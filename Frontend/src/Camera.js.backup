@@ -1,0 +1,465 @@
+import React, { useEffect, useRef, useState, forwardRef, useImperativeHandle } from "react";
+
+const API_BASE_URL = "http://localhost:8000/api/v1";
+
+const Camera = forwardRef(function Camera({ open }, ref) {
+    const videoRef = useRef(null);
+    const canvasRef = useRef(null);
+
+    const [stream, setStream] = useState(null);
+    const [isCameraOn, setIsCameraOn] = useState(false);
+    
+    // Pose selection state
+    const [poses, setPoses] = useState([]);
+    const [selectedPose, setSelectedPose] = useState("");
+    const [selectedView, setSelectedView] = useState("");
+    const [availableViews, setAvailableViews] = useState([]);
+    
+    // Results state
+    const [overallAccuracy, setOverallAccuracy] = useState("--");
+    const [referenceImage, setReferenceImage] = useState("");
+    
+    // Animation and detection refs
+    const animationFrameRef = useRef(null);
+    const lastAccuracyCheckRef = useRef(0);
+    const ACCURACY_CHECK_INTERVAL = 500; // 500ms between API calls
+    
+    // Error state
+    const [error, setError] = useState("");
+
+    // Load available poses on mount
+    useEffect(() => {
+        loadPoses();
+    }, []);
+
+    const loadPoses = async () => {
+        try {
+            setError(""); // Clear previous errors
+            const response = await fetch(`${API_BASE_URL}/reference/poses`);
+            
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            
+            const data = await response.json();
+
+            if (data.success && data.poses.length > 0) {
+                setPoses(data.poses);
+                setError(""); // Clear error on success
+            } else {
+                setError("No poses available. Please check backend.");
+            }
+        } catch (error) {
+            console.error("Failed to load poses:", error);
+            setError(`Failed to load poses: ${error.message}. Make sure backend is running on port 8000.`);
+        }
+    };
+
+    const handlePoseChange = (e) => {
+        const poseData = poses.find((p) => p.base_pose_name === e.target.value);
+        setSelectedPose(e.target.value);
+        setSelectedView("");
+
+        if (poseData) {
+            const views = [];
+            if (poseData.has_front) views.push("front");
+            if (poseData.has_side) views.push("side");
+            setAvailableViews(views);
+
+            // Auto-select first view
+            if (views.length > 0) {
+                setSelectedView(views[0]);
+                loadReferenceImage(e.target.value, views[0]);
+            }
+        } else {
+            setAvailableViews([]);
+            setReferenceImage("");
+        }
+    };
+
+    const handleViewChange = (e) => {
+        const view = e.target.value;
+        setSelectedView(view);
+
+        if (view && selectedPose) {
+            loadReferenceImage(selectedPose, view);
+        }
+    };
+
+    const loadReferenceImage = async (poseName, view) => {
+        const poseId = `${poseName}_${view}`;
+        try {
+            const response = await fetch(`${API_BASE_URL}/reference/pose/${poseId}`);
+            const data = await response.json();
+
+            if (data.success && data.pose) {
+                setReferenceImage(data.pose.thumbnail || "");
+            }
+        } catch (error) {
+            console.error("Failed to load reference image:", error);
+        }
+    };
+
+    // Pose detection and accuracy check
+    const detectAndCalculateAccuracy = async () => {
+        if (!videoRef.current || !canvasRef.current || !selectedPose || !selectedView) return;
+
+        const now = Date.now();
+        if (now - lastAccuracyCheckRef.current < ACCURACY_CHECK_INTERVAL) return;
+        lastAccuracyCheckRef.current = now;
+
+        try {
+            // Capture frame from video
+            const canvas = canvasRef.current;
+            const video = videoRef.current;
+            const ctx = canvas.getContext("2d");
+            
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            ctx.drawImage(video, 0, 0);
+
+            // Convert to base64
+            const imageData = canvas.toDataURL("image/jpeg");
+
+            // Call accuracy API
+            const response = await fetch(`${API_BASE_URL}/accuracy/calculate-accuracy`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    user_image: imageData,
+                    reference_pose_id: `${selectedPose}_${selectedView}`,
+                }),
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+                setOverallAccuracy(Math.round(data.overall_accuracy));
+                
+                // Draw pose skeleton on canvas
+                if (data.user_keypoints) {
+                    drawPoseSkeleton(ctx, data.user_keypoints, canvas.width, canvas.height);
+                }
+            }
+        } catch (error) {
+            console.error("Accuracy calculation failed:", error);
+        }
+    };
+
+    // Draw pose skeleton overlay
+    const drawPoseSkeleton = (ctx, keypoints, width, height) => {
+        // Define pose connections
+        const connections = [
+            ["left_shoulder", "right_shoulder"],
+            ["left_shoulder", "left_elbow"],
+            ["left_elbow", "left_wrist"],
+            ["right_shoulder", "right_elbow"],
+            ["right_elbow", "right_wrist"],
+            ["left_shoulder", "left_hip"],
+            ["right_shoulder", "right_hip"],
+            ["left_hip", "right_hip"],
+            ["left_hip", "left_knee"],
+            ["left_knee", "left_ankle"],
+            ["right_hip", "right_knee"],
+            ["right_knee", "right_ankle"],
+        ];
+
+        // Draw connections
+        ctx.strokeStyle = "rgba(0, 255, 0, 0.8)";
+        ctx.lineWidth = 3;
+
+        connections.forEach(([start, end]) => {
+            const startKp = keypoints.find((kp) => kp.name === start);
+            const endKp = keypoints.find((kp) => kp.name === end);
+
+            if (startKp && endKp && startKp.visibility > 0.5 && endKp.visibility > 0.5) {
+                ctx.beginPath();
+                ctx.moveTo(startKp.x * width, startKp.y * height);
+                ctx.lineTo(endKp.x * width, endKp.y * height);
+                ctx.stroke();
+            }
+        });
+
+        // Draw keypoints
+        keypoints.forEach((kp) => {
+            if (kp.visibility > 0.5) {
+                ctx.fillStyle = "rgba(0, 255, 0, 0.9)";
+                ctx.beginPath();
+                ctx.arc(kp.x * width, kp.y * height, 5, 0, 2 * Math.PI);
+                ctx.fill();
+            }
+        });
+    };
+
+    // Animation loop for continuous detection
+    const startDetectionLoop = () => {
+        const loop = () => {
+            if (isCameraOn && selectedPose && selectedView) {
+                detectAndCalculateAccuracy();
+            }
+            animationFrameRef.current = requestAnimationFrame(loop);
+        };
+        loop();
+    };
+
+    const stopDetectionLoop = () => {
+        if (animationFrameRef.current) {
+            cancelAnimationFrame(animationFrameRef.current);
+            animationFrameRef.current = null;
+        }
+    };
+
+    // Start/stop detection loop based on camera state
+    useEffect(() => {
+        if (isCameraOn && selectedPose && selectedView) {
+            startDetectionLoop();
+        } else {
+            stopDetectionLoop();
+        }
+
+        return () => stopDetectionLoop();
+    }, [isCameraOn, selectedPose, selectedView]);
+
+    // START CAMERA
+    const startCamera = async () => {
+        try {
+            const camStream = await navigator.mediaDevices.getUserMedia({
+                video: { facingMode: "user", width: 720, height: 480 },
+                audio: false,
+            });
+
+            if (videoRef.current) {
+                videoRef.current.srcObject = camStream;
+                videoRef.current.play();
+                setStream(camStream);
+                setIsCameraOn(true);
+            }
+
+            document.getElementById("cameraStatus").innerText = "Camera Started";
+            document.getElementById("stopCameraBtn").disabled = false;
+            document.getElementById("stopCameraBtn").classList.remove("opacity-50");
+            document.getElementById("stopCameraBtn").classList.remove("cursor-not-allowed");
+
+        } catch (err) {
+            alert("Camera permission denied or unavailable");
+            console.error(err);
+        }
+    };
+
+    // STOP CAMERA
+    const stopCamera = () => {
+        try {
+            // Stop tracks
+            if (stream) {
+                stream.getTracks().forEach(t => t.stop());
+            }
+
+            // Stop and clear video
+            if (videoRef.current) {
+                videoRef.current.pause();
+                videoRef.current.srcObject = null;
+                videoRef.current.removeAttribute("src");
+                videoRef.current.load();
+            }
+
+            // Clear canvas
+            if (canvasRef.current) {
+                const ctx = canvasRef.current.getContext("2d");
+                ctx.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
+            }
+
+            setStream(null);
+            setIsCameraOn(false);
+            setOverallAccuracy("--");
+            stopDetectionLoop();
+
+            // Safe DOM updates (only if element exists)
+            const camStatus = document.getElementById("cameraStatus");
+            if (camStatus) camStatus.innerText = "Camera Stopped";
+
+            const stopBtn = document.getElementById("stopCameraBtn");
+            if (stopBtn) {
+                stopBtn.disabled = true;
+                stopBtn.classList.add("opacity-50", "cursor-not-allowed");
+            }
+
+        } catch (err) {
+            console.error("StopCamera Error:", err);
+        }
+    };
+
+
+
+
+    // Expose methods to parent
+    useImperativeHandle(ref, () => ({
+        startCamera,
+        stopCamera,
+        isCameraOn
+    }));
+
+    // Auto-stop when modal closes
+    useEffect(() => {
+        if (!open && isCameraOn) {
+            stopCamera();
+        }
+    }, [open]);
+
+    // CLEANUP on unmount (Safe cleanup)
+    useEffect(() => {
+        return () => {
+            try {
+                stopCamera();
+            } catch (e) {
+                console.warn("Cleanup error ignored:", e);
+            }
+        };
+    }, []);
+
+
+    return (
+        <div className=" rounded-3xl  w-full bg-[#0b0f0e] text-white flex flex-col items-center">
+
+            {/* MAIN CONTAINER */}
+            <div className="w-full rounded-3xl  bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl p-5 pt-0 ">
+
+                {/* HEADER */}
+                <header className="text-center mb-0">
+                    <h1 className="text-3xl font-bold text-green-400">Yoga Accuracy</h1>
+                    <p className="text-gray-300 text-base mt-1">Compare your posture with reference poses.</p>
+                </header>
+
+                {/* ERROR MESSAGE */}
+                {error && (
+                    <div className="bg-red-500/20 border border-red-500/50 rounded-lg p-3 mb-4 mt-3">
+                        <p className="text-red-300 text-sm mb-2">{error}</p>
+                        <button
+                            onClick={loadPoses}
+                            className="px-3 py-1 bg-red-500 hover:bg-red-600 text-white text-sm rounded"
+                        >
+                            Retry
+                        </button>
+                    </div>
+                )}
+
+                {/* CONTROL PANEL — SUPER COMPACT, NO BG, NO BORDER */}
+                <div className="flex items-center justify-center mb-0">
+
+                    {/* CONTROL PANEL */}
+                    <div className="flex flex-col w-full mb-4">
+
+                        {/* POSE SELECTOR */}
+                        <select
+                            value={selectedPose}
+                            onChange={handlePoseChange}
+                            className="w-full mt-3 p-2 text-sm rounded-lg bg-black/30 text-gray-300 
+        border border-white/20 mb-2"
+                        >
+                            <option value="">Select Pose</option>
+                            {poses.map((pose) => (
+                                <option key={pose.base_pose_name} value={pose.base_pose_name}>
+                                    {pose.display_name}
+                                </option>
+                            ))}
+                        </select>
+
+                        {/* VIEW SELECTOR */}
+                        {availableViews.length > 0 && (
+                            <select
+                                value={selectedView}
+                                onChange={handleViewChange}
+                                className="w-full p-2 text-sm rounded-lg bg-black/30 text-gray-300 
+        border border-white/20 mb-4"
+                            >
+                                <option value="">Select View</option>
+                                {availableViews.map((view) => (
+                                    <option key={view} value={view}>
+                                        {view.charAt(0).toUpperCase() + view.slice(1)} View
+                                    </option>
+                                ))}
+                            </select>
+                        )}
+
+                        {/* SINGLE TOGGLE BUTTON — LEFT SIDE ALIGN */}
+                        <button
+                            onClick={isCameraOn ? stopCamera : startCamera}
+                            disabled={!selectedPose || !selectedView}
+                            className={`px-4 py-2 rounded-lg text-sm font-semibold w-40
+            ${isCameraOn
+                                    ? "bg-red-500 hover:bg-red-600 text-white"
+                                    : "bg-green-500 hover:bg-green-600 text-white"
+                                } ${(!selectedPose || !selectedView) ? "opacity-50 cursor-not-allowed" : ""}`}
+                        >
+                            {isCameraOn ? "Stop Camera" : "Start Camera"}
+                        </button>
+
+                    </div>
+
+
+
+                    {/* Overall Accuracy — compact */}
+                    <div className="text-center w-full">
+                        {/* <h3 className="text-sm font-semibold mb-1">Overall</h3> */}
+                        <div className="mx-auto w-35 h-35 rounded-full bg-linear-to-br 
+                        from-green-500 to-green-700 flex flex-col 
+                        items-center justify-center">
+                            <div className="text-xl font-bold">{overallAccuracy}</div>
+                            <div className="text-xs">%</div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                {/* VIDEO + REFERENCE SECTION */}
+                <div className="grid md:grid-cols-2 gap-6">
+
+                    {/* USER CAMERA */}
+                    <div>
+                        <h3 className="text-lg text-green-400 font-semibold mb-2">Your Pose</h3>
+
+                        <div className="relative bg-black/40 rounded-xl overflow-hidden border border-white/10 h-60 flex items-center justify-center text-gray-500">
+                            <video ref={videoRef} playsInline className="absolute inset-0 w-full h-full object-cover bg-black" />
+
+                            <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
+
+                            {!isCameraOn && (
+                                <p className="z-10 text-sm">📷 Camera Off</p>
+                            )}
+                        </div>
+                    </div>
+
+                    {/* REFERENCE IMAGE (with bottom next/prev buttons) */}
+                    <div>
+                        <h3 className="text-lg text-green-400 font-semibold mb-2">Reference</h3>
+
+                        <div className="relative bg-black/20 rounded-xl border border-white/10 h-60 
+        flex items-center justify-center overflow-hidden">
+
+                            {/* IMAGE */}
+                            {referenceImage ? (
+                                <img
+                                    src={referenceImage}
+                                    alt="Reference pose"
+                                    className="max-h-full rounded-xl transition-all duration-300"
+                                />
+                            ) : (
+                                <div className="text-gray-400 text-sm text-center px-3">
+                                    Select a pose to see the reference image
+                                </div>
+                            )}
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+    );
+});
+
+export default Camera;
