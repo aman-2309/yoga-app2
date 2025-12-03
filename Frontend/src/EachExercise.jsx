@@ -41,7 +41,7 @@ function Typing({
         <img
           src="/images/icon.svg"
           alt="veda"
-          className={`w-5 h-5 mt-1 flex-shrink-0 transition-all duration-300 ${
+          className={`w-10 h-10 mt-1 flex-shrink-0 transition-all duration-300 ${
             globalTyping ? "animate-pulse scale-110" : "scale-100"
           }`}
         />
@@ -115,6 +115,11 @@ export default function EachExercise() {
       }
       if (isChatOpen) {
         const chatPanel = document.getElementById("chat-panel");
+        const chatBar = e.target.closest('input[placeholder*="Ask anything"]');
+        // Don't close if clicking on the chat input bar
+        if (chatBar) {
+          return;
+        }
         if (chatPanel && !chatPanel.contains(e.target)) {
           setIsChatOpen(false);
         }
@@ -197,7 +202,10 @@ export default function EachExercise() {
     const userMsg = input.trim();
     setMessages((prev) => [...prev, { from: "user", text: userMsg }]);
     setInput("");
-    openChat();
+    // Only open chat if it's not already open
+    if (!isChatOpen && !chatMounted) {
+      openChat();
+    }
     setTimeout(() => {
       setMessages((prev) => [
         ...prev,
@@ -351,13 +359,17 @@ export default function EachExercise() {
       <header className="w-full backdrop-blur-xl bg-[#0d1117]/80 border-b border-white/10 shadow-lg sticky top-0 z-50">
         <div className="max-w-6xl mx-auto flex justify-between items-center px-6 py-2">
           <Link to="/" className="flex items-center gap-2">
-            <img src="/images/icon.svg" className="w-8 h-8" alt="veda logo" />
-            <span className="text-xl font-bold tracking-tight">veda</span>
+            <img
+              src="/images/icon2.png"
+              className="h-12 object-cover"
+              alt="veda logo"
+            />
+            <span className="text-lg font-bold tracking-tight">veda</span>
           </Link>
-          <nav className="flex items-center gap-6 text-lg font-medium">
+          <nav className="flex items-center gap-3 text-base font-medium">
             <button
               onClick={toggleDarkMode}
-              className="w-10 h-10 rounded-full flex items-center justify-center bg-white/10 border border-white/20 text-gray-300 hover:bg-white/20 transition shadow-md"
+              className="w-8 h-8 rounded-full flex items-center justify-center bg-white/10 border border-white/20 text-gray-300 hover:bg-white/20 transition shadow-md text-sm"
             >
               {darkMode ? "🌙" : "☀️"}
             </button>
@@ -370,74 +382,81 @@ export default function EachExercise() {
             <Link to="/yoga" className="hover:text-green-400 transition">
               Yoga
             </Link>
-            <div className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center">
-              <i className="fas fa-user text-gray-300"></i>
+            <div className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center">
+              <i className="fas fa-user text-gray-300 text-sm"></i>
             </div>
           </nav>
         </div>
       </header>
 
-      {/* Back Button
-            <div className="fixed top-24 left-4 z-[70]">
-                <button
-                    onClick={goBack}
-                    className="w-12 h-12 rounded-full flex items-center justify-center backdrop-blur-xl bg-white/10 border border-white/20 shadow-lg hover:scale-110 transition text-white text-2xl"
-                >
-                    ←
-                </button>
-            </div> */}
-
       {/* CONTENT */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-2 pb-32 space-y-6">
-        {/* IMAGE */}
-        <div
-          className="relative w-full max-w-4xl mx-auto overflow-hidden rounded-3xl 
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-2 pb-10 ">
+        {/* IMAGE AND VIDEO SECTION */}
+        <div className="flex gap-4 w-full">
+          {/* IMAGE - 70% */}
+          <div
+            className="relative w-[50%] overflow-hidden rounded-3xl 
     bg-white/10 backdrop-blur-lg border border-white/10 shadow-xl
-    h-64 sm:h-80 md:h-90 lg:h-[350px] flex items-center justify-center"
-        >
-          {referenceImage ? (
-            <>
-              {/* Blurred background */}
-              <img
-                src={referenceImage}
-                alt=""
-                className="absolute inset-0 w-full h-full object-cover blur-3xl scale-110 opacity-50"
-                aria-hidden="true"
-              />
-              {/* Main image */}
-              <img
-                src={referenceImage}
-                alt={exercise.name}
-                className="relative w-full h-full object-contain z-10"
-              />
-            </>
-          ) : (
-            <div className="text-gray-400 text-sm">Loading image...</div>
-          )}
+    h-[248px] sm:h-[311px] md:h-[350px] lg:h-[340px] flex items-center justify-center"
+          >
+            {referenceImage ? (
+              <>
+                {/* Blurred background */}
+                <img
+                  src={referenceImage}
+                  alt=""
+                  className="absolute inset-0 w-full h-full object-cover blur-3xl scale-110 opacity-50"
+                  aria-hidden="true"
+                />
+                {/* Main image */}
+                <img
+                  src={referenceImage}
+                  alt={exercise.name}
+                  className="relative w-full h-full object-contain z-10"
+                />
+              </>
+            ) : (
+              <div className="text-gray-400 text-sm">Loading image...</div>
+            )}
+          </div>
+
+          {/* VIDEO - 30% */}
+          <div
+            className="relative w-[50%] overflow-hidden rounded-3xl 
+    bg-white/10 backdrop-blur-lg border border-white/10 shadow-xl
+    h-[248px] sm:h-[311px] md:h-[350px] lg:h-[340px] flex items-center justify-center"
+          >
+            <iframe
+              width="656"
+              height="369"
+              src={`https://www.youtube.com/embed/${exercise.elink}`}
+              title="Halasana for Beginners | How To Do Plow Yoga Pose | Step-by-Step guide"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
         </div>
 
         {/* NAME - No typing effect */}
-        <h1 className="text-4xl font-bold text-center text-green-400 mt-6">
+        <h1 className="text-4xl font-bold text-center text-green-400 mt-5">
           {exercise.name} ( {exercise.hindi} )
         </h1>
 
-        {/* SHORT DESCRIPTION - Only show after scroll */}
+        {/* SHORT DESCRIPTION with BLINKING ICON - Only show after scroll */}
         {hasScrolled && (
-          <div className="mt-3">
-            {/* Icon in separate row */}
-            <div className="flex items-center mb-2">
-              <img
-                src="/images/icon.svg"
-                alt="veda"
-                className={`w-10 h-10 transition-all duration-500 ${
-                  !allTypingDone
-                    ? "animate-pulse brightness-150 drop-shadow-[0_0_15px_rgba(74,222,128,0.8)] scale-110"
-                    : "brightness-100 scale-100"
-                }`}
-              />
-            </div>
-            {/* Text content */}
-            <p className="text-lg opacity-80 text-left">
+          <div className="mt-6 flex items-start gap-4">
+            <img
+              src="/images/icon2.png"
+              alt="veda"
+              className={`w-11  mt-1 flex-shrink-0 transition-all duration-500 ${
+                !allTypingDone
+                  ? "animate-pulse brightness-150 drop-shadow-[0_0_15px_rgba(74,222,128,0.8)] scale-110"
+                  : "brightness-100 scale-100"
+              }`}
+            />
+            <p className="text-lg opacity-80 text-left flex-1">
               <Typing
                 key={exercise.id + "-shrtdes"}
                 text={exercise.short_description}
@@ -452,7 +471,7 @@ export default function EachExercise() {
 
         {/* BENEFITS - Only show after scroll */}
         {hasScrolled && step >= 1 && (
-          <div className="mt-6">
+          <div className="mt-6 ml-14">
             <h2 className="text-2xl font-semibold text-green-400 mb-2">
               Benefits
             </h2>
@@ -469,7 +488,7 @@ export default function EachExercise() {
 
         {/* STEPS - Only show after scroll */}
         {hasScrolled && step >= 2 && (
-          <div className="mt-6">
+          <div className="mt-6 ml-14">
             <h2 className="text-2xl font-semibold text-green-400 mb-2">
               Steps
             </h2>
@@ -486,7 +505,7 @@ export default function EachExercise() {
 
         {/* MUSCLES - Only show after scroll */}
         {hasScrolled && step >= 3 && (
-          <div className="mt-6">
+          <div className="mt-6 ml-14">
             <h2 className="text-2xl font-semibold text-green-400 mb-2">
               Muscles Targeted
             </h2>
@@ -503,7 +522,7 @@ export default function EachExercise() {
 
         {/* BREATHING - Only show after scroll */}
         {hasScrolled && step >= 4 && (
-          <div className="mt-6">
+          <div className="mt-6 ml-14">
             <h2 className="text-2xl font-semibold text-green-400 mb-2">
               Breathing
             </h2>
@@ -520,7 +539,7 @@ export default function EachExercise() {
 
         {/* DURATION - Only show after scroll */}
         {hasScrolled && step >= 5 && (
-          <div className="mt-6">
+          <div className="mt-6 ml-14">
             <h2 className="text-xl font-semibold text-green-400 mb-1">
               Duration
             </h2>
@@ -537,7 +556,7 @@ export default function EachExercise() {
 
         {/* DIFFICULTY - Only show after scroll */}
         {hasScrolled && step >= 6 && (
-          <div className="mt-6">
+          <div className="mt-6 ml-14">
             <h2 className="text-xl font-semibold text-green-400 mb-1">
               Difficulty
             </h2>
@@ -554,7 +573,7 @@ export default function EachExercise() {
 
         {/* COMMON MISTAKES - Only show after scroll */}
         {hasScrolled && step >= 7 && (
-          <div className="mt-6">
+          <div className="mt-6 ml-14">
             <h2 className="text-2xl font-semibold text-red-400 mb-2">
               Common Mistakes
             </h2>
@@ -571,7 +590,7 @@ export default function EachExercise() {
 
         {/* CONTRAINDICATIONS - Only show after scroll */}
         {hasScrolled && step >= 8 && (
-          <div className="mt-6">
+          <div className="mt-6 ml-14">
             <h2 className="text-2xl font-semibold text-red-400 mb-2">
               Contraindications
             </h2>
@@ -591,115 +610,129 @@ export default function EachExercise() {
           </div>
         )}
 
-        {/* YOUTUBE LINK */}
-        <div className="text-center mt-8">
-          <a
-            href={exercise.youtube}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-6 py-3 rounded-xl bg-green-600 text-white hover:bg-green-700 transition shadow-lg inline-block"
-          >
-            Watch on YouTube
-          </a>
-        </div>
+        {/* EXTRA SPACE TO ENSURE SCROLLING */}
+        <div className="h-[30vh]"></div>
       </div>
 
-      {/* Prev/Next with replace */}
-      <div className="fixed top-[45%] sm:top-1/2 left-2 sm:left-4 -translate-y-1/2 z-[70]">
-        <button
-          disabled={exercise.id <= 1}
-          onClick={() => {
-            // Store camera state before navigation
-            if (isCamOpen) {
-              shouldReopenCamera.current = true;
-            }
-            navigate(`/exercise/${exercise.id - 1}`, { replace: true });
-          }}
-          className={`w-12 h-12 rounded-full flex items-center justify-center backdrop-blur-xl border shadow-lg transition ${
-            exercise.id <= 1
-              ? "opacity-40 cursor-not-allowed bg-white/10 border-white/10"
-              : "hover:scale-110 bg-white/20 border-white/30"
-          }`}
-        >
-          <span className="text-2xl">⟨</span>
-        </button>
-      </div>
-      <div className="fixed top-[45%] sm:top-1/2 right-2 sm:right-4 -translate-y-1/2 z-[70]">
-        <button
-          disabled={exercise.id >= exercises.length}
-          onClick={() => {
-            // Store camera state before navigation
-            if (isCamOpen) {
-              shouldReopenCamera.current = true;
-            }
-            navigate(`/exercise/${exercise.id + 1}`, { replace: true });
-          }}
-          className={`w-12 h-12 rounded-full flex items-center justify-center backdrop-blur-xl border shadow-lg transition ${
-            exercise.id >= exercises.length
-              ? "opacity-40 cursor-not-allowed bg-white/10 border-white/10"
-              : "hover:scale-110 bg-white/20 border-white/30"
-          }`}
-        >
-          <span className="text-2xl">⟩</span>
-        </button>
-      </div>
-
-      {/* Chat bar with Camera button */}
-      <div
-        className="fixed bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 
-    w-[100vw] px-2 sm:px-0 max-w-3xl z-[60]"
-      >
-        <div className="bg-white/10 backdrop-blur-xl shadow-xl rounded-full border border-white/20 p-3 flex items-center gap-2">
+      {/* Prev/Next with replace - hide when camera OR chat is open */}
+      {!isCamOpen && !isChatOpen && (
+        <div className="fixed top-[45%] sm:top-1/2 left-2 sm:left-4 -translate-y-1/2 z-[70]">
           <button
-            onClick={(e) => {
-              e.stopPropagation();
-              if (isChatOpen) setIsChatOpen(false);
+            disabled={exercise.id <= 1}
+            onClick={() => {
+              // Store camera state before navigation
               if (isCamOpen) {
-                closeCameraModal();
-              } else {
-                openCameraModal();
+                shouldReopenCamera.current = true;
               }
+              navigate(`/exercise/${exercise.id - 1}`, { replace: true });
             }}
-            className={`w-10 h-10 rounded-full flex items-center justify-center backdrop-blur-xl border shadow-lg transition flex-shrink-0 ${
-              isCamOpen
-                ? "bg-red-600 hover:bg-red-700 border-red-400"
-                : "bg-green-600 hover:bg-green-700 border-green-400"
+            className={`w-12 h-12 rounded-full flex items-center justify-center backdrop-blur-xl border shadow-lg transition ${
+              exercise.id <= 1
+                ? "opacity-40 cursor-not-allowed bg-white/10 border-white/10"
+                : "hover:scale-110 bg-white/20 border-white/30"
             }`}
           >
-            {isCamOpen ? "✕" : "📷"}
-          </button>
-
-          <input
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            onClick={() => {
-              if (isCamOpen) setIsCamOpen(false);
-              if (!isChatOpen) openChat();
-            }}
-            onKeyDown={(e) => e.key === "Enter" && handleSend()}
-            placeholder="Ask anything about this exercise…"
-            className="flex-grow px-4 py-2 rounded-full bg-transparent text-white focus:outline-none placeholder-gray-400"
-          />
-
-          <button
-            onClick={handleSend}
-            className="px-5 py-2 bg-green-600 text-white rounded-full hover:bg-green-700 transition flex-shrink-0"
-          >
-            Send
+            <span className="text-2xl">⟨</span>
           </button>
         </div>
-      </div>
+      )}
+      {!isCamOpen && !isChatOpen && (
+        <div className="fixed top-[45%] sm:top-1/2 right-2 sm:right-4 -translate-y-1/2 z-[70]">
+          <button
+            disabled={exercise.id >= exercises.length}
+            onClick={() => {
+              // Store camera state before navigation
+              if (isCamOpen) {
+                shouldReopenCamera.current = true;
+              }
+              navigate(`/exercise/${exercise.id + 1}`, { replace: true });
+            }}
+            className={`w-12 h-12 rounded-full flex items-center justify-center backdrop-blur-xl border shadow-lg transition ${
+              exercise.id >= exercises.length
+                ? "opacity-40 cursor-not-allowed bg-white/10 border-white/10"
+                : "hover:scale-110 bg-white/20 border-white/30"
+            }`}
+          >
+            <span className="text-2xl">⟩</span>
+          </button>
+        </div>
+      )}
+
+      {/* Chat bar with Camera button - always visible, only hide when camera is open */}
+      {!isCamOpen && (
+        <div
+          className="fixed bottom-1 sm:bottom-3 left-1/2 -translate-x-1/2 
+    w-[100vw] px-2 sm:px-0 max-w-3xl z-[10001]"
+        >
+          <div className="bg-white/10 backdrop-blur-xl shadow-xl rounded-full border border-white/20 p-3 flex items-center gap-2">
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                if (isChatOpen) setIsChatOpen(false);
+                if (isCamOpen) {
+                  closeCameraModal();
+                } else {
+                  openCameraModal();
+                }
+              }}
+              className={`w-8 h-8 rounded-full flex items-center justify-center backdrop-blur-xl border shadow-lg transition flex-shrink-0 text-sm ${
+                isCamOpen
+                  ? "bg-red-600 hover:bg-red-700 border-red-400"
+                  : "bg-green-600 hover:bg-green-700 border-green-400"
+              }`}
+            >
+              {isCamOpen ? "✕" : "📷"}
+            </button>
+
+            <input
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              onClick={(e) => {
+                // Prevent closing chat if it's already open
+                if (isChatOpen) {
+                  e.stopPropagation();
+                  return;
+                }
+                // Close camera if open
+                if (isCamOpen) setIsCamOpen(false);
+                // Only open chat if it's completely closed
+                if (!isChatOpen && !chatMounted) {
+                  openChat();
+                }
+              }}
+              onKeyDown={(e) => e.key === "Enter" && handleSend()}
+              placeholder="Ask anything about this exercise…"
+              className="flex-grow px-3 py-2 rounded-full bg-transparent text-white focus:outline-none placeholder-gray-400 text-sm"
+            />
+
+            <button
+              onClick={handleSend}
+              className="px-4 py-2 bg-green-600 text-white rounded-full hover:bg-green-700 transition flex-shrink-0 text-sm"
+            >
+              Send
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Blurred strip below chat bar - hide when camera is open */}
+      {!isCamOpen && (
+        <div className="fixed bottom-0 left-0 right-0 h-[calc(0.75rem+env(safe-area-inset-bottom))] backdrop-blur-2xl bg-black/40 z-[59]" />
+      )}
 
       {/* Chat Modal */}
       {chatMounted && (
-        <div className="fixed inset-0 z-40 flex justify-center pointer-events-none">
-          <div className="absolute inset-0 backdrop-blur-sm bg-black/60" />
+        <div className="fixed inset-0 z-[9999] flex justify-center pointer-events-auto">
+          <div
+            className="absolute inset-0 backdrop-blur-sm bg-black/60"
+            onClick={() => setIsChatOpen(false)}
+          />
           <div
             id="chat-panel"
-            className="pointer-events-auto fixed z-[9999] left-1/2 w-[100vw] max-w-3xl flex flex-col bg-white/10 backdrop-blur-2xl rounded-3xl shadow-2xl border border-white/10 overflow-hidden"
+            className="pointer-events-auto fixed z-[10000] left-1/2 w-[100vw] max-w-3xl flex flex-col bg-white/10 backdrop-blur-2xl rounded-3xl shadow-2xl border border-white/10 overflow-hidden"
             style={{
-              top: "3.6rem", // navbar height
-              bottom: "5.6rem", // chat bar height + padding
+              top: "0rem", // navbar height
+              bottom: "4.5rem", // aligned with chat bar top edge
               transform: isChatOpen
                 ? "translate(-50%, 0)"
                 : "translate(-50%, 120vh)",
@@ -750,7 +783,7 @@ export default function EachExercise() {
           <div className="absolute inset-0 backdrop-blur-sm bg-black/30" />
           <div
             id="camera-panel"
-            className="pointer-events-auto fixed z-[10000] left-1/2 top-0 w-[100vw] max-w-[1100px] h-[90vh] bg-white/10 backdrop-blur-2xl rounded-b-3xl shadow-2xl border border-white/10 overflow-hidden flex flex-col"
+            className="pointer-events-auto fixed z-[10000] left-1/2 top-0 w-[100vw] max-w-[1100px] h-screen bg-white/10 backdrop-blur-2xl shadow-2xl border border-white/10 overflow-hidden flex flex-col"
             style={{
               transform: isCamOpen
                 ? "translate(-50%, 0)"
@@ -765,6 +798,7 @@ export default function EachExercise() {
                 open={isCamOpen}
                 selectedPoseId={exercise.bName}
                 onPoseChange={handlePoseChangeInCamera}
+                onClose={closeCameraModal}
               />
             </div>
           </div>

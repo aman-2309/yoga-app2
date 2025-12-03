@@ -18,7 +18,7 @@ import {
 } from "./utils/accuracyCalculator";
 
 const Camera = forwardRef(function Camera(
-  { open, selectedPoseId, onPoseChange },
+  { open, selectedPoseId, onPoseChange, onClose },
   ref
 ) {
   const videoRef = useRef(null);
@@ -44,7 +44,7 @@ const Camera = forwardRef(function Camera(
 
   // Constants matching original
   const ACCURACY_CHECK_INTERVAL = 500; // 500ms between API calls
-  const SMOOTHING_FACTOR = 0.3; // Lower = more smoothing
+  const SMOOTHING_FACTOR = 0.9; // Lower = more smoothing, Higher = more responsive
   const MIN_CONFIDENCE_THRESHOLD = 0.5;
 
   // Load available poses on mount
@@ -905,188 +905,213 @@ const Camera = forwardRef(function Camera(
   }, []);
 
   return (
-    <div className=" rounded-3xl  w-full bg-[#0b0f0e] text-white flex flex-col items-center">
+    <div className="w-full h-full bg-[#0b0f0e] text-white flex flex-col overflow-hidden">
       {/* MAIN CONTAINER */}
-      <div className="w-full rounded-3xl  bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl p-5 pt-0 ">
-        {/* HEADER */}
-        <header className="text-center mb-0">
-          <h1 className="text-3xl font-bold text-green-400">Yoga Accuracy</h1>
-          <p className="text-gray-300 text-base mt-1">
-            Compare your posture with reference poses.
-          </p>
+      <div className="w-full h-full bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl p-3 flex flex-col overflow-hidden">
+        {/* HEADER with Close Button */}
+        <header className="flex justify-between items-center mb-0 relative flex-shrink-0">
+          <div className="flex-1"></div>
+          <h1 className="text-3xl font-bold text-green-400 absolute left-1/2 -translate-x-1/2 mb-0">
+            Yoga Accuracy
+          </h1>
+          <button
+            onClick={onClose}
+            className="w-8 h-8 rounded-full bg-red-500 hover:bg-red-600 text-white flex items-center justify-center transition shadow-lg text-base z-10"
+          >
+            ✕
+          </button>
         </header>
 
-        {/* CONTROL PANEL — SUPER COMPACT, NO BG, NO BORDER */}
-        <div className="flex items-center justify-center mb-0">
-          {/* CONTROL PANEL */}
-          <div className="flex flex-col w-full mb-4">
-            {/* FULL-WIDTH POSE SELECTOR (thoda niche spacing ke saath) */}
-            <select
-              value={selectedPose}
-              onChange={handlePoseChange}
-              className="w-full mt-3 px-3 py-2.5 text-sm rounded-xl bg-black/40 text-white 
-        border border-white/30 mb-4 focus:outline-none focus:ring-2 focus:ring-green-500/50 hover:bg-black/50 transition cursor-pointer appearance-none"
-              style={{
-                backgroundImage:
-                  "url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%239CA3AF' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e\")",
-                backgroundPosition: "right 0.5rem center",
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "1.5em 1.5em",
-                paddingRight: "2.5rem",
-              }}
-            >
-              <option value="" className="bg-gray-900 text-gray-300">
-                Select Pose
-              </option>
-              {poses
-                .reduce((uniquePoses, pose) => {
-                  // Find matching exercise from yogaExercises.json
-                  const matchingExercise = exercises.find((ex) => {
-                    const exName = ex.name.toLowerCase();
-                    const poseName = (pose.name || "").toLowerCase();
-                    const baseName = (pose.base_pose_name || "").toLowerCase();
-                    const poseId = (pose.pose_id || "").toLowerCase();
+        {/* CONTROL PANEL — Left: Dropdown+Button, Right: Accuracy */}
+        <div className="mb-2 flex-shrink-0">
+          <div className="flex items-start gap-3">
+            {/* Left Side: Dropdown and Button */}
+            <div className="flex-[0.6] flex flex-col gap-6 pt-8">
+              <div className="flex flex-row gap-2">
+              {/* Pose Selector Dropdown */}
+              <select
+                value={selectedPose}
+                onChange={handlePoseChange}
+                className="w-[80%] px-3 py-2 text-xs rounded-lg bg-black/40 text-white 
+        border border-white/30 focus:outline-none focus:ring-2 focus:ring-green-500/50 hover:bg-black/50 transition cursor-pointer appearance-none"
+                style={{
+                  backgroundImage:
+                    "url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%239CA3AF' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e\")",
+                  backgroundPosition: "right 0.5rem center",
+                  backgroundRepeat: "no-repeat",
+                  backgroundSize: "1.2em 1.2em",
+                  paddingRight: "2rem",
+                }}
+              >
+                <option value="" className="bg-gray-900 text-gray-300 w-[80%]">
+                  Select Pose
+                </option>
+                {poses
+                  .reduce((uniquePoses, pose) => {
+                    // Find matching exercise from yogaExercises.json
+                    const matchingExercise = exercises.find((ex) => {
+                      const exName = ex.name.toLowerCase();
+                      const poseName = (pose.name || "").toLowerCase();
+                      const baseName = (
+                        pose.base_pose_name || ""
+                      ).toLowerCase();
+                      const poseId = (pose.pose_id || "").toLowerCase();
 
-                    const cleanEx = exName
-                      .replace(/\s+or\s+/gi, " ")
-                      .replace(/[()]/g, "")
-                      .trim();
-                    const cleanPoseName = poseName
-                      .replace(/\s+or\s+/gi, " ")
-                      .replace(/[()]/g, "")
-                      .trim();
+                      const cleanEx = exName
+                        .replace(/\s+or\s+/gi, " ")
+                        .replace(/[()]/g, "")
+                        .trim();
+                      const cleanPoseName = poseName
+                        .replace(/\s+or\s+/gi, " ")
+                        .replace(/[()]/g, "")
+                        .trim();
 
-                    return (
-                      cleanPoseName === cleanEx ||
-                      baseName === exName ||
-                      poseId.startsWith(
-                        exName.replace(/\s+/g, "_").toLowerCase()
-                      )
-                    );
-                  });
+                      return (
+                        cleanPoseName === cleanEx ||
+                        baseName === exName ||
+                        poseId.startsWith(
+                          exName.replace(/\s+/g, "_").toLowerCase()
+                        )
+                      );
+                    });
 
-                  if (matchingExercise) {
-                    // Check if this exercise name is already added
-                    const alreadyExists = uniquePoses.some(
-                      (p) => p.displayName === matchingExercise.name
-                    );
+                    if (matchingExercise) {
+                      // Check if this exercise name is already added
+                      const alreadyExists = uniquePoses.some(
+                        (p) => p.displayName === matchingExercise.name
+                      );
 
-                    if (!alreadyExists) {
-                      uniquePoses.push({
-                        pose_id: pose.pose_id,
-                        displayName: matchingExercise.name,
-                      });
+                      if (!alreadyExists) {
+                        uniquePoses.push({
+                          pose_id: pose.pose_id,
+                          displayName: matchingExercise.name,
+                        });
+                      }
+                    } else {
+                      // No matching exercise, use backend name
+                      const displayName = pose.base_pose_name || pose.pose_id;
+                      const alreadyExists = uniquePoses.some(
+                        (p) => p.displayName === displayName
+                      );
+
+                      if (!alreadyExists) {
+                        uniquePoses.push({
+                          pose_id: pose.pose_id,
+                          displayName: displayName,
+                        });
+                      }
                     }
-                  } else {
-                    // No matching exercise, use backend name
-                    const displayName = pose.base_pose_name || pose.pose_id;
-                    const alreadyExists = uniquePoses.some(
-                      (p) => p.displayName === displayName
-                    );
 
-                    if (!alreadyExists) {
-                      uniquePoses.push({
-                        pose_id: pose.pose_id,
-                        displayName: displayName,
-                      });
-                    }
-                  }
+                    return uniquePoses;
+                  }, [])
+                  .map((poseItem) => (
+                    <option
+                      key={poseItem.pose_id}
+                      value={poseItem.pose_id}
+                      className="bg-gray-900 text-white py-2"
+                    >
+                      {poseItem.displayName}
+                    </option>
+                  ))}
+              </select>
 
-                  return uniquePoses;
-                }, [])
-                .map((poseItem) => (
-                  <option
-                    key={poseItem.pose_id}
-                    value={poseItem.pose_id}
-                    className="bg-gray-900 text-white py-2"
-                  >
-                    {poseItem.displayName}
-                  </option>
-                ))}
-            </select>
-
-            {/* SINGLE TOGGLE BUTTON — LEFT SIDE ALIGN */}
-            <button
-              onClick={isCameraOn ? stopCamera : startCamera}
-              className={`px-4 py-2 rounded-lg text-sm font-semibold w-40
+              {/* Start/Stop Camera Button */}
+              <button
+                onClick={isCameraOn ? stopCamera : startCamera}
+                className={`w-[20%] px-4 py-2.5 rounded-xl text-sm font-semibold whitespace-nowrap
             ${
               isCameraOn
                 ? "bg-red-500 hover:bg-red-600 text-white"
                 : "bg-green-500 hover:bg-green-600 text-white"
             }`}
-            >
-              {isCameraOn ? "Stop Camera" : "Start Camera"}
-            </button>
-          </div>
-
-          {/* Overall Accuracy — compact */}
-          <div className="text-center w-full">
-            <div className="relative mx-auto w-32 h-32 flex items-center justify-center">
-              {/* Background circle */}
-              <svg
-                className="absolute inset-0 w-full h-full -rotate-90"
-                viewBox="0 0 120 120"
               >
-                {/* Background track */}
-                <circle
-                  cx="60"
-                  cy="60"
-                  r="50"
-                  fill="none"
-                  stroke="rgba(255,255,255,0.1)"
-                  strokeWidth="10"
-                />
-                {/* Animated progress circle */}
-                <circle
-                  cx="60"
-                  cy="60"
-                  r="50"
-                  fill="none"
-                  stroke={
-                    accuracy >= 80
-                      ? "#10b981"
-                      : accuracy >= 60
-                      ? "#f59e0b"
-                      : accuracy >= 40
-                      ? "#fb923c"
-                      : "#ef4444"
-                  }
-                  strokeWidth="10"
-                  strokeLinecap="round"
-                  strokeDasharray="314.159"
-                  strokeDashoffset={314.159 - (314.159 * (accuracy || 0)) / 100}
-                  style={{
-                    transition: "stroke-dashoffset 0.5s ease, stroke 0.3s ease",
-                  }}
-                />
-              </svg>
-              {/* Center text */}
-              <div className="flex flex-col items-center justify-center z-10">
+                {isCameraOn ? "Stop Camera" : "Start Camera"}
+              </button>
+              </div>
+              {/* FEEDBACK SECTION */}
+              {(generalFeedback || angleFeedback.length > 0) && (
+                <div className="mb-2 flex-shrink-0">
+                  {generalFeedback && (
+                    <div className="p-2">
+                      <p className="text-green-300 text-left font-medium text-lg leading-tight">
+                        {generalFeedback}
+                      </p>
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+
+            {/* Accuracy Meter — Next to Button */}
+            <div className="flex-[0.4] flex flex-col items-center gap-0">
+              <div className="relative w-44 h-44 flex items-center justify-center">
+                {/* Background circle */}
+                <svg
+                  className="absolute inset-0 w-full h-full -rotate-90"
+                  viewBox="0 0 60 60"
+                >
+                  {/* Background track */}
+                  <circle
+                    cx="30"
+                    cy="30"
+                    r="25"
+                    fill="none"
+                    stroke="rgba(255,255,255,0.1)"
+                    strokeWidth="8"
+                  />
+                  {/* Animated progress circle */}
+                  <circle
+                    cx="30"
+                    cy="30"
+                    r="25"
+                    fill="none"
+                    stroke={
+                      accuracy >= 80
+                        ? "#10b981"
+                        : accuracy >= 60
+                        ? "#f59e0b"
+                        : accuracy >= 40
+                        ? "#fb923c"
+                        : "#ef4444"
+                    }
+                    strokeWidth="8"
+                    strokeLinecap="round"
+                    strokeDasharray="157.08"
+                    strokeDashoffset={157.08 - (157.08 * (accuracy || 0)) / 100}
+                    style={{
+                      transition:
+                        "stroke-dashoffset 0.5s ease, stroke 0.3s ease",
+                    }}
+                  />
+                </svg>
+                {/* Center text */}
                 <div
                   id="overallAccuracy"
-                  className="text-3xl font-bold text-white"
+                  className="text-xl font-bold text-white z-10"
                 >
-                  {accuracy || "--"}
+                  {accuracy ? `${accuracy}%` : "--"}
                 </div>
-                <div className="text-sm text-gray-300">%</div>
               </div>
+              <span className="text-sm text-gray-300 font-medium">
+                Accuracy
+              </span>
             </div>
           </div>
         </div>
 
         {/* VIDEO + REFERENCE SECTION */}
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-3 flex-1 min-h-0 overflow-hidden pb-3">
           {/* USER CAMERA */}
-          <div>
-            <h3 className="text-lg text-green-400 font-semibold mb-2">
+          <div className="flex flex-col min-h-0">
+            <h3 className="text-sm text-green-400 font-semibold mb-1.5 flex-shrink-0">
               Your Pose
             </h3>
 
-            <div className="relative bg-black/40 rounded-xl overflow-hidden border border-white/10 h-60 flex items-center justify-center text-gray-500">
+            <div className="relative bg-black/40 rounded-lg overflow-hidden border border-white/10 flex-1 flex items-center justify-center text-gray-500 min-h-0">
               <video
                 ref={videoRef}
                 playsInline
-                className="absolute inset-0 w-full h-full object-cover bg-black"
+                className="absolute inset-0 w-full h-full object-contain bg-black"
               />
 
               <canvas ref={canvasRef} className="absolute inset-0"></canvas>
@@ -1095,17 +1120,13 @@ const Camera = forwardRef(function Camera(
             </div>
           </div>
 
-          {/* REFERENCE IMAGE (with bottom next/prev buttons) */}
-          <div>
-            <h3 className="text-lg text-green-400 font-semibold mb-2">
+          {/* REFERENCE IMAGE */}
+          <div className="flex flex-col min-h-0">
+            <h3 className="text-sm text-green-400 font-semibold mb-1.5 flex-shrink-0">
               Reference
             </h3>
 
-            <div
-              className="relative bg-black/20 rounded-xl border border-white/10 h-60 
-        flex items-center justify-center overflow-hidden"
-            >
-              {/* IMAGE */}
+            <div className="relative bg-black/20 rounded-lg border border-white/10 flex-1 flex items-center justify-center overflow-hidden min-h-0">
               {referenceImage ? (
                 <>
                   {/* Blurred background */}
@@ -1120,7 +1141,7 @@ const Camera = forwardRef(function Camera(
                     id="referenceImage"
                     src={referenceImage}
                     alt="Reference Pose"
-                    className="relative max-h-full  transition-all duration-300 z-10 object-contain"
+                    className="relative max-h-full max-w-full transition-all duration-300 z-10 object-contain"
                   />
                 </>
               ) : (
@@ -1131,37 +1152,6 @@ const Camera = forwardRef(function Camera(
             </div>
           </div>
         </div>
-
-        {/* FEEDBACK SECTION */}
-        {(generalFeedback || angleFeedback.length > 0) && (
-          <div className="mt-6">
-            {/* General Feedback */}
-            {generalFeedback && (
-              <div className="mb-4 p-4 rounded-lg bg-green-500/20 border border-green-500/30">
-                <p className="text-green-300 text-center font-medium">
-                  {generalFeedback}
-                </p>
-              </div>
-            )}
-
-            {/* Angle-specific Feedback */}
-            {/* {angleFeedback.length > 0 && (
-                            <div className="bg-black/30 rounded-lg p-4 border border-white/10">
-                                <h3 className="text-lg text-green-400 font-semibold mb-3">Angle Feedback</h3>
-                                <div className="space-y-2">
-                                    {angleFeedback.map((feedback, index) => (
-                                        <div
-                                            key={index}
-                                            className="text-sm text-gray-300 bg-white/5 px-3 py-2 rounded"
-                                        >
-                                            {feedback}
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        )} */}
-          </div>
-        )}
       </div>
     </div>
   );

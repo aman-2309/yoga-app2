@@ -43,7 +43,17 @@
     ],
     "youtube": "https://www.youtube.com/watch?v=zK1cLctwBsk&pp=ygUWIkFkaG8gTXVraGEgU3ZhbmFzYW5hIg%3D%3D",
     "hindi": "अधो मुख श्वानासन",
-    "bName": "Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_"
+    "bName": "Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana_",
+    "elink": "zK1cLctwBsk",
+    "ageGroup": "12-60",
+    "contraindicationCategories": [
+      "Wrist Issues",
+      "Shoulder Issues",
+      "High Blood Pressure",
+      "Glaucoma",
+      "Pregnancy",
+      "Digestive Issues"
+    ]
   },
   {
     "id": 2,
@@ -88,7 +98,19 @@
     ],
     "youtube": "https://www.youtube.com/watch?v=Iq1nl0ouOgU&pp=ygUUQWRobyBNdWtoYSBWcmtzYXNhbmE%3D",
     "hindi": "अधो मुख वृक्षासन",
-    "bName": "Handstand_pose_or_Adho_Mukha_Vrksasana_"
+    "bName": "Handstand_pose_or_Adho_Mukha_Vrksasana_",
+    "elink": "Q5QUzsfwlDI&t=49s",
+    "ageGroup": "18-45",
+    "contraindicationCategories": [
+      "Wrist Issues",
+      "Shoulder Issues",
+      "Neck Issues",
+      "High Blood Pressure",
+      "Heart Conditions",
+      "Glaucoma",
+      "Retinal Issues",
+      "Pregnancy"
+    ]
   },
   {
     "id": 3,
@@ -115,7 +137,7 @@
     ],
     "breathing": "Inhale to lengthen spine; exhale to draw the foot and open the hip without force.",
     "duration": "20–30 seconds each side; 2 rounds.",
-    "difficulty": "Intermediate–Advanced",
+    "difficulty": "Intermediate",
     "muscles_targeted": [
       "Hamstrings",
       "Hip flexors",
@@ -131,7 +153,17 @@
     ],
     "youtube": "https://www.youtube.com/watch?v=peh9uHiRGrQ&pp=ygUSQWthcm5hIERoYW51cmFzYW5h",
     "hindi": "आकर्ण धनुरासन",
-    "bName": "Akarna_Dhanurasana_"
+    "bName": "Akarna_Dhanurasana_",
+    "elink": "peh9uHiRGrQ",
+    "ageGroup": "15-55",
+    "contraindicationCategories": [
+      "Shoulder Issues",
+      "Knee Issues",
+      "Hip Issues",
+      "Lower Back Issues",
+      "Hamstring Issues",
+      "Pregnancy"
+    ]
   },
   {
     "id": 4,
@@ -173,7 +205,17 @@
     ],
     "youtube": "https://www.youtube.com/watch?v=Ppku7i3ypGM&pp=ygUPQW5hbmRhIEJhbGFzYW5h",
     "hindi": "आनंद बालासन",
-    "bName": "Happy_Baby_Pose_or_Ananda_Balasana_"
+    "bName": "Happy_Baby_Pose_or_Ananda_Balasana_",
+    "elink": "Ppku7i3ypGM",
+    "ageGroup": "12-60",
+    "contraindicationCategories": [
+      "Neck Issues",
+      "Knee Issues",
+      "Hip Issues",
+      "Ankle Issues",
+      "High Blood Pressure",
+      "Pregnancy"
+    ]
   },
   {
     "id": 5,
@@ -200,7 +242,7 @@
     ],
     "breathing": "Inhale to find length; exhale to stabilize obliques and extend the lifted leg.",
     "duration": "20–40 seconds each side.",
-    "difficulty": "Beginner–Intermediate",
+    "difficulty": "Beginner",
     "muscles_targeted": [
       "Obliques",
       "Hip flexors",
@@ -216,7 +258,17 @@
     ],
     "youtube": "https://www.youtube.com/watch?v=xOXOtV7RdC8&pp=ygUKQW5hbnRhc2FuYQ%3D%3D",
     "hindi": "अनन्तासन",
-    "bName": "Side-Reclining_Leg_Lift_pose_or_Anantasana_"
+    "bName": "Side-Reclining_Leg_Lift_pose_or_Anantasana_",
+    "elink": "xOXOtV7RdC8",
+    "ageGroup": "12-60",
+    "contraindicationCategories": [
+      "Shoulder Issues",
+      "Neck Issues",
+      "Knee Issues",
+      "Hip Issues",
+      "Lower Back Issues",
+      "Migraine"
+    ]
   },
   {
     "id": 6,
@@ -259,7 +311,14 @@
     ],
     "youtube": "https://www.youtube.com/watch?v=SrlUKY0rt0c&pp=ygUMQW5qYW5leWFzYW5h",
     "hindi": "अंजनेयासन",
-    "bName": "Low_Lunge_pose_or_Anjaneyasana_"
+    "bName": "Low_Lunge_pose_or_Anjaneyasana_",
+    "elink": "VkOzoP9p1eM",
+    "ageGroup": "12-60",
+    "contraindicationCategories": [
+      "Knee Issues",
+      "Hip Issues",
+      "Lower Back Issues"
+    ]
   },
   {
     "id": 7,
@@ -301,7 +360,15 @@
     ],
     "youtube": "https://www.youtube.com/watch?v=SbkhsRXCmfc&pp=ygURQXJkaGEgQ2hhbmRyYXNhbmE%3D",
     "hindi": "अर्ध चंद्रासन",
-    "bName": "Half_Moon_Pose_or_Ardha_Chandrasana_"
+    "bName": "Half_Moon_Pose_or_Ardha_Chandrasana_",
+    "elink": "4dgat-2My3Q",
+    "ageGroup": "15-55",
+    "contraindicationCategories": [
+      "Ankle Issues",
+      "Lower Back Issues",
+      "Vertigo",
+      "Balance Disorders"
+    ]
   },
   {
     "id": 8,
@@ -328,7 +395,7 @@
     ],
     "breathing": "Inhale to lengthen spine; exhale to deepen gentle twist.",
     "duration": "20–40 seconds each side.",
-    "difficulty": "Beginner–Intermediate",
+    "difficulty": "Beginner",
     "muscles_targeted": [
       "Obliques",
       "Paraspinal muscles",
@@ -342,7 +409,14 @@
     ],
     "youtube": "https://www.youtube.com/watch?v=yYy6w8_hLTE&pp=ygUUQXJkaGEgTWF0c3llbmRyYXNhbmE%3D",
     "hindi": "अर्ध मत्स्येन्द्रासन",
-    "bName": "Half_Lord_of_the_Fishes_Pose_or_Ardha_Matsyendrasana_"
+    "bName": "Half_Lord_of_the_Fishes_Pose_or_Ardha_Matsyendrasana_",
+    "elink": "yYy6w8_hLTE",
+    "ageGroup": "12-60",
+    "contraindicationCategories": [
+      "Lower Back Issues",
+      "Pregnancy",
+      "Hernia"
+    ]
   },
   {
     "id": 9,
@@ -384,7 +458,14 @@
     ],
     "youtube": "https://www.youtube.com/watch?v=W9qEcTjmA78&pp=ygUXQXJkaGEgUGluY2hhIE1heXVyYXNhbmE%3D",
     "hindi": "अर्ध पिंचा मयूरासन",
-    "bName": "Dolphin_Pose_or_Ardha_Pincha_Mayurasana_"
+    "bName": "Dolphin_Pose_or_Ardha_Pincha_Mayurasana_",
+    "elink": "W9qEcTjmA78",
+    "ageGroup": "15-55",
+    "contraindicationCategories": [
+      "Shoulder Issues",
+      "Neck Issues",
+      "High Blood Pressure"
+    ]
   },
   {
     "id": 10,
@@ -426,7 +507,15 @@
     ],
     "youtube": "https://www.youtube.com/watch?v=6WH_dfmyJUE&pp=ygUNQXN0YXZha3Jhc2FuYQ%3D%3D",
     "hindi": "अष्टावक्रासन",
-    "bName": "Eight-Angle_Pose_or_Astavakrasana_"
+    "bName": "Eight-Angle_Pose_or_Astavakrasana_",
+    "elink": "6WH_dfmyJUE",
+    "ageGroup": "18-45",
+    "contraindicationCategories": [
+      "Wrist Issues",
+      "Shoulder Issues",
+      "Lower Back Issues",
+      "Elbow Issues"
+    ]
   },
   {
     "id": 11,
@@ -460,10 +549,20 @@
       "Lower back",
       "Pelvic floor"
     ],
-    "contraindications": ["Groin or knee injury", "Sciatica flare-ups"],
+    "contraindications": [
+      "Groin or knee injury",
+      "Sciatica flare-ups"
+    ],
     "youtube": "https://www.youtube.com/watch?v=bCyk1sNm39k&pp=ygUPQmFkZGhhIEtvbmFzYW5h",
     "hindi": "बद्ध कोणासन",
-    "bName": "Bound_Angle_Pose_or_Baddha_Konasana_"
+    "bName": "Bound_Angle_Pose_or_Baddha_Konasana_",
+    "elink": "bCyk1sNm39k",
+    "ageGroup": "12-60",
+    "contraindicationCategories": [
+      "Knee Issues",
+      "Hip Issues",
+      "Lower Back Issues"
+    ]
   },
   {
     "id": 12,
@@ -498,10 +597,21 @@
       "Forearms",
       "Upper back"
     ],
-    "contraindications": ["Wrist pain", "Shoulder injury", "Pregnancy"],
+    "contraindications": [
+      "Wrist pain",
+      "Shoulder injury",
+      "Pregnancy"
+    ],
     "youtube": "https://www.youtube.com/watch?v=bsEcy4VVinE&pp=ygUIQmFrYXNhbmE%3D",
     "hindi": "बकासन",
-    "bName": "Crane_(Crow)_Pose_or_Bakasana_"
+    "bName": "Crane_(Crow)_Pose_or_Bakasana_",
+    "elink": "piToZuGFtsU",
+    "ageGroup": "15-55",
+    "contraindicationCategories": [
+      "Wrist Issues",
+      "Shoulder Issues",
+      "Pregnancy"
+    ]
   },
   {
     "id": 13,
@@ -541,7 +651,13 @@
     ],
     "youtube": "https://www.youtube.com/watch?v=2MJGg-dUKh0&pp=ygUIQmFsYXNhbmE%3D",
     "hindi": "बालासन",
-    "bName": "Child_Pose_or_Balasana_"
+    "bName": "Child_Pose_or_Balasana_",
+    "elink": "2MJGg-dUKh0",
+    "ageGroup": "12-60",
+    "contraindicationCategories": [
+      "Knee Issues",
+      "Pregnancy"
+    ]
   },
   {
     "id": 14,
@@ -568,7 +684,7 @@
     ],
     "breathing": "Inhale to lift; exhale to deepen twist slowly.",
     "duration": "20–40 seconds each side.",
-    "difficulty": "Beginner–Intermediate",
+    "difficulty": "Beginner",
     "muscles_targeted": [
       "Obliques",
       "Spinal extensors",
@@ -581,7 +697,13 @@
     ],
     "youtube": "https://www.youtube.com/watch?v=GpGtitqklq8&pp=ygUQQmhhcmFkdmFqYXNhbmEgSQ%3D%3D",
     "hindi": "भरद्वाजासन I",
-    "bName": "Bharadvajas_Twist_pose_or_Bharadvajasana_I_"
+    "bName": "Bharadvajas_Twist_pose_or_Bharadvajasana_I_",
+    "elink": "fC38wmAgG3U",
+    "ageGroup": "12-60",
+    "contraindicationCategories": [
+      "Lower Back Issues",
+      "Pregnancy"
+    ]
   },
   {
     "id": 15,
@@ -608,7 +730,7 @@
     ],
     "breathing": "Inhale to lift chest; exhale to deepen thigh stretch gently.",
     "duration": "20–30 seconds.",
-    "difficulty": "Intermediate–Advanced",
+    "difficulty": "Intermediate",
     "muscles_targeted": [
       "Quadriceps",
       "Hip flexors",
@@ -623,7 +745,14 @@
     ],
     "youtube": "https://www.youtube.com/watch?v=idp7KzjWrrM&pp=ygUJQmhla2FzYW5h",
     "hindi": "भेकासन",
-    "bName": "Frog_Pose_or_Bhekasana_"
+    "bName": "Frog_Pose_or_Bhekasana_",
+    "elink": "idp7KzjWrrM",
+    "ageGroup": "15-55",
+    "contraindicationCategories": [
+      "Shoulder Issues",
+      "Knee Issues",
+      "Lower Back Issues"
+    ]
   },
   {
     "id": 16,
@@ -665,7 +794,14 @@
     ],
     "youtube": "https://www.youtube.com/watch?v=-HgeZztTSec&pp=ygUMQmh1amFuZ2FzYW5h",
     "hindi": "भुजंगासन",
-    "bName": "Cobra_Pose_or_Bhujangasana_"
+    "bName": "Cobra_Pose_or_Bhujangasana_",
+    "elink": "-HgeZztTSec",
+    "ageGroup": "12-60",
+    "contraindicationCategories": [
+      "Lower Back Issues",
+      "Pregnancy",
+      "Recent Surgery"
+    ]
   },
   {
     "id": 17,
@@ -707,7 +843,14 @@
     ],
     "youtube": "https://www.youtube.com/watch?v=nylIbKB0fOU&pp=ygUNQmh1amFwaWRhc2FuYQ%3D%3D",
     "hindi": "भुजपीडासन",
-    "bName": "Shoulder-Pressing_Pose_or_Bhujapidasana_"
+    "bName": "Shoulder-Pressing_Pose_or_Bhujapidasana_",
+    "elink": "nylIbKB0fOU",
+    "ageGroup": "18-45",
+    "contraindicationCategories": [
+      "Wrist Issues",
+      "Shoulder Issues",
+      "Back Issues"
+    ]
   },
   {
     "id": 18,
@@ -749,7 +892,14 @@
     ],
     "youtube": "https://www.youtube.com/watch?v=XNzE5a0hL0U&pp=ygUNQ2FtYXRrYXJhc2FuYQ%3D%3D",
     "hindi": "चमत्कारासन",
-    "bName": "Wild_Thing_pose_or_Camatkarasana_"
+    "bName": "Wild_Thing_pose_or_Camatkarasana_",
+    "elink": "XNzE5a0hL0U",
+    "ageGroup": "15-55",
+    "contraindicationCategories": [
+      "Wrist Issues",
+      "Shoulder Issues",
+      "Lower Back Issues"
+    ]
   },
   {
     "id": 19,
@@ -791,7 +941,14 @@
     ],
     "youtube": "https://www.youtube.com/watch?v=s-yUwL1n6cg&pp=ygUNQ29ja2VyZWwgUG9zZQ%3D%3D",
     "hindi": "कुक्कुटासन",
-    "bName": "Cockerel_Pose_"
+    "bName": "Cockerel_Pose_",
+    "elink": "s-yUwL1n6cg",
+    "ageGroup": "18-45",
+    "contraindicationCategories": [
+      "Wrist Issues",
+      "Shoulder Issues",
+      "Hernia"
+    ]
   },
   {
     "id": 20,
@@ -831,7 +988,13 @@
     ],
     "youtube": "https://www.youtube.com/watch?v=55qLwMW6fTE&pp=ygUJRGFuZGFzYW5h",
     "hindi": "दण्डासन",
-    "bName": "Staff_Pose_or_Dandasana_"
+    "bName": "Staff_Pose_or_Dandasana_",
+    "elink": "55qLwMW6fTE",
+    "ageGroup": "12-60",
+    "contraindicationCategories": [
+      "Lower Back Issues",
+      "Hamstring Issues"
+    ]
   },
   {
     "id": 21,
@@ -874,7 +1037,15 @@
     ],
     "youtube": "https://www.youtube.com/watch?v=xm00XMmBbto&pp=ygUXQm93IFBvc2Ugb3IgRGhhbnVyYXNhbmE%3D",
     "hindi": "धनुरासन",
-    "bName": "Bow_Pose_or_Dhanurasana_"
+    "bName": "Bow_Pose_or_Dhanurasana_",
+    "elink": "xm00XMmBbto",
+    "ageGroup": "15-55",
+    "contraindicationCategories": [
+      "Back Issues",
+      "Pregnancy",
+      "Hernia",
+      "Recent Surgery"
+    ]
   },
   {
     "id": 22,
@@ -917,7 +1088,15 @@
     ],
     "youtube": "https://www.youtube.com/watch?v=7RZ4ycSYymY&pp=ygUbRHdpIFBhZGEgVmlwYXJpdGEgRGFuZGFzYW5h",
     "hindi": "द्वि पाद विपरीत दण्डासन",
-    "bName": "Upward_Facing_Two-Foot_Staff_Pose_or_Dwi_Pada_Viparita_Dandasana_"
+    "bName": "Upward_Facing_Two-Foot_Staff_Pose_or_Dwi_Pada_Viparita_Dandasana_",
+    "elink": "7RZ4ycSYymY",
+    "ageGroup": "18-45",
+    "contraindicationCategories": [
+      "Neck Issues",
+      "High Blood Pressure",
+      "Heart Conditions",
+      "Vertigo"
+    ]
   },
   {
     "id": 23,
@@ -953,10 +1132,21 @@
       "Calves",
       "Core"
     ],
-    "contraindications": ["Knee injury", "Shoulder pain", "Vertigo"],
+    "contraindications": [
+      "Knee injury",
+      "Shoulder pain",
+      "Vertigo"
+    ],
     "youtube": "https://www.youtube.com/watch?v=xib32FozWds&pp=ygUKR2FydWRhc2FuYQ%3D%3D",
     "hindi": "गरुड़ासन",
-    "bName": "Eagle_Pose_or_Garudasana_"
+    "bName": "Eagle_Pose_or_Garudasana_",
+    "elink": "xib32FozWds",
+    "ageGroup": "15-55",
+    "contraindicationCategories": [
+      "Shoulder Issues",
+      "Knee Issues",
+      "Vertigo"
+    ]
   },
   {
     "id": 24,
@@ -999,7 +1189,14 @@
     ],
     "youtube": "https://www.youtube.com/watch?v=219_jSXkQ5Q&pp=ygULR29tdWtoYXNhbmHSBwkJIgoBhyohjO8%3D",
     "hindi": "गोमुखासन",
-    "bName": "Cow_Face_Pose_or_Gomukhasana_"
+    "bName": "Cow_Face_Pose_or_Gomukhasana_",
+    "elink": "219_jSXkQ5Q",
+    "ageGroup": "15-55",
+    "contraindicationCategories": [
+      "Shoulder Issues",
+      "Knee Issues",
+      "Lower Back Issues"
+    ]
   },
   {
     "id": 25,
@@ -1042,7 +1239,15 @@
     ],
     "youtube": "https://www.youtube.com/watch?v=7LJLCxo5bBk&pp=ygUISGFsYXNhbmE%3D",
     "hindi": "हलासन",
-    "bName": "Plow_Pose_or_Halasana_"
+    "bName": "Plow_Pose_or_Halasana_",
+    "elink": "7LJLCxo5bBk",
+    "ageGroup": "15-55",
+    "contraindicationCategories": [
+      "Neck Issues",
+      "High Blood Pressure",
+      "Glaucoma",
+      "Pregnancy"
+    ]
   },
   {
     "id": 26,
@@ -1071,11 +1276,25 @@
     "breathing": "Inhale to lengthen spine; exhale to deepen forward fold.",
     "duration": "30–60 seconds each side.",
     "difficulty": "Beginner",
-    "muscles_targeted": ["Hamstrings", "Calves", "Lower back", "Hip flexors"],
-    "contraindications": ["Lower-back injury", "Hamstring tear"],
+    "muscles_targeted": [
+      "Hamstrings",
+      "Calves",
+      "Lower back",
+      "Hip flexors"
+    ],
+    "contraindications": [
+      "Lower-back injury",
+      "Hamstring tear"
+    ],
     "youtube": "https://www.youtube.com/watch?v=TQKl8QFTH7s&pp=ygUOSmFudSBTaXJzYXNhbmE%3D",
     "hindi": "जानु शीर्षासन",
-    "bName": "Head-to-Knee_Forward_Bend_pose_or_Janu_Sirsasana_"
+    "bName": "Head-to-Knee_Forward_Bend_pose_or_Janu_Sirsasana_",
+    "elink": "TQKl8QFTH7s",
+    "ageGroup": "12-60",
+    "contraindicationCategories": [
+      "Lower Back Issues",
+      "Hamstring Issues"
+    ]
   },
   {
     "id": 27,
@@ -1110,10 +1329,21 @@
       "Shoulders",
       "Spinal extensors"
     ],
-    "contraindications": ["Back injury", "High blood pressure", "Heart issues"],
+    "contraindications": [
+      "Back injury",
+      "High blood pressure",
+      "Heart issues"
+    ],
     "youtube": "https://www.youtube.com/watch?v=Zpf8WnlktvY&pp=ygUKS2Fwb3Rhc2FuYQ%3D%3D",
     "hindi": "कपोतासन",
-    "bName": "Pigeon_Pose_or_Kapotasana_"
+    "bName": "Pigeon_Pose_or_Kapotasana_",
+    "elink": "q4lef0sPxfY",
+    "ageGroup": "18-45",
+    "contraindicationCategories": [
+      "Back Issues",
+      "High Blood Pressure",
+      "Heart Conditions"
+    ]
   },
   {
     "id": 28,
@@ -1141,7 +1371,12 @@
     "breathing": "Inhale to lift spine; exhale to draw leg gently inward.",
     "duration": "20–30 seconds.",
     "difficulty": "Intermediate",
-    "muscles_targeted": ["Hamstrings", "Hip flexors", "Calves", "Lower back"],
+    "muscles_targeted": [
+      "Hamstrings",
+      "Hip flexors",
+      "Calves",
+      "Lower back"
+    ],
     "contraindications": [
       "Knee injury",
       "Tight hamstrings",
@@ -1149,7 +1384,14 @@
     ],
     "youtube": "https://www.youtube.com/watch?v=G7Qgzcn5VoA&pp=ygUMS3JvdW5jaGFzYW5h",
     "hindi": "क्रौंचासन",
-    "bName": "Heron_Pose_or_Krounchasana_"
+    "bName": "Heron_Pose_or_Krounchasana_",
+    "elink": "n94yTFn-21E",
+    "ageGroup": "15-55",
+    "contraindicationCategories": [
+      "Knee Issues",
+      "Lower Back Issues",
+      "Hamstring Issues"
+    ]
   },
   {
     "id": 29,
@@ -1177,11 +1419,26 @@
     "breathing": "Steady breathing; exhale to maintain core engagement.",
     "duration": "20–60 seconds.",
     "difficulty": "Beginner",
-    "muscles_targeted": ["Core", "Shoulders", "Chest", "Glutes", "Quadriceps"],
-    "contraindications": ["Wrist pain", "Shoulder injury"],
+    "muscles_targeted": [
+      "Core",
+      "Shoulders",
+      "Chest",
+      "Glutes",
+      "Quadriceps"
+    ],
+    "contraindications": [
+      "Wrist pain",
+      "Shoulder injury"
+    ],
     "youtube": "https://www.youtube.com/watch?v=v_8rMn6jxqc&pp=ygUMS3VtYmhha2FzYW5h",
     "hindi": "कुंभकासन",
-    "bName": "Plank_Pose_or_Kumbhakasana_"
+    "bName": "Plank_Pose_or_Kumbhakasana_",
+    "elink": "v_8rMn6jxqc",
+    "ageGroup": "12-60",
+    "contraindicationCategories": [
+      "Wrist Issues",
+      "Shoulder Issues"
+    ]
   },
   {
     "id": 30,
@@ -1222,7 +1479,14 @@
     ],
     "youtube": "https://www.youtube.com/watch?v=TzahhHZvOks&pp=ygUPVmlwYXJpdGEgS2FyYW5p",
     "hindi": "विपरीत करणी",
-    "bName": "Legs-Up-the-Wall_Pose_or_Viparita_Karani_"
+    "bName": "Legs-Up-the-Wall_Pose_or_Viparita_Karani_",
+    "elink": "xmcDj4Bf--0",
+    "ageGroup": "12-60",
+    "contraindicationCategories": [
+      "Back Issues",
+      "High Blood Pressure",
+      "Glaucoma"
+    ]
   },
   {
     "id": 31,
@@ -1250,11 +1514,26 @@
     "breathing": "Slow steady breaths; exhale to maintain core activation.",
     "duration": "20–40 seconds.",
     "difficulty": "Intermediate",
-    "muscles_targeted": ["Core", "Shoulders", "Upper back", "Chest", "Glutes"],
-    "contraindications": ["Shoulder injury", "Wrist/forearm pain"],
+    "muscles_targeted": [
+      "Core",
+      "Shoulders",
+      "Upper back",
+      "Chest",
+      "Glutes"
+    ],
+    "contraindications": [
+      "Shoulder injury",
+      "Wrist/forearm pain"
+    ],
     "youtube": "https://www.youtube.com/watch?v=-3-AElnJDPI&pp=ygUbTWFrYXJhIEFkaG8gTXVraGEgU3ZhbmFzYW5h",
     "hindi": "मकर अधो मुख श्वानासन",
-    "bName": "Dolphin_Plank_Pose_or_Makara_Adho_Mukha_Svanasana_"
+    "bName": "Dolphin_Plank_Pose_or_Makara_Adho_Mukha_Svanasana_",
+    "elink": "yvX3srDp6dE",
+    "ageGroup": "15-55",
+    "contraindicationCategories": [
+      "Wrist Issues",
+      "Shoulder Issues"
+    ]
   },
   {
     "id": 32,
@@ -1290,10 +1569,19 @@
       "Hamstrings",
       "Calves"
     ],
-    "contraindications": ["Knee injuries", "Ankle stiffness"],
+    "contraindications": [
+      "Knee injuries",
+      "Ankle stiffness"
+    ],
     "youtube": "https://www.youtube.com/watch?v=QQVslTgBiDI&pp=ygUITWFsYXNhbmE%3D",
     "hindi": "मालासन",
-    "bName": "Garland_Pose_or_Malasana_"
+    "bName": "Garland_Pose_or_Malasana_",
+    "elink": "KTxVYk-Bqv4",
+    "ageGroup": "12-60",
+    "contraindicationCategories": [
+      "Knee Issues",
+      "Ankle Issues"
+    ]
   },
   {
     "id": 33,
@@ -1322,50 +1610,76 @@
     "breathing": "Exhale to round spine; inhale to neutral.",
     "duration": "10–15 rounds.",
     "difficulty": "Beginner",
-    "muscles_targeted": ["Spinal muscles", "Core", "Neck", "Shoulders"],
-    "contraindications": ["Severe neck injury"],
+    "muscles_targeted": [
+      "Spinal muscles",
+      "Core",
+      "Neck",
+      "Shoulders"
+    ],
+    "contraindications": [
+      "Severe neck injury"
+    ],
     "youtube": "https://www.youtube.com/watch?v=Ov65nNSWrfw&pp=ygUMTWFyamFyeWFzYW5h",
     "hindi": "मार्जरीआसन",
-    "bName": "Cat_Cow_Pose_or_Marjaryasana_"
+    "bName": "Cat_Cow_Pose_or_Marjaryasana_",
+    "elink": "Ov65nNSWrfw",
+    "ageGroup": "12-60",
+    "contraindicationCategories": [
+      "Neck Issues"
+    ]
   },
   {
     "id": 34,
-    "name": "Matsyasana",
-    "short_description": "A reclining heart-opening pose that expands the chest and reduces upper-body tension.",
+    "name": "Chaturanga Dandasana",
+    "short_description": "A foundational yoga pose that builds arm, core, and shoulder strength while improving body alignment.",
     "benefits": [
-      "Opens chest and throat",
-      "Improves posture",
-      "Stretches hip flexors",
-      "Relieves tension in neck and shoulders",
-      "Strengthens upper back"
+      "Strengthens arms, wrists, and shoulders",
+      "Builds strong core and abdominal stability",
+      "Improves posture and full-body alignment",
+      "Prepares the body for arm balances",
+      "Enhances stamina and body control"
     ],
     "steps": [
-      "Lie on your back with legs extended.",
-      "Place hands under hips, palms down.",
-      "Lift chest upward by pressing elbows into floor.",
-      "Drop head back gently, resting crown lightly.",
-      "Maintain open chest and steady breath."
+      "Start in a high plank with shoulders stacked over wrists.",
+      "Engage the core and keep body in a straight line from head to heels.",
+      "Shift forward slightly so shoulders move past wrists.",
+      "Bend elbows straight back, keeping them close to your ribs.",
+      "Lower your body halfway down while maintaining a flat back.",
+      "Hold briefly with core engaged, then transition to Upward-Facing Dog or return to plank."
     ],
     "common_mistakes": [
-      "Putting full weight on the head",
-      "Collapsed chest",
-      "Strained neck",
-      "Elbows sliding outward"
+      "Dropping the hips low",
+      "Flaring elbows outward",
+      "Collapsing chest or shoulders",
+      "Letting lower back sag",
+      "Rushing the pose without control"
     ],
-    "breathing": "Deep chest-expanding breaths; inhale to open heart.",
-    "duration": "20–30 seconds.",
+    "breathing": "Take slow, steady breaths; exhale while lowering down with control.",
+    "duration": "10–20 seconds or 1–3 controlled reps.",
     "difficulty": "Intermediate",
     "muscles_targeted": [
+      "Core muscles",
+      "Triceps",
       "Chest",
-      "Hip flexors",
-      "Neck",
-      "Upper back",
-      "Abdominals (stretch)"
+      "Shoulders",
+      "Wrists",
+      "Upper back"
     ],
-    "contraindications": ["Neck injury", "Low blood pressure", "Migraine"],
-    "youtube": "https://www.youtube.com/watch?v=taLcmLI5hqc&pp=ygUKbWF0c3lhc2FuYQ%3D%3D",
-    "hindi": "मत्स्यासन",
-    "bName": "Fish_Pose_or_Matsyasana_"
+    "contraindications": [
+      "Wrist injury",
+      "Shoulder injury or pain",
+      "Weak core or lower back issues"
+    ],
+    "youtube": "https://www.youtube.com/watch?v=EpXmHyO5uRk&pp=ygUUQ2hhdHVyYW5nYSBEYW5kYXNhbmE%3D",
+    "hindi": "चतुरंग दंडासन",
+    "bName": "Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana_",
+    "elink": "EpXmHyO5uRk",
+    "ageGroup": "15-55",
+    "contraindicationCategories": [
+      "Wrist Issues",
+      "Shoulder Issues",
+      "Lower Back Issues"
+    ]
   },
   {
     "id": 35,
@@ -1401,10 +1715,21 @@
       "Back muscles",
       "Shoulders"
     ],
-    "contraindications": ["Wrist injury", "Hernia", "High blood pressure"],
+    "contraindications": [
+      "Wrist injury",
+      "Hernia",
+      "High blood pressure"
+    ],
     "youtube": "https://www.youtube.com/watch?v=YJgBF0QlZKc&pp=ygUKTWF5dXJhc2FuYQ%3D%3D",
     "hindi": "मयूरासन",
-    "bName": "Dolphin_Pose_or_Ardha_Pincha_Mayurasana_"
+    "bName": "Peacock_Pose_or_Mayurasana_",
+    "elink": "YJgBF0QlZKc",
+    "ageGroup": "18-45",
+    "contraindicationCategories": [
+      "Wrist Issues",
+      "High Blood Pressure",
+      "Hernia"
+    ]
   },
   {
     "id": 36,
@@ -1439,10 +1764,21 @@
       "Shoulders",
       "Hip flexors"
     ],
-    "contraindications": ["Vertigo", "Knee injury", "Lower-back pain"],
+    "contraindications": [
+      "Vertigo",
+      "Knee injury",
+      "Lower-back pain"
+    ],
     "youtube": "https://www.youtube.com/watch?v=fzWRhdfc-rw&pp=ygUMTmF0YXJhamFzYW5h",
     "hindi": "नटराजासन",
-    "bName": "Lord_of_the_Dance_Pose_or_Natarajasana_"
+    "bName": "Lord_of_the_Dance_Pose_or_Natarajasana_",
+    "elink": "2HJvzYzjaP0",
+    "ageGroup": "15-55",
+    "contraindicationCategories": [
+      "Knee Issues",
+      "Lower Back Issues",
+      "Vertigo"
+    ]
   },
   {
     "id": 37,
@@ -1476,10 +1812,19 @@
       "Intercostal muscles",
       "Hip adductors"
     ],
-    "contraindications": ["Knee pain", "Lower-back injury"],
+    "contraindications": [
+      "Knee pain",
+      "Lower-back injury"
+    ],
     "youtube": "https://www.youtube.com/watch?v=nGhKyKuvW8k&pp=ygULUGFyaWdoYXNhbmE%3D",
     "hindi": "परिघासन",
-    "bName": "Gate_Pose_or_Parighasana_"
+    "bName": "Gate_Pose_or_Parighasana_",
+    "elink": "FNwMcgqJz44",
+    "ageGroup": "12-60",
+    "contraindicationCategories": [
+      "Knee Issues",
+      "Lower Back Issues"
+    ]
   },
   {
     "id": 38,
@@ -1513,10 +1858,21 @@
       "Lower back",
       "Quadriceps"
     ],
-    "contraindications": ["Lower-back pain", "Hernia", "Pregnancy"],
+    "contraindications": [
+      "Lower-back pain",
+      "Hernia",
+      "Pregnancy"
+    ],
     "youtube": "https://www.youtube.com/watch?v=K5ulk9HtMOQ&pp=ygUSUGFyaXB1cm5hIE5hdmFzYW5h",
     "hindi": "परिपूर्ण नावासन",
-    "bName": "Boat_Pose_or_Paripurna_Navasana_"
+    "bName": "Boat_Pose_or_Paripurna_Navasana_",
+    "elink": "8KsyQvwi85Q",
+    "ageGroup": "15-55",
+    "contraindicationCategories": [
+      "Lower Back Issues",
+      "Pregnancy",
+      "Hernia"
+    ]
   },
   {
     "id": 39,
@@ -1550,10 +1906,19 @@
       "Lower back",
       "Intercostal muscles"
     ],
-    "contraindications": ["Hamstring tear", "Lower-back strain"],
+    "contraindications": [
+      "Hamstring tear",
+      "Lower-back strain"
+    ],
     "youtube": "https://www.youtube.com/watch?v=Ef_mIV6F278&pp=ygUYUGFyaXZydHRhIEphbnUgU2lyc2FzYW5h",
     "hindi": "परिवृत्त जानु शीर्षासन",
-    "bName": "Revolved_Head-to-Knee_Pose_or_Parivrtta_Janu_Sirsasana_"
+    "bName": "Revolved_Head-to-Knee_Pose_or_Parivrtta_Janu_Sirsasana_",
+    "elink": "Ef_mIV6F278",
+    "ageGroup": "15-55",
+    "contraindicationCategories": [
+      "Lower Back Issues",
+      "Hamstring Issues"
+    ]
   },
   {
     "id": 40,
@@ -1581,11 +1946,28 @@
     "breathing": "Slow nasal breathing to maintain control and balance.",
     "duration": "5–15 seconds.",
     "difficulty": "Advanced",
-    "muscles_targeted": ["Core", "Arms", "Wrists", "Obliques", "Shoulders"],
-    "contraindications": ["Wrist injury", "Shoulder strain", "Lower-back pain"],
+    "muscles_targeted": [
+      "Core",
+      "Arms",
+      "Wrists",
+      "Obliques",
+      "Shoulders"
+    ],
+    "contraindications": [
+      "Wrist injury",
+      "Shoulder strain",
+      "Lower-back pain"
+    ],
     "youtube": "https://www.youtube.com/watch?v=ABNXcE1Tk4M&pp=ygUPcGFyc3ZhIGJha2FzYW5h",
     "hindi": "पार्श्व बकासन",
-    "bName": "Side_Crane_(Crow)_Pose_or_Parsva_Bakasana_"
+    "bName": "Side_Crane_(Crow)_Pose_or_Parsva_Bakasana_",
+    "elink": "ABNXcE1Tk4M",
+    "ageGroup": "18-45",
+    "contraindicationCategories": [
+      "Wrist Issues",
+      "Shoulder Issues",
+      "Lower Back Issues"
+    ]
   },
   {
     "id": 41,
@@ -1621,10 +2003,21 @@
       "Hips",
       "Glutes"
     ],
-    "contraindications": ["Hamstring injury", "Lower-back pain", "Vertigo"],
+    "contraindications": [
+      "Hamstring injury",
+      "Lower-back pain",
+      "Vertigo"
+    ],
     "youtube": "https://www.youtube.com/watch?v=V8FBogE7oxw&pp=ygUPUGFyc3ZvdHRhbmFzYW5h0gcJCSIKAYcqIYzv",
     "hindi": "पार्श्वोत्तानासन",
-    "bName": "Intense_Side_Stretch_Pose_or_Parsvottanasana_"
+    "bName": "Intense_Side_Stretch_Pose_or_Parsvottanasana_",
+    "elink": "I-eY06IDLmM",
+    "ageGroup": "15-55",
+    "contraindicationCategories": [
+      "Lower Back Issues",
+      "Hamstring Issues",
+      "Vertigo"
+    ]
   },
   {
     "id": 42,
@@ -1660,10 +2053,21 @@
       "Hip rotators",
       "Ankles"
     ],
-    "contraindications": ["Knee injury", "Low back pain", "Pregnancy"],
+    "contraindications": [
+      "Knee injury",
+      "Low back pain",
+      "Pregnancy"
+    ],
     "youtube": "https://www.youtube.com/watch?v=FOxjtWBC_cE&pp=ygUIUGFzYXNhbmE%3D",
     "hindi": "पाशासन",
-    "bName": "Noose_Pose_or_Pasasana_"
+    "bName": "Noose_Pose_or_Pasasana_",
+    "elink": "KOyRfH3W69Q",
+    "ageGroup": "18-45",
+    "contraindicationCategories": [
+      "Knee Issues",
+      "Back Issues",
+      "Pregnancy"
+    ]
   },
   {
     "id": 43,
@@ -1706,7 +2110,13 @@
     ],
     "youtube": "https://www.youtube.com/watch?v=E5FtZEVC424&pp=ygURUGFzY2hpbW90dGFuYXNhbmE%3D",
     "hindi": "पश्चिमोत्तानासन",
-    "bName": "Seated_Forward_Bend_pose_or_Paschimottanasana_"
+    "bName": "Seated_Forward_Bend_pose_or_Paschimottanasana_",
+    "elink": "E5FtZEVC424",
+    "ageGroup": "12-60",
+    "contraindicationCategories": [
+      "Lower Back Issues",
+      "Hamstring Issues"
+    ]
   },
   {
     "id": 44,
@@ -1735,11 +2145,26 @@
     "breathing": "Exhale while pulling knee in; inhale while releasing.",
     "duration": "20–30 seconds each side.",
     "difficulty": "Beginner",
-    "muscles_targeted": ["Lower back", "Hip flexors", "Abdominal muscles"],
-    "contraindications": ["Pregnancy", "Neck injury", "Hernia"],
+    "muscles_targeted": [
+      "Lower back",
+      "Hip flexors",
+      "Abdominal muscles"
+    ],
+    "contraindications": [
+      "Pregnancy",
+      "Neck injury",
+      "Hernia"
+    ],
     "youtube": "https://www.youtube.com/watch?v=6w4chpJaQl4&pp=ygUOUGF3YW5tdWt0YXNhbmE%3D",
     "hindi": "पवनमुक्तासन",
-    "bName": "Wind_Relieving_pose_or_Pawanmuktasana_"
+    "bName": "Wind_Relieving_pose_or_Pawanmuktasana_",
+    "elink": "6w4chpJaQl4",
+    "ageGroup": "12-60",
+    "contraindicationCategories": [
+      "Neck Issues",
+      "Pregnancy",
+      "Hernia"
+    ]
   },
   {
     "id": 45,
@@ -1782,7 +2207,14 @@
     ],
     "youtube": "https://www.youtube.com/watch?v=CIYUtNw5LaI&pp=ygURUGluY2hhIE1heXVyYXNhbmE%3D",
     "hindi": "पिंचा मयूरासन",
-    "bName": "Dolphin_Pose_or_Ardha_Pincha_Mayurasana_"
+    "bName": "Feathered_Peacock_Pose_or_Pincha_Mayurasana_",
+    "elink": "CIYUtNw5LaI",
+    "ageGroup": "18-45",
+    "contraindicationCategories": [
+      "Shoulder Issues",
+      "Neck Issues",
+      "High Blood Pressure"
+    ]
   },
   {
     "id": 46,
@@ -1825,7 +2257,14 @@
     ],
     "youtube": "https://www.youtube.com/watch?v=qRTpNlS4t90&pp=ygUXUHJhc2FyaXRhIFBhZG90dGFuYXNhbmHSBwkJIgoBhyohjO8%3D",
     "hindi": "प्रसारित पादोत्तानासन",
-    "bName": "Wide-Legged_Forward_Bend_pose_or_Prasarita_Padottanasana_"
+    "bName": "Wide-Legged_Forward_Bend_pose_or_Prasarita_Padottanasana_",
+    "elink": "qRTpNlS4t90",
+    "ageGroup": "12-60",
+    "contraindicationCategories": [
+      "Lower Back Issues",
+      "Hamstring Issues",
+      "High Blood Pressure"
+    ]
   },
   {
     "id": 47,
@@ -1861,10 +2300,21 @@
       "Hamstrings",
       "Triceps"
     ],
-    "contraindications": ["Wrist pain", "Neck injury", "Shoulder issues"],
+    "contraindications": [
+      "Wrist pain",
+      "Neck injury",
+      "Shoulder issues"
+    ],
     "youtube": "https://www.youtube.com/watch?v=lczZOVvYAcM&pp=ygUOUHVydm90dGFuYXNhbmE%3D",
     "hindi": "पूर्वोत्तानासन",
-    "bName": "Upward_Plank_Pose_or_Purvottanasana_"
+    "bName": "Upward_Plank_Pose_or_Purvottanasana_",
+    "elink": "ce2HLOWFHaM",
+    "ageGroup": "15-55",
+    "contraindicationCategories": [
+      "Wrist Issues",
+      "Shoulder Issues",
+      "Neck Issues"
+    ]
   },
   {
     "id": 48,
@@ -1900,10 +2350,21 @@
       "Shoulders",
       "Spinal extensors"
     ],
-    "contraindications": ["Knee issues", "Lower-back injury", "Hip injuries"],
+    "contraindications": [
+      "Knee issues",
+      "Lower-back injury",
+      "Hip injuries"
+    ],
     "youtube": "https://www.youtube.com/watch?v=pbOI10rnCiY&pp=ygUOUmFqYWthcG90YXNhbmE%3D",
     "hindi": "राजकपोतासन",
-    "bName": "King_Pigeon_"
+    "bName": "King_Pigeon_",
+    "elink": "UdIf0m2oh3s",
+    "ageGroup": "18-45",
+    "contraindicationCategories": [
+      "Knee Issues",
+      "Hip Issues",
+      "Lower Back Issues"
+    ]
   },
   {
     "id": 49,
@@ -1932,11 +2393,26 @@
     "breathing": "Inhale to lift; exhale to stabilize.",
     "duration": "15–30 seconds.",
     "difficulty": "Beginner",
-    "muscles_targeted": ["Lower back", "Glutes", "Hamstrings", "Shoulders"],
-    "contraindications": ["Back injury", "Spinal disorders", "Pregnancy"],
+    "muscles_targeted": [
+      "Lower back",
+      "Glutes",
+      "Hamstrings",
+      "Shoulders"
+    ],
+    "contraindications": [
+      "Back injury",
+      "Spinal disorders",
+      "Pregnancy"
+    ],
     "youtube": "https://www.youtube.com/watch?v=dkCiQuLwI1U&pp=ygULU2FsYWJoYXNhbmE%3D",
     "hindi": "शलबासन",
-    "bName": "Locust_Pose_or_Salabhasana_"
+    "bName": "Locust_Pose_or_Salabhasana_",
+    "elink": "dkCiQuLwI1U",
+    "ageGroup": "12-60",
+    "contraindicationCategories": [
+      "Lower Back Issues",
+      "Pregnancy"
+    ]
   },
   {
     "id": 50,
@@ -1980,7 +2456,15 @@
     ],
     "youtube": "https://www.youtube.com/watch?v=zKXoyfqjWJo&pp=ygUUU2FsYW1iYSBTYXJ2YW5nYXNhbmE%3D",
     "hindi": "सलम्ब सर्वांगासन",
-    "bName": "Supported_Shoulderstand_pose_or_Salamba_Sarvangasana_"
+    "bName": "Supported_Shoulderstand_pose_or_Salamba_Sarvangasana_",
+    "elink": "zKXoyfqjWJo",
+    "ageGroup": "15-55",
+    "contraindicationCategories": [
+      "Neck Issues",
+      "High Blood Pressure",
+      "Heart Conditions",
+      "Glaucoma"
+    ]
   },
   {
     "id": 51,
@@ -2009,7 +2493,12 @@
     "breathing": "Slow nasal inhalation and exhalation to maintain balance.",
     "duration": "10–30 seconds for beginners.",
     "difficulty": "Advanced",
-    "muscles_targeted": ["Shoulders", "Core", "Upper back", "Arms"],
+    "muscles_targeted": [
+      "Shoulders",
+      "Core",
+      "Upper back",
+      "Arms"
+    ],
     "contraindications": [
       "Neck injury",
       "High blood pressure",
@@ -2018,7 +2507,15 @@
     ],
     "youtube": "https://www.youtube.com/watch?v=ixfB_S652po&pp=ygURU2FsYW1iYSBTaXJzYXNhbmE%3D",
     "hindi": "सलम्ब शीर्षासन",
-    "bName": "Supported_Headstand_pose_or_Salamba_Sirsasana_"
+    "bName": "Supported_Headstand_pose_or_Salamba_Sirsasana_",
+    "elink": "xxoNuP-z70Y",
+    "ageGroup": "18-45",
+    "contraindicationCategories": [
+      "Neck Issues",
+      "High Blood Pressure",
+      "Heart Conditions",
+      "Glaucoma"
+    ]
   },
   {
     "id": 52,
@@ -2052,10 +2549,18 @@
       "Nervous system",
       "Respiratory system"
     ],
-    "contraindications": ["Back pain (modify with knee support)"],
+    "contraindications": [
+      "Back pain (modify with knee support)"
+    ],
     "youtube": "https://www.youtube.com/watch?v=hAh61NjZt9E&pp=ygUIU2F2YXNhbmE%3D",
     "hindi": "शवासन",
-    "bName": "Corpse_Pose_or_Savasana_"
+    "bName": "Corpse_Pose_or_Savasana_",
+    "elink": "hAh61NjZt9E",
+    "ageGroup": "12-60",
+    "contraindicationCategories": [
+      "Knee Issues",
+      "Back Issues"
+    ]
   },
   {
     "id": 53,
@@ -2091,10 +2596,21 @@
       "Chest",
       "Hip flexors"
     ],
-    "contraindications": ["Neck injury", "Back pain", "Shoulder problems"],
+    "contraindications": [
+      "Neck injury",
+      "Back pain",
+      "Shoulder problems"
+    ],
     "youtube": "https://www.youtube.com/watch?v=uezgpR1833s&pp=ygUYU2V0dSBCYW5kaGEgU2FydmFuZ2FzYW5h",
     "hindi": "सेतु बंध सर्वांगासन",
-    "bName": "Bridge_Pose_or_Setu_Bandha_Sarvangasana_"
+    "bName": "Bridge_Pose_or_Setu_Bandha_Sarvangasana_",
+    "elink": "Nm5qwS_Ps_Q",
+    "ageGroup": "12-60",
+    "contraindicationCategories": [
+      "Shoulder Issues",
+      "Neck Issues",
+      "Back Issues"
+    ]
   },
   {
     "id": 54,
@@ -2123,14 +2639,25 @@
     "breathing": "Smooth, natural inhalation and exhalation.",
     "duration": "1–5 minutes.",
     "difficulty": "Beginner",
-    "muscles_targeted": ["Lower back", "Hip flexors", "Core", "Spinal muscles"],
+    "muscles_targeted": [
+      "Lower back",
+      "Hip flexors",
+      "Core",
+      "Spinal muscles"
+    ],
     "contraindications": [
       "Severe hip tightness",
       "Lower-back pain (use cushion support)"
     ],
     "youtube": "https://www.youtube.com/watch?v=e6fFsXlRkyA&pp=ygUac2l0dGluZyBwb3NlIHlvZ2EgdHV0b3JpYWzSBwkJIgoBhyohjO8%3D",
     "hindi": "बैठने की मुद्रा (सिटिंग पोज़)",
-    "bName": "Sitting_pose_1_(normal)_"
+    "bName": "Sitting_pose_1_(normal)_",
+    "elink": "e6fFsXlRkyA",
+    "ageGroup": "12-60",
+    "contraindicationCategories": [
+      "Hip Issues",
+      "Lower Back Issues"
+    ]
   },
   {
     "id": 55,
@@ -2159,11 +2686,26 @@
     "breathing": "Deep inhales to expand chest; exhale to sink gently into stretch.",
     "duration": "15–30 seconds.",
     "difficulty": "Advanced",
-    "muscles_targeted": ["Hamstrings", "Hip flexors", "Glutes", "Inner thighs"],
-    "contraindications": ["Hamstring injury", "Hip issues", "Groin strain"],
-    "youtube": "https://www.youtube.com/shorts/ArsnUsmc2eU",
+    "muscles_targeted": [
+      "Hamstrings",
+      "Hip flexors",
+      "Glutes",
+      "Inner thighs"
+    ],
+    "contraindications": [
+      "Hamstring injury",
+      "Hip issues",
+      "Groin strain"
+    ],
+    "youtube": "https://www.youtube.com/watch?v=3zAHANT3rVA&pp=ygUPU3BsaXQgUG9zZSB5b2dh",
     "hindi": "स्प्लिट पोज़",
-    "bName": "Split_Pose_"
+    "bName": "Split_Pose_",
+    "elink": "3zAHANT3rVA",
+    "ageGroup": "18-45",
+    "contraindicationCategories": [
+      "Hip Issues",
+      "Hamstring Issues"
+    ]
   },
   {
     "id": 56,
@@ -2198,10 +2740,19 @@
       "Lower back",
       "Pelvic floor muscles"
     ],
-    "contraindications": ["Groin strain", "Lower-back injury"],
+    "contraindications": [
+      "Groin strain",
+      "Lower-back injury"
+    ],
     "youtube": "https://www.youtube.com/watch?v=CDbf1POUp2Q&pp=ygUVU3VwdGEgQmFkZGhhIEtvbmFzYW5h",
     "hindi": "सुप्त बद्ध कोणासन",
-    "bName": "Reclining_Bound_Angle_"
+    "bName": "Reclining_Bound_Angle_",
+    "elink": "dQkBuNWxZK4",
+    "ageGroup": "12-60",
+    "contraindicationCategories": [
+      "Hip Issues",
+      "Lower Back Issues"
+    ]
   },
   {
     "id": 57,
@@ -2230,11 +2781,25 @@
     "breathing": "Slow inhales to lengthen the spine, exhale to relax into the stretch.",
     "duration": "20–40 seconds per leg.",
     "difficulty": "Beginner",
-    "muscles_targeted": ["Hamstrings", "Calves", "Lower back", "Hips"],
-    "contraindications": ["Hamstring injury", "Lower-back pain"],
+    "muscles_targeted": [
+      "Hamstrings",
+      "Calves",
+      "Lower back",
+      "Hips"
+    ],
+    "contraindications": [
+      "Hamstring injury",
+      "Lower-back pain"
+    ],
     "youtube": "https://www.youtube.com/watch?v=w7_FGSgA8hc&pp=ygUVU3VwdGEgUGFkYW5ndXN0aGFzYW5h",
     "hindi": "सुप्त पादांगुष्ठासन",
-    "bName": "Reclining_Hand-to-Big-Toe_Pose_or_Supta_Padangusthasana_"
+    "bName": "Reclining_Hand-to-Big-Toe_Pose_or_Supta_Padangusthasana_",
+    "elink": "vLevjWsoInQ",
+    "ageGroup": "12-60",
+    "contraindicationCategories": [
+      "Lower Back Issues",
+      "Hamstring Issues"
+    ]
   },
   {
     "id": 58,
@@ -2263,11 +2828,27 @@
     "breathing": "Steady nasal breathing to release tension in thighs.",
     "duration": "20–40 seconds.",
     "difficulty": "Intermediate",
-    "muscles_targeted": ["Quadriceps", "Hip flexors", "Abs", "Ankles"],
-    "contraindications": ["Knee injury", "Lower-back pain", "Ankle stiffness"],
+    "muscles_targeted": [
+      "Quadriceps",
+      "Hip flexors",
+      "Abs",
+      "Ankles"
+    ],
+    "contraindications": [
+      "Knee injury",
+      "Lower-back pain",
+      "Ankle stiffness"
+    ],
     "youtube": "https://www.youtube.com/watch?v=nyxBEMb9rwA&pp=ygUYU3VwdGEgVmlyYXNhbmEgVmFqcmFzYW5h",
     "hindi": "सुप्त वीरासन / वज्रासन",
-    "bName": "Supta_Virasana_Vajrasana_"
+    "bName": "Supta_Virasana_Vajrasana_",
+    "elink": "nyxBEMb9rwA",
+    "ageGroup": "15-55",
+    "contraindicationCategories": [
+      "Knee Issues",
+      "Ankle Issues",
+      "Lower Back Issues"
+    ]
   },
   {
     "id": 59,
@@ -2296,11 +2877,27 @@
     "breathing": "Slow steady breaths while maintaining balance.",
     "duration": "5–10 seconds.",
     "difficulty": "Advanced",
-    "muscles_targeted": ["Core", "Hip flexors", "Arms", "Shoulders"],
-    "contraindications": ["Wrist pain", "Shoulder injury", "Lower back issues"],
+    "muscles_targeted": [
+      "Core",
+      "Hip flexors",
+      "Arms",
+      "Shoulders"
+    ],
+    "contraindications": [
+      "Wrist pain",
+      "Shoulder injury",
+      "Lower back issues"
+    ],
     "youtube": "https://www.youtube.com/watch?v=mQpEnxvAW80&pp=ygUMVGl0dGliaGFzYW5h0gcJCSIKAYcqIYzv",
     "hindi": "टिट्टिभासन",
-    "bName": "Firefly_Pose_or_Tittibhasana_"
+    "bName": "Firefly_Pose_or_Tittibhasana_",
+    "elink": "8K0ghCn8O_E",
+    "ageGroup": "18-45",
+    "contraindicationCategories": [
+      "Wrist Issues",
+      "Shoulder Issues",
+      "Lower Back Issues"
+    ]
   },
   {
     "id": 60,
@@ -2329,7 +2926,12 @@
     "breathing": "Controlled deep breathing to maintain balance.",
     "duration": "5–10 seconds.",
     "difficulty": "Advanced",
-    "muscles_targeted": ["Core", "Shoulders", "Arms", "Wrists"],
+    "muscles_targeted": [
+      "Core",
+      "Shoulders",
+      "Arms",
+      "Wrists"
+    ],
     "contraindications": [
       "Wrist injury",
       "Shoulder pain",
@@ -2337,7 +2939,14 @@
     ],
     "youtube": "https://www.youtube.com/watch?v=BaDoE5B2j2w&pp=ygUIVG9sYXNhbmE%3D",
     "hindi": "तोलासन",
-    "bName": "Scale_Pose_or_Tolasana_"
+    "bName": "Scale_Pose_or_Tolasana_",
+    "elink": "BaDoE5B2j2w",
+    "ageGroup": "18-45",
+    "contraindicationCategories": [
+      "Wrist Issues",
+      "Shoulder Issues",
+      "Knee Issues"
+    ]
   },
   {
     "id": 61,
@@ -2366,7 +2975,12 @@
     "breathing": "Inhale to lengthen spine, exhale to fold deeper.",
     "duration": "30–60 seconds.",
     "difficulty": "Intermediate",
-    "muscles_targeted": ["Hamstrings", "Inner thighs", "Lower back", "Hips"],
+    "muscles_targeted": [
+      "Hamstrings",
+      "Inner thighs",
+      "Lower back",
+      "Hips"
+    ],
     "contraindications": [
       "Lower-back injury",
       "Hamstring strain",
@@ -2374,7 +2988,14 @@
     ],
     "youtube": "https://www.youtube.com/watch?v=JT-dA1iLvdg&pp=ygUSVXBhdmlzdGhhIEtvbmFzYW5h",
     "hindi": "उपविष्ठ कोणासन",
-    "bName": "Wide-Angle_Seated_Forward_Bend_pose_or_Upavistha_Konasana_"
+    "bName": "Wide-Angle_Seated_Forward_Bend_pose_or_Upavistha_Konasana_",
+    "elink": "YtjKXDHd5hU",
+    "ageGroup": "15-55",
+    "contraindicationCategories": [
+      "Hip Issues",
+      "Lower Back Issues",
+      "Hamstring Issues"
+    ]
   },
   {
     "id": 62,
@@ -2403,7 +3024,13 @@
     "breathing": "Deep inhalations to open chest; slow exhalations to maintain control.",
     "duration": "5–10 seconds for beginners.",
     "difficulty": "Advanced",
-    "muscles_targeted": ["Spine", "Chest", "Arms", "Glutes", "Hamstrings"],
+    "muscles_targeted": [
+      "Spine",
+      "Chest",
+      "Arms",
+      "Glutes",
+      "Hamstrings"
+    ],
     "contraindications": [
       "Wrist pain",
       "Lower-back issues",
@@ -2412,7 +3039,15 @@
     ],
     "youtube": "https://www.youtube.com/watch?v=H85c14OGvjg&pp=ygUSVXJkaHZhIERoYW51cmFzYW5h",
     "hindi": "ऊर्ध्व धनुरासन",
-    "bName": "Upward_Bow_(Wheel)_Pose_or_Urdhva_Dhanurasana_"
+    "bName": "Upward_Bow_(Wheel)_Pose_or_Urdhva_Dhanurasana_",
+    "elink": "P1V5ePxIYws",
+    "ageGroup": "18-45",
+    "contraindicationCategories": [
+      "Wrist Issues",
+      "Shoulder Issues",
+      "Lower Back Issues",
+      "High Blood Pressure"
+    ]
   },
   {
     "id": 63,
@@ -2455,7 +3090,14 @@
     ],
     "youtube": "https://www.youtube.com/watch?v=pNf9e0LqjF0&pp=ygUdVXJkaHZhIFByYXNhcml0YSBFa2EgUGFkYXNhbmHSBwkJIgoBhyohjO8%3D",
     "hindi": "ऊर्ध्व प्रसारित एक पादासन",
-    "bName": "Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_"
+    "bName": "Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana_",
+    "elink": "pNf9e0LqjF0",
+    "ageGroup": "15-55",
+    "contraindicationCategories": [
+      "Lower Back Issues",
+      "Hamstring Issues",
+      "Balance Disorders"
+    ]
   },
   {
     "id": 64,
@@ -2484,7 +3126,12 @@
     "breathing": "Inhale to lift the chest, exhale to deepen the backbend.",
     "duration": "10–20 seconds.",
     "difficulty": "Intermediate",
-    "muscles_targeted": ["Back muscles", "Hip flexors", "Chest", "Shoulders"],
+    "muscles_targeted": [
+      "Back muscles",
+      "Hip flexors",
+      "Chest",
+      "Shoulders"
+    ],
     "contraindications": [
       "Neck injury",
       "Lower-back pain",
@@ -2492,7 +3139,14 @@
     ],
     "youtube": "https://www.youtube.com/watch?v=JDzDfraiR7U&pp=ygUJVXN0cmFzYW5h0gcJCSIKAYcqIYzv",
     "hindi": "ऊष्ट्रासन",
-    "bName": "Camel_Pose_or_Ustrasana_"
+    "bName": "Camel_Pose_or_Ustrasana_",
+    "elink": "JDzDfraiR7U",
+    "ageGroup": "15-55",
+    "contraindicationCategories": [
+      "Neck Issues",
+      "Lower Back Issues",
+      "High Blood Pressure"
+    ]
   },
   {
     "id": 65,
@@ -2528,10 +3182,21 @@
       "Core",
       "Lower back"
     ],
-    "contraindications": ["Knee injury", "Lower-back issues", "Vertigo"],
+    "contraindications": [
+      "Knee injury",
+      "Lower-back issues",
+      "Vertigo"
+    ],
     "youtube": "https://www.youtube.com/watch?v=SWXIx5Sy4Qw&pp=ygUKVXRrYXRhc2FuYQ%3D%3D",
     "hindi": "उत्कटासन",
-    "bName": "Chair_Pose_or_Utkatasana_"
+    "bName": "Chair_Pose_or_Utkatasana_",
+    "elink": "5P3x3yByq_g",
+    "ageGroup": "15-55",
+    "contraindicationCategories": [
+      "Knee Issues",
+      "Lower Back Issues",
+      "Vertigo"
+    ]
   },
   {
     "id": 66,
@@ -2560,11 +3225,27 @@
     "breathing": "Inhale to lengthen spine, exhale to soften chest toward mat.",
     "duration": "20–40 seconds.",
     "difficulty": "Beginner",
-    "muscles_targeted": ["Shoulders", "Upper back", "Spine", "Chest"],
-    "contraindications": ["Shoulder injury", "Knee pain", "Neck strain"],
+    "muscles_targeted": [
+      "Shoulders",
+      "Upper back",
+      "Spine",
+      "Chest"
+    ],
+    "contraindications": [
+      "Shoulder injury",
+      "Knee pain",
+      "Neck strain"
+    ],
     "youtube": "https://www.youtube.com/watch?v=1ubhPtojR4w&pp=ygURVXR0YW5hIFNoaXNob3NhbmE%3D",
     "hindi": "उत्तान शिशोसन",
-    "bName": "Extended_Puppy_Pose_or_Uttana_Shishosana_"
+    "bName": "Extended_Puppy_Pose_or_Uttana_Shishosana_",
+    "elink": "mytWLo8fHbw",
+    "ageGroup": "12-60",
+    "contraindicationCategories": [
+      "Shoulder Issues",
+      "Neck Issues",
+      "Knee Issues"
+    ]
   },
   {
     "id": 67,
@@ -2593,11 +3274,27 @@
     "breathing": "Slow exhalations to deepen fold; inhale to lengthen spine.",
     "duration": "20–30 seconds.",
     "difficulty": "Beginner",
-    "muscles_targeted": ["Hamstrings", "Calves", "Lower back", "Hips"],
-    "contraindications": ["Lower-back injury", "Vertigo", "Hamstring strain"],
+    "muscles_targeted": [
+      "Hamstrings",
+      "Calves",
+      "Lower back",
+      "Hips"
+    ],
+    "contraindications": [
+      "Lower-back injury",
+      "Vertigo",
+      "Hamstring strain"
+    ],
     "youtube": "https://www.youtube.com/watch?v=ZihiryxPglc&pp=ygUKVXR0YW5hc2FuYQ%3D%3D",
     "hindi": "उत्तानासन",
-    "bName": "Standing_Forward_Bend_pose_or_Uttanasana_"
+    "bName": "Standing_Forward_Bend_pose_or_Uttanasana_",
+    "elink": "HXOxs7ADii8",
+    "ageGroup": "12-60",
+    "contraindicationCategories": [
+      "Lower Back Issues",
+      "Hamstring Issues",
+      "Vertigo"
+    ]
   },
   {
     "id": 68,
@@ -2633,10 +3330,21 @@
       "Glutes",
       "Calves"
     ],
-    "contraindications": ["Hamstring injury", "Balance disorders", "Hip pain"],
+    "contraindications": [
+      "Hamstring injury",
+      "Balance disorders",
+      "Hip pain"
+    ],
     "youtube": "https://www.youtube.com/watch?v=3MSbUSseP_E&pp=ygUXVXR0aGl0YSBQYWRhbmd1c3RoYXNhbmE%3D",
     "hindi": "उत्त्थित पादांगुष्ठासन",
-    "bName": "Standing_big_toe_hold_pose_or_Utthita_Padangusthasana_"
+    "bName": "Standing_big_toe_hold_pose_or_Utthita_Padangusthasana_",
+    "elink": "yg2dqnCwNHo",
+    "ageGroup": "15-55",
+    "contraindicationCategories": [
+      "Hip Issues",
+      "Hamstring Issues",
+      "Balance Disorders"
+    ]
   },
   {
     "id": 69,
@@ -2678,7 +3386,14 @@
     ],
     "youtube": "https://www.youtube.com/watch?v=BcWxUpLG_Mc&pp=ygUWVXR0aGl0YSBQYXJzdmFrb25hc2FuYQ%3D%3D",
     "hindi": "उत्त्थित पार्श्वकोणासन",
-    "bName": "Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_"
+    "bName": "Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana_",
+    "elink": "aoB5L6AxckU",
+    "ageGroup": "15-55",
+    "contraindicationCategories": [
+      "Knee Issues",
+      "Hip Issues",
+      "High Blood Pressure"
+    ]
   },
   {
     "id": 70,
@@ -2721,7 +3436,14 @@
     ],
     "youtube": "https://www.youtube.com/watch?v=zJDUKJjq_8c&pp=ygUTVXR0aGl0YSBUcmlrb25hc2FuYQ%3D%3D",
     "hindi": "उत्त्थित त्रिकोणासन",
-    "bName": "Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_"
+    "bName": "Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana_",
+    "elink": "zJDUKJjq_8c",
+    "ageGroup": "12-60",
+    "contraindicationCategories": [
+      "Neck Issues",
+      "Hamstring Issues",
+      "Low Blood Pressure"
+    ]
   },
   {
     "id": 71,
@@ -2750,7 +3472,12 @@
     "breathing": "Soft and steady breaths; maintain long inhalations and exhalations.",
     "duration": "2–5 minutes.",
     "difficulty": "Beginner",
-    "muscles_targeted": ["Quadriceps", "Pelvic floor", "Lower back", "Core"],
+    "muscles_targeted": [
+      "Quadriceps",
+      "Pelvic floor",
+      "Lower back",
+      "Core"
+    ],
     "contraindications": [
       "Knee pain",
       "Ankle stiffness",
@@ -2758,7 +3485,13 @@
     ],
     "youtube": "https://www.youtube.com/watch?v=GDwDN0DUNm8&pp=ygUJVmFqcmFzYW5h",
     "hindi": "वज्रासन",
-    "bName": "Supta_Virasana_Vajrasana_"
+    "bName": "Supta_Virasana_Vajrasana_",
+    "elink": "GDwDN0DUNm8",
+    "ageGroup": "12-60",
+    "contraindicationCategories": [
+      "Knee Issues",
+      "Ankle Issues"
+    ]
   },
   {
     "id": 72,
@@ -2787,11 +3520,28 @@
     "breathing": "Inhale to lift hips; exhale to maintain stability.",
     "duration": "10–20 seconds per side.",
     "difficulty": "Intermediate",
-    "muscles_targeted": ["Obliques", "Shoulders", "Wrists", "Glutes", "Core"],
-    "contraindications": ["Wrist injury", "Shoulder instability", "Vertigo"],
+    "muscles_targeted": [
+      "Obliques",
+      "Shoulders",
+      "Wrists",
+      "Glutes",
+      "Core"
+    ],
+    "contraindications": [
+      "Wrist injury",
+      "Shoulder instability",
+      "Vertigo"
+    ],
     "youtube": "https://www.youtube.com/watch?v=76_GXwhBFkw&pp=ygUMVmFzaXN0aGFzYW5h",
     "hindi": "वसिष्ठासन",
-    "bName": "Side_Plank_Pose_or_Vasisthasana_"
+    "bName": "Side_Plank_Pose_or_Vasisthasana_",
+    "elink": "8qI2SzNHoO0",
+    "ageGroup": "15-55",
+    "contraindicationCategories": [
+      "Wrist Issues",
+      "Shoulder Issues",
+      "Vertigo"
+    ]
   },
   {
     "id": 73,
@@ -2834,7 +3584,14 @@
     ],
     "youtube": "https://www.youtube.com/watch?v=Fs0yN4CMn74&pp=ygUXVmlwYXJpdGEgVmlyYWJoYWRyYXNhbmE%3D",
     "hindi": "विपरीत वीरभद्रासन",
-    "bName": "Reverse_Warrior_or_Viparita_Virabhadrasana_"
+    "bName": "Reverse_Warrior_or_Viparita_Virabhadrasana_",
+    "elink": "Fs0yN4CMn74",
+    "ageGroup": "12-60",
+    "contraindicationCategories": [
+      "Knee Issues",
+      "Lower Back Issues",
+      "High Blood Pressure"
+    ]
   },
   {
     "id": 74,
@@ -2870,10 +3627,21 @@
       "Hip flexors",
       "Shoulders"
     ],
-    "contraindications": ["Knee pain", "Hip injury", "High blood pressure"],
+    "contraindications": [
+      "Knee pain",
+      "Hip injury",
+      "High blood pressure"
+    ],
     "youtube": "https://www.youtube.com/watch?v=NA9m7VB3Q_Q&pp=ygUQVmlyYWJoYWRyYXNhbmEgSQ%3D%3D",
     "hindi": "वीरभद्रासन I",
-    "bName": "Warrior_I_Pose_or_Virabhadrasana_I_"
+    "bName": "Warrior_I_Pose_or_Virabhadrasana_I_",
+    "elink": "NA9m7VB3Q_Q",
+    "ageGroup": "12-60",
+    "contraindicationCategories": [
+      "Knee Issues",
+      "Hip Issues",
+      "High Blood Pressure"
+    ]
   },
   {
     "id": 75,
@@ -2902,11 +3670,28 @@
     "breathing": "Smooth and steady breathing while maintaining posture.",
     "duration": "20–30 seconds.",
     "difficulty": "Beginner",
-    "muscles_targeted": ["Quadriceps", "Glutes", "Shoulders", "Hips", "Core"],
-    "contraindications": ["Knee arthritis", "Hip pain", "High blood pressure"],
+    "muscles_targeted": [
+      "Quadriceps",
+      "Glutes",
+      "Shoulders",
+      "Hips",
+      "Core"
+    ],
+    "contraindications": [
+      "Knee arthritis",
+      "Hip pain",
+      "High blood pressure"
+    ],
     "youtube": "https://www.youtube.com/watch?v=yxNtoOJ9500&pp=ygURVmlyYWJoYWRyYXNhbmEgSUk%3D",
     "hindi": "वीरभद्रासन II",
-    "bName": "Warrior_II_Pose_or_Virabhadrasana_II_"
+    "bName": "Warrior_II_Pose_or_Virabhadrasana_II_",
+    "elink": "yxNtoOJ9500",
+    "ageGroup": "12-60",
+    "contraindicationCategories": [
+      "Knee Issues",
+      "Hip Issues",
+      "High Blood Pressure"
+    ]
   },
   {
     "id": 76,
@@ -2942,10 +3727,21 @@
       "Core",
       "Shoulders"
     ],
-    "contraindications": ["Vertigo", "Lower-back injury", "Balance disorders"],
+    "contraindications": [
+      "Vertigo",
+      "Lower-back injury",
+      "Balance disorders"
+    ],
     "youtube": "https://www.youtube.com/watch?v=JywtfRIwv5M&pp=ygUSVmlyYWJoYWRyYXNhbmEgSUlJ",
     "hindi": "वीरभद्रासन III",
-    "bName": "Warrior_III_Pose_or_Virabhadrasana_III_"
+    "bName": "Warrior_III_Pose_or_Virabhadrasana_III_",
+    "elink": "V-5EGMdkDQU",
+    "ageGroup": "15-55",
+    "contraindicationCategories": [
+      "Lower Back Issues",
+      "Vertigo",
+      "Balance Disorders"
+    ]
   },
   {
     "id": 77,
@@ -2974,7 +3770,13 @@
     "breathing": "Calm and steady breaths to maintain balance.",
     "duration": "20–40 seconds per side.",
     "difficulty": "Beginner",
-    "muscles_targeted": ["Calves", "Thighs", "Hips", "Core", "Ankles"],
+    "muscles_targeted": [
+      "Calves",
+      "Thighs",
+      "Hips",
+      "Core",
+      "Ankles"
+    ],
     "contraindications": [
       "Severe vertigo",
       "Inner-ear issues",
@@ -2982,7 +3784,13 @@
     ],
     "youtube": "https://www.youtube.com/watch?v=NKhkIS0bwSU&pp=ygUJVnJrc2FzYW5h",
     "hindi": "वृक्षासन",
-    "bName": "Handstand_pose_or_Adho_Mukha_Vrksasana_"
+    "bName": "Tree_Pose_or_Vrksasana_",
+    "elink": "6kZ7uPMs5oo",
+    "ageGroup": "12-60",
+    "contraindicationCategories": [
+      "Vertigo",
+      "Balance Disorders"
+    ]
   },
   {
     "id": 78,
@@ -3025,7 +3833,15 @@
     ],
     "youtube": "https://www.youtube.com/watch?v=azu7Kxr6rcQ&pp=ygUNVnJpc2NoaWthc2FuYQ%3D%3D",
     "hindi": "वृश्चिकासन",
-    "bName": "Scorpion_pose_or_vrischikasana_"
+    "bName": "Scorpion_pose_or_vrischikasana_",
+    "elink": "azu7Kxr6rcQ",
+    "ageGroup": "18-45",
+    "contraindicationCategories": [
+      "Neck Issues",
+      "Back Issues",
+      "High Blood Pressure",
+      "Heart Conditions"
+    ]
   },
   {
     "id": 79,
@@ -3065,6 +3881,13 @@
     ],
     "youtube": "https://www.youtube.com/watch?v=ueOEopVQYf8&pp=ygUQWW9naWMgU2xlZXAgUG9zZdIHCQkiCgGHKiGM7w%3D%3D",
     "hindi": "योग निद्रा मुद्रा",
-    "bName": "Yogic_Sleep_Pose_"
+    "bName": "Yogic_Sleep_Pose_",
+    "elink": "ueOEopVQYf8",
+    "ageGroup": "12-60",
+    "contraindicationCategories": [
+      "Knee Issues",
+      "Back Issues",
+      "Mental Health Conditions"
+    ]
   }
 ]

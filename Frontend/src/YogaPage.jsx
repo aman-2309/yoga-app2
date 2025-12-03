@@ -9,8 +9,12 @@ export default function Page() {
   const [direction, setDirection] = useState(1);
   const [query, setQuery] = useState("");
   const [page, setPage] = useState(0);
-  const [selectedDifficulties, setSelectedDifficulties] = useState([]);
+  const [selectedDifficulty, setSelectedDifficulty] = useState("");
   const [showDifficultyMenu, setShowDifficultyMenu] = useState(false);
+  const [aiFilterEnabled, setAiFilterEnabled] = useState(false);
+  const [showAiFilterModal, setShowAiFilterModal] = useState(false);
+  const [userAge, setUserAge] = useState("");
+  const [selectedHealthIssues, setSelectedHealthIssues] = useState([]);
   const perPage = 8;
   const [referenceImages, setReferenceImages] = useState({});
 
@@ -165,15 +169,40 @@ export default function Page() {
       result = result.filter((e) => (e.name || "").toLowerCase().includes(q));
     }
 
-    // Filter by difficulty (multiple selection)
-    if (selectedDifficulties.length > 0) {
-      result = result.filter((e) =>
-        selectedDifficulties.includes(e.difficulty)
-      );
+    // Filter by difficulty (single selection)
+    if (selectedDifficulty) {
+      result = result.filter((e) => e.difficulty === selectedDifficulty);
+    }
+
+    // AI Filter: age and health conditions
+    if (aiFilterEnabled && userAge && selectedHealthIssues.length > 0) {
+      result = result.filter((e) => {
+        // Parse age group (e.g., "12-60")
+        const ageRange = (e.ageGroup || "").split("-");
+        if (ageRange.length === 2) {
+          const minAge = parseInt(ageRange[0]);
+          const maxAge = parseInt(ageRange[1]);
+          const age = parseInt(userAge);
+          if (age < minAge || age > maxAge) return false;
+        }
+
+        // Check contraindications
+        const exerciseContraindications = e.contraindicationCategories || [];
+        const hasConflict = selectedHealthIssues.some((issue) =>
+          exerciseContraindications.includes(issue)
+        );
+        return !hasConflict;
+      });
     }
 
     return result;
-  }, [query, selectedDifficulties]);
+  }, [
+    query,
+    selectedDifficulty,
+    aiFilterEnabled,
+    userAge,
+    selectedHealthIssues,
+  ]);
 
   const totalPages = Math.max(1, Math.ceil(filtered.length / perPage));
   const pageItems = filtered.slice(page * perPage, page * perPage + perPage);
@@ -207,19 +236,38 @@ export default function Page() {
   };
 
   const toggleDifficulty = (difficulty) => {
-    setSelectedDifficulties((prev) => {
-      if (prev.includes(difficulty)) {
-        return prev.filter((d) => d !== difficulty);
-      } else {
-        return [...prev, difficulty];
-      }
-    });
+    setSelectedDifficulty((prev) => (prev === difficulty ? "" : difficulty));
     setPage(0);
+    setShowDifficultyMenu(false);
   };
 
-  const clearAllDifficulties = () => {
-    setSelectedDifficulties([]);
-    setPage(0);
+  const handleAiFilterToggle = () => {
+    if (!aiFilterEnabled) {
+      setShowAiFilterModal(true);
+    } else {
+      setAiFilterEnabled(false);
+      setUserAge("");
+      setSelectedHealthIssues([]);
+      setPage(0);
+    }
+  };
+
+  const handleAiFilterApply = () => {
+    if (userAge && selectedHealthIssues.length > 0) {
+      setAiFilterEnabled(true);
+      setShowAiFilterModal(false);
+      setPage(0);
+    }
+  };
+
+  const toggleHealthIssue = (issue) => {
+    setSelectedHealthIssues((prev) => {
+      if (prev.includes(issue)) {
+        return prev.filter((i) => i !== issue);
+      } else {
+        return [...prev, issue];
+      }
+    });
   };
 
   const toggleDarkMode = () => setDarkMode((d) => !d);
@@ -280,15 +328,15 @@ export default function Page() {
             backdropFilter: "blur(8px)",
           }}
         >
-          <div className="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
-            <Link to="/" className="flex items-center gap-3">
-              <img src="/images/icon.svg" className="w-8 h-8" alt="veda" />
-              <span className="text-xl font-bold tracking-tight">veda</span>
+          <div className="max-w-6xl mx-auto flex justify-between items-center px-10 py-2">
+            <Link to="/" className="flex items-center gap-2">
+              <img src="/images/icon2.png" className="h-12 object-cover" alt="veda" />
+              <span className="text-lg font-bold tracking-tight">veda</span>
             </Link>{" "}
-            <div className="flex items-center gap-4 text-lg font-medium">
+            <div className="flex items-center gap-3 text-base font-medium">
               <button
                 onClick={toggleDarkMode}
-                className="w-10 h-10 rounded-full flex items-center justify-center bg-white/7 border border-white/6 hover:bg-white/10 transition"
+                className="w-8 h-8 rounded-full flex items-center justify-center bg-white/7 border border-white/6 hover:bg-white/10 transition text-sm"
                 aria-label="Toggle theme"
                 title="Toggle theme"
               >
@@ -316,20 +364,20 @@ export default function Page() {
                 Yoga
               </NavLink>
 
-              <div className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center">
-                <i className="fas fa-user text-gray-300" />
+              <div className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center">
+                <i className="fas fa-user text-gray-300 text-sm" />
               </div>
             </div>
           </div>
         </header>
 
         {/* MAIN */}
-        <div className="max-w-6xl mx-auto px-6 py-10">
+        <div className="max-w-7xl mx-auto px-0 py-6">
           <h1 className="text-4xl md:text-5xl font-bold text-center mb-8">
             Yoga <span className="text-green-400">Exercises</span>
           </h1>
 
-          <div className="flex justify-center mb-10 gap-4 items-center flex-wrap">
+          <div className="flex justify-center mb-10 gap-4 items-center flex-wrap px-10">
             <input
               type="search"
               placeholder="Search exercises..."
@@ -342,6 +390,32 @@ export default function Page() {
               } focus:outline-none focus:ring-2 focus:ring-green-500 transition shadow-lg`}
             />
 
+            {/* AI Filter Button */}
+            <button
+              onClick={handleAiFilterToggle}
+              className={`px-4 py-2.5 rounded-lg cursor-pointer flex items-center gap-3 transition-all duration-200 ${
+                darkMode
+                  ? "bg-[#1c2938] hover:bg-[#243447]"
+                  : "bg-gray-100 hover:bg-gray-200"
+              } focus:outline-none`}
+            >
+              {/* Toggle Switch */}
+              <div
+                className={`relative w-11 h-6 rounded-full transition-colors duration-200 ${
+                  aiFilterEnabled ? "bg-blue-600" : "bg-gray-600"
+                }`}
+              >
+                <div
+                  className={`absolute top-0.5 left-0.5 w-5 h-5 bg-white rounded-full transition-transform duration-200 ${
+                    aiFilterEnabled ? "translate-x-5" : "translate-x-0"
+                  }`}
+                />
+              </div>
+              <span className={`text-sm ${darkMode ? "text-gray-200" : "text-gray-800"}`}>
+                AI Filter
+              </span>
+            </button>
+
             <div className="relative difficulty-filter-container">
               <button
                 onClick={() => setShowDifficultyMenu(!showDifficultyMenu)}
@@ -351,11 +425,7 @@ export default function Page() {
                     : "bg-white border border-gray-200 text-gray-800"
                 } hover:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-500 transition shadow-lg`}
               >
-                <span>
-                  {selectedDifficulties.length === 0
-                    ? "All Levels"
-                    : `${selectedDifficulties.length} Selected`}
-                </span>
+                <span>{selectedDifficulty || "All Levels"}</span>
                 <svg
                   className={`w-4 h-4 transition-transform ${
                     showDifficultyMenu ? "rotate-180" : ""
@@ -375,52 +445,74 @@ export default function Page() {
 
               {showDifficultyMenu && (
                 <div
-                  className={`absolute top-full mt-2 right-0 min-w-[200px] rounded-xl shadow-2xl border z-50 ${
+                  className={`absolute top-full mt-2 right-0 w-full rounded-xl shadow-2xl border z-50 ${
                     darkMode
                       ? "bg-[#0b1720] border-gray-800"
                       : "bg-white border-gray-200"
                   }`}
                 >
                   <div className="p-3 space-y-2">
-                    {[
-                      "Beginner",
-                      "Beginner–Intermediate",
-                      "Intermediate",
-                      "Intermediate–Advanced",
-                      "Advanced"
-                    ].map((difficulty) => (
-                      <label
-                        key={difficulty}
-                        className="flex items-center gap-2 cursor-pointer hover:bg-green-500/10 p-2 rounded transition"
-                      >
-                        <input
-                          type="checkbox"
-                          checked={selectedDifficulties.includes(difficulty)}
-                          onChange={() => toggleDifficulty(difficulty)}
-                          className="w-4 h-4 rounded border-gray-600 text-green-500 focus:ring-green-500"
-                        />
-                        <span className="text-sm">{difficulty}</span>
-                      </label>
-                    ))}
+                    {["Beginner", "Intermediate", "Advanced"].map(
+                      (difficulty) => (
+                        <label
+                          key={difficulty}
+                          className="flex items-center gap-2 cursor-pointer hover:bg-green-500/10 p-2 rounded transition"
+                        >
+                          <input
+                            type="radio"
+                            name="difficulty"
+                            checked={selectedDifficulty === difficulty}
+                            onChange={() => toggleDifficulty(difficulty)}
+                            className="w-4 h-4 border-gray-600 text-green-500 focus:ring-green-500"
+                          />
+                          <span className="text-sm">{difficulty}</span>
+                        </label>
+                      )
+                    )}
                   </div>
-
-                  {selectedDifficulties.length > 0 && (
-                    <div className="border-t border-gray-700 p-2">
-                      <button
-                        onClick={clearAllDifficulties}
-                        className="w-full text-sm text-red-400 hover:text-red-300 py-1 transition"
-                      >
-                        Clear All
-                      </button>
-                    </div>
-                  )}
                 </div>
               )}
             </div>
           </div>
 
           {/* Animated cards with page sliding */}
-          <div className="relative">
+          <div className="relative ml-10 mr-10">
+            {/* Previous Button - Left Side */}
+            <button
+              onClick={() => {
+                setDirection(-1);
+                prev();
+              }}
+              disabled={page === 0}
+              className={`fixed left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full flex items-center justify-center backdrop-blur-xl border shadow-lg transition z-40 ${
+                page === 0
+                  ? "opacity-40 cursor-not-allowed bg-white/10 border-white/10"
+                  : darkMode
+                  ? "hover:scale-110 bg-white/20 border-white/30"
+                  : "hover:scale-110 bg-gray-200 border-gray-300"
+              }`}
+            >
+              <span className="text-2xl">⟨</span>
+            </button>
+
+            {/* Next Button - Right Side */}
+            <button
+              onClick={() => {
+                setDirection(1);
+                next();
+              }}
+              disabled={page >= totalPages - 1}
+              className={`fixed right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full flex items-center justify-center backdrop-blur-xl border shadow-lg transition z-40 ${
+                page >= totalPages - 1
+                  ? "opacity-40 cursor-not-allowed bg-white/10 border-white/10"
+                  : darkMode
+                  ? "hover:scale-110 bg-white/20 border-white/30"
+                  : "hover:scale-110 bg-gray-200 border-gray-300"
+              }`}
+            >
+              <span className="text-2xl">⟩</span>
+            </button>
+
             <AnimatePresence custom={direction} mode="wait">
               <motion.div
                 key={page}
@@ -464,7 +556,7 @@ export default function Page() {
                               <img
                                 src={referenceImages[ex.id]}
                                 alt={ex.name}
-                                className="relative w-full h-full object-cover z-10"
+                                className="relative w-full h-full object-contain z-10"
                               />
                             </>
                           ) : (
@@ -574,6 +666,133 @@ export default function Page() {
             </div>
           </div>
         </div>
+
+        {/* AI Filter Modal */}
+        {showAiFilterModal && (
+          <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-[100] p-4">
+            <div
+              className={`relative max-w-2xl w-full max-h-[90vh] overflow-y-auto rounded-3xl p-8 ${
+                darkMode ? "bg-[#0b1720] border border-gray-800" : "bg-white"
+              } shadow-2xl`}
+            >
+              <button
+                onClick={() => setShowAiFilterModal(false)}
+                className="absolute top-4 right-4 text-2xl hover:text-green-400 transition"
+              >
+                ✕
+              </button>
+
+              <h2 className="text-3xl font-bold mb-6 text-green-400">
+                AI Personalized Filter
+              </h2>
+
+              {/* Age Input */}
+              <div className="mb-6">
+                <label className="block text-lg font-semibold mb-2">
+                  Your Age
+                </label>
+                <input
+                  type="number"
+                  min="1"
+                  max="120"
+                  value={userAge}
+                  onChange={(e) => setUserAge(e.target.value)}
+                  placeholder="Enter your age"
+                  className={`w-full px-4 py-3 rounded-xl ${
+                    darkMode
+                      ? "bg-[#071721] border-gray-700 text-gray-200"
+                      : "bg-gray-50 border-gray-300 text-gray-800"
+                  } border focus:outline-none focus:ring-2 focus:ring-green-500`}
+                />
+              </div>
+
+              {/* Health Issues */}
+              <div className="mb-6">
+                <label className="block text-lg font-semibold mb-3">
+                  Any Health Conditions? (Select all that apply)
+                </label>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 p-2">
+                  {[
+                    "Ankle Issues",
+                    "Back Issues",
+                    "Balance Disorders",
+                    "Digestive Issues",
+                    "Elbow Issues",
+                    "Glaucoma",
+                    "Hamstring Issues",
+                    "Heart Conditions",
+                    "Hernia",
+                    "High Blood Pressure",
+                    "Hip Issues",
+                    "Knee Issues",
+                    "Low Blood Pressure",
+                    "Lower Back Issues",
+                    "Mental Health Conditions",
+                    "Migraine",
+                    "Neck Issues",
+                    "Pregnancy",
+                    "Recent Surgery",
+                    "Retinal Issues",
+                    "Shoulder Issues",
+                    "Vertigo",
+                    "Wrist Issues",
+                  ].map((issue) => (
+                    <label
+                      key={issue}
+                      className={`flex items-center gap-3 p-3 rounded-lg cursor-pointer transition ${
+                        selectedHealthIssues.includes(issue)
+                          ? "bg-green-500/20 border-green-500"
+                          : darkMode
+                          ? "bg-[#071721] hover:bg-[#0a1f2e]"
+                          : "bg-gray-50 hover:bg-gray-100"
+                      } border`}
+                    >
+                      <input
+                        type="checkbox"
+                        checked={selectedHealthIssues.includes(issue)}
+                        onChange={() => toggleHealthIssue(issue)}
+                        className="w-4 h-4 text-green-500 rounded focus:ring-green-500"
+                      />
+                      <span className="text-sm">{issue}</span>
+                    </label>
+                  ))}
+                </div>
+              </div>
+
+              {/* Apply Button */}
+              <div className="flex gap-4">
+                <button
+                  onClick={handleAiFilterApply}
+                  disabled={!userAge || selectedHealthIssues.length === 0}
+                  className={`flex-1 py-3 px-6 rounded-xl font-semibold transition ${
+                    userAge && selectedHealthIssues.length > 0
+                      ? "bg-green-500 text-white hover:bg-green-600"
+                      : "bg-gray-400 text-gray-200 cursor-not-allowed"
+                  }`}
+                >
+                  Apply AI Filter
+                </button>
+                <button
+                  onClick={() => setShowAiFilterModal(false)}
+                  className={`px-6 py-3 rounded-xl font-semibold transition ${
+                    darkMode
+                      ? "bg-gray-700 hover:bg-gray-600"
+                      : "bg-gray-200 hover:bg-gray-300"
+                  }`}
+                >
+                  Cancel
+                </button>
+              </div>
+
+              {(!userAge || selectedHealthIssues.length === 0) && (
+                <p className="text-sm text-red-400 mt-3 text-center">
+                  Please fill in your age and select at least one health
+                  condition
+                </p>
+              )}
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
