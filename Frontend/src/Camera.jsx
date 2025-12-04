@@ -16,11 +16,13 @@ import {
   keypointsToDict,
   isKeypointVisible,
 } from "./utils/accuracyCalculator";
+import { useDarkMode } from "./DarkModeContext";
 
 const Camera = forwardRef(function Camera(
   { open, selectedPoseId, onPoseChange, onClose },
   ref
 ) {
+  const { darkMode } = useDarkMode();
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
 
@@ -905,18 +907,30 @@ const Camera = forwardRef(function Camera(
   }, []);
 
   return (
-    <div className="w-full h-full bg-[#0b0f0e] text-white flex flex-col overflow-hidden">
+    <div
+      className={`w-full h-full flex flex-col overflow-hidden transition-all duration-500 ${
+        darkMode
+          ? "bg-gradient-to-br from-[#0D1931] via-[#0a1628] to-[#0D1931] text-white"
+          : "bg-gradient-to-br from-white via-slate-50 to-white text-gray-900"
+      }`}
+    >
       {/* MAIN CONTAINER */}
-      <div className="w-full h-full bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl p-3 flex flex-col overflow-hidden">
+      <div
+        className={`w-full h-full backdrop-blur-2xl shadow-2xl p-3 flex flex-col overflow-hidden ${
+          darkMode
+            ? "bg-gradient-to-br from-[#1a2942]/60 to-[#1a2942]/40 border border-blue-500/30"
+            : "bg-gradient-to-br from-blue-50/80 to-white/80 border border-blue-300/50"
+        }`}
+      >
         {/* HEADER with Close Button */}
         <header className="flex justify-between items-center mb-0 relative flex-shrink-0">
           <div className="flex-1"></div>
-          <h1 className="text-3xl font-bold text-green-400 absolute left-1/2 -translate-x-1/2 mb-0">
+          <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent absolute left-1/2 -translate-x-1/2 mb-0 animate-fadeIn">
             Yoga Accuracy
           </h1>
           <button
             onClick={onClose}
-            className="w-8 h-8 rounded-full bg-red-500 hover:bg-red-600 text-white flex items-center justify-center transition shadow-lg text-base z-10"
+            className="w-8 h-8 rounded-full bg-red-500 hover:bg-red-600 text-white flex items-center justify-center transition-all duration-300 hover:scale-125 hover:rotate-90 shadow-lg text-base z-10"
           >
             ✕
           </button>
@@ -928,112 +942,126 @@ const Camera = forwardRef(function Camera(
             {/* Left Side: Dropdown and Button */}
             <div className="flex-[0.6] flex flex-col gap-6 pt-8">
               <div className="flex flex-row gap-2">
-              {/* Pose Selector Dropdown */}
-              <select
-                value={selectedPose}
-                onChange={handlePoseChange}
-                className="w-[80%] px-3 py-2 text-xs rounded-lg bg-black/40 text-white 
-        border border-white/30 focus:outline-none focus:ring-2 focus:ring-green-500/50 hover:bg-black/50 transition cursor-pointer appearance-none"
-                style={{
-                  backgroundImage:
-                    "url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%239CA3AF' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e\")",
-                  backgroundPosition: "right 0.5rem center",
-                  backgroundRepeat: "no-repeat",
-                  backgroundSize: "1.2em 1.2em",
-                  paddingRight: "2rem",
-                }}
-              >
-                <option value="" className="bg-gray-900 text-gray-300 w-[80%]">
-                  Select Pose
-                </option>
-                {poses
-                  .reduce((uniquePoses, pose) => {
-                    // Find matching exercise from yogaExercises.json
-                    const matchingExercise = exercises.find((ex) => {
-                      const exName = ex.name.toLowerCase();
-                      const poseName = (pose.name || "").toLowerCase();
-                      const baseName = (
-                        pose.base_pose_name || ""
-                      ).toLowerCase();
-                      const poseId = (pose.pose_id || "").toLowerCase();
-
-                      const cleanEx = exName
-                        .replace(/\s+or\s+/gi, " ")
-                        .replace(/[()]/g, "")
-                        .trim();
-                      const cleanPoseName = poseName
-                        .replace(/\s+or\s+/gi, " ")
-                        .replace(/[()]/g, "")
-                        .trim();
-
-                      return (
-                        cleanPoseName === cleanEx ||
-                        baseName === exName ||
-                        poseId.startsWith(
-                          exName.replace(/\s+/g, "_").toLowerCase()
-                        )
-                      );
-                    });
-
-                    if (matchingExercise) {
-                      // Check if this exercise name is already added
-                      const alreadyExists = uniquePoses.some(
-                        (p) => p.displayName === matchingExercise.name
-                      );
-
-                      if (!alreadyExists) {
-                        uniquePoses.push({
-                          pose_id: pose.pose_id,
-                          displayName: matchingExercise.name,
-                        });
-                      }
-                    } else {
-                      // No matching exercise, use backend name
-                      const displayName = pose.base_pose_name || pose.pose_id;
-                      const alreadyExists = uniquePoses.some(
-                        (p) => p.displayName === displayName
-                      );
-
-                      if (!alreadyExists) {
-                        uniquePoses.push({
-                          pose_id: pose.pose_id,
-                          displayName: displayName,
-                        });
-                      }
+                {/* Pose Selector Dropdown */}
+                <select
+                  value={selectedPose}
+                  onChange={handlePoseChange}
+                  className={`w-[80%] px-3 py-2 text-xs rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300 cursor-pointer appearance-none backdrop-blur-xl shadow-lg hover:shadow-blue-500/20 ${
+                    darkMode
+                      ? "bg-[#1a2942]/80 text-white border border-blue-500/30 hover:bg-[#1a2942] hover:border-blue-500/50"
+                      : "bg-white/90 text-gray-900 border border-blue-300/50 hover:bg-white hover:border-blue-400"
+                  }`}
+                  style={{
+                    backgroundImage:
+                      "url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%239CA3AF' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e\")",
+                    backgroundPosition: "right 0.5rem center",
+                    backgroundRepeat: "no-repeat",
+                    backgroundSize: "1.2em 1.2em",
+                    paddingRight: "2rem",
+                  }}
+                >
+                  <option
+                    value=""
+                    className={
+                      darkMode
+                        ? "bg-[#0D1931] text-gray-300"
+                        : "bg-white text-gray-700"
                     }
+                  >
+                    Select Pose
+                  </option>
+                  {poses
+                    .reduce((uniquePoses, pose) => {
+                      // Find matching exercise from yogaExercises.json
+                      const matchingExercise = exercises.find((ex) => {
+                        const exName = ex.name.toLowerCase();
+                        const poseName = (pose.name || "").toLowerCase();
+                        const baseName = (
+                          pose.base_pose_name || ""
+                        ).toLowerCase();
+                        const poseId = (pose.pose_id || "").toLowerCase();
 
-                    return uniquePoses;
-                  }, [])
-                  .map((poseItem) => (
-                    <option
-                      key={poseItem.pose_id}
-                      value={poseItem.pose_id}
-                      className="bg-gray-900 text-white py-2"
-                    >
-                      {poseItem.displayName}
-                    </option>
-                  ))}
-              </select>
+                        const cleanEx = exName
+                          .replace(/\s+or\s+/gi, " ")
+                          .replace(/[()]/g, "")
+                          .trim();
+                        const cleanPoseName = poseName
+                          .replace(/\s+or\s+/gi, " ")
+                          .replace(/[()]/g, "")
+                          .trim();
 
-              {/* Start/Stop Camera Button */}
-              <button
-                onClick={isCameraOn ? stopCamera : startCamera}
-                className={`w-[20%] px-4 py-2.5 rounded-xl text-sm font-semibold whitespace-nowrap
+                        return (
+                          cleanPoseName === cleanEx ||
+                          baseName === exName ||
+                          poseId.startsWith(
+                            exName.replace(/\s+/g, "_").toLowerCase()
+                          )
+                        );
+                      });
+
+                      if (matchingExercise) {
+                        // Check if this exercise name is already added
+                        const alreadyExists = uniquePoses.some(
+                          (p) => p.displayName === matchingExercise.name
+                        );
+
+                        if (!alreadyExists) {
+                          uniquePoses.push({
+                            pose_id: pose.pose_id,
+                            displayName: matchingExercise.name,
+                          });
+                        }
+                      } else {
+                        // No matching exercise, use backend name
+                        const displayName = pose.base_pose_name || pose.pose_id;
+                        const alreadyExists = uniquePoses.some(
+                          (p) => p.displayName === displayName
+                        );
+
+                        if (!alreadyExists) {
+                          uniquePoses.push({
+                            pose_id: pose.pose_id,
+                            displayName: displayName,
+                          });
+                        }
+                      }
+
+                      return uniquePoses;
+                    }, [])
+                    .map((poseItem) => (
+                      <option
+                        key={poseItem.pose_id}
+                        value={poseItem.pose_id}
+                        className={
+                          darkMode
+                            ? "bg-[#0D1931] text-white py-2 hover:bg-blue-500/20"
+                            : "bg-white text-gray-900 py-2 hover:bg-blue-50"
+                        }
+                      >
+                        {poseItem.displayName}
+                      </option>
+                    ))}
+                </select>
+
+                {/* Start/Stop Camera Button */}
+                <button
+                  onClick={isCameraOn ? stopCamera : startCamera}
+                  className={`w-[20%] px-4 py-2.5 rounded-xl text-sm font-semibold whitespace-nowrap transition-all duration-300 hover:scale-105 shadow-lg
             ${
               isCameraOn
-                ? "bg-red-500 hover:bg-red-600 text-white"
-                : "bg-green-500 hover:bg-green-600 text-white"
+                ? "bg-red-500 hover:bg-red-600 text-white hover:shadow-red-500/30"
+                : "bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white shadow-blue-500/50 hover:shadow-blue-500/60"
             }`}
-              >
-                {isCameraOn ? "Stop Camera" : "Start Camera"}
-              </button>
+                >
+                  {isCameraOn ? "Stop Camera" : "Start Camera"}
+                </button>
               </div>
               {/* FEEDBACK SECTION */}
               {(generalFeedback || angleFeedback.length > 0) && (
                 <div className="mb-2 flex-shrink-0">
                   {generalFeedback && (
                     <div className="p-2">
-                      <p className="text-green-300 text-left font-medium text-lg leading-tight">
+                      <p className="text-blue-400 text-left font-medium text-lg leading-tight transition-colors duration-300 hover:text-blue-300">
                         {generalFeedback}
                       </p>
                     </div>
@@ -1044,7 +1072,7 @@ const Camera = forwardRef(function Camera(
 
             {/* Accuracy Meter — Next to Button */}
             <div className="flex-[0.4] flex flex-col items-center gap-0">
-              <div className="relative w-44 h-44 flex items-center justify-center">
+              <div className="relative w-44 h-44 flex items-center justify-center transition-all duration-300 hover:scale-105">
                 {/* Background circle */}
                 <svg
                   className="absolute inset-0 w-full h-full -rotate-90"
@@ -1056,7 +1084,7 @@ const Camera = forwardRef(function Camera(
                     cy="30"
                     r="25"
                     fill="none"
-                    stroke="rgba(255,255,255,0.1)"
+                    stroke="rgba(59, 130, 246, 0.1)"
                     strokeWidth="8"
                   />
                   {/* Animated progress circle */}
@@ -1081,18 +1109,19 @@ const Camera = forwardRef(function Camera(
                     style={{
                       transition:
                         "stroke-dashoffset 0.5s ease, stroke 0.3s ease",
+                      filter: "drop-shadow(0 0 1px currentColor)",
                     }}
                   />
                 </svg>
                 {/* Center text */}
                 <div
                   id="overallAccuracy"
-                  className="text-xl font-bold text-white z-10"
+                  className="text-xl font-bold text-white z-10 transition-all duration-300"
                 >
                   {accuracy ? `${accuracy}%` : "--"}
                 </div>
               </div>
-              <span className="text-sm text-gray-300 font-medium">
+              <span className="text-sm text-blue-300 font-medium transition-colors duration-300">
                 Accuracy
               </span>
             </div>
@@ -1103,11 +1132,11 @@ const Camera = forwardRef(function Camera(
         <div className="grid md:grid-cols-2 gap-3 flex-1 min-h-0 overflow-hidden pb-3">
           {/* USER CAMERA */}
           <div className="flex flex-col min-h-0">
-            <h3 className="text-sm text-green-400 font-semibold mb-1.5 flex-shrink-0">
+            <h3 className="text-sm text-blue-400 font-semibold mb-1.5 flex-shrink-0 transition-colors duration-300 hover:text-blue-300">
               Your Pose
             </h3>
 
-            <div className="relative bg-black/40 rounded-lg overflow-hidden border border-white/10 flex-1 flex items-center justify-center text-gray-500 min-h-0">
+            <div className="relative bg-black/40 rounded-lg overflow-hidden border border-blue-500/30 hover:border-blue-500/50 flex-1 flex items-center justify-center text-gray-500 min-h-0 transition-all duration-300 hover:shadow-blue-500/20 hover:shadow-lg">
               <video
                 ref={videoRef}
                 playsInline
@@ -1122,11 +1151,11 @@ const Camera = forwardRef(function Camera(
 
           {/* REFERENCE IMAGE */}
           <div className="flex flex-col min-h-0">
-            <h3 className="text-sm text-green-400 font-semibold mb-1.5 flex-shrink-0">
+            <h3 className="text-sm text-blue-400 font-semibold mb-1.5 flex-shrink-0 transition-colors duration-300 hover:text-blue-300">
               Reference
             </h3>
 
-            <div className="relative bg-black/20 rounded-lg border border-white/10 flex-1 flex items-center justify-center overflow-hidden min-h-0">
+            <div className="relative bg-black/20 rounded-lg border border-blue-500/30 hover:border-blue-500/50 flex-1 flex items-center justify-center overflow-hidden min-h-0 transition-all duration-300 hover:shadow-blue-500/20 hover:shadow-lg">
               {referenceImage ? (
                 <>
                   {/* Blurred background */}
@@ -1141,7 +1170,7 @@ const Camera = forwardRef(function Camera(
                     id="referenceImage"
                     src={referenceImage}
                     alt="Reference Pose"
-                    className="relative max-h-full max-w-full transition-all duration-300 z-10 object-contain"
+                    className="relative max-h-full max-w-full transition-all duration-500 z-10 object-contain hover:scale-105"
                   />
                 </>
               ) : (

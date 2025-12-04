@@ -3,6 +3,8 @@ import { Link, useParams, useNavigate } from "react-router-dom";
 import exercises from "../yogaExercises.json";
 import Camera from "./Camera";
 import { listReferencePoses, getReferencePose } from "./services/reference";
+import Header from "./Header";
+import { useDarkMode } from "./DarkModeContext";
 
 function Typing({
   text,
@@ -52,6 +54,8 @@ function Typing({
 }
 
 export default function EachExercise() {
+  const { darkMode } = useDarkMode();
+
   const [step, setStep] = useState(0);
   const [hasScrolled, setHasScrolled] = useState(false);
   const [allTypingDone, setAllTypingDone] = useState(false);
@@ -76,14 +80,7 @@ export default function EachExercise() {
   const shouldReopenCamera = useRef(false);
   const selectedExerciseIdRef = useRef(null); // Track which exercise was selected in camera
 
-  const ANIM_DURATION = 150;
-  const [darkMode, setDarkMode] = useState(true);
-
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-    if (!darkMode) document.documentElement.classList.remove("dark");
-    else document.documentElement.classList.add("dark");
-  };
+  const ANIM_DURATION = 100;
 
   // navigate back helper
   const goBack = () => {
@@ -333,14 +330,14 @@ export default function EachExercise() {
   // Check if exercise exists
   if (!exercise) {
     return (
-      <div className="min-h-screen bg-[#0D1117] text-white flex items-center justify-center">
-        <div className="text-center">
+      <div className="min-h-screen bg-gradient-to-br from-[#0D1931] via-[#0a1628] to-[#0D1931] text-white flex items-center justify-center">
+        <div className="text-center animate-scaleUp">
           <h1 className="text-3xl font-bold text-red-400">
             Exercise Not Found
           </h1>
           <button
             onClick={() => navigate("/yoga")}
-            className="mt-4 px-6 py-3 bg-green-600 rounded-xl hover:bg-green-700 transition"
+            className="mt-4 px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl hover:from-blue-600 hover:to-blue-700 transition-all duration-300 hover:scale-105 shadow-lg shadow-blue-500/50"
           >
             Back to Yoga Page
           </button>
@@ -352,51 +349,22 @@ export default function EachExercise() {
   return (
     <div
       className={`min-h-screen ${
-        darkMode ? "bg-[#0D1117] text-white" : "bg-white text-gray-900"
-      } font-sans`}
+        darkMode
+          ? "bg-gradient-to-br from-[#0D1931] via-[#0a1628] to-[#0D1931] text-white"
+          : "bg-gradient-to-br from-white via-slate-50 to-white text-gray-900"
+      } font-sans transition-all duration-500`}
     >
       {/* NAVBAR */}
-      <header className="w-full backdrop-blur-xl bg-[#0d1117]/80 border-b border-white/10 shadow-lg sticky top-0 z-50">
-        <div className="max-w-6xl mx-auto flex justify-between items-center px-6 py-2">
-          <Link to="/" className="flex items-center gap-2">
-            <img
-              src="/images/icon2.png"
-              className="h-12 object-cover"
-              alt="veda logo"
-            />
-            <span className="text-lg font-bold tracking-tight">veda</span>
-          </Link>
-          <nav className="flex items-center gap-3 text-base font-medium">
-            <button
-              onClick={toggleDarkMode}
-              className="w-8 h-8 rounded-full flex items-center justify-center bg-white/10 border border-white/20 text-gray-300 hover:bg-white/20 transition shadow-md text-sm"
-            >
-              {darkMode ? "🌙" : "☀️"}
-            </button>
-            <Link to="/" className="hover:text-green-400 transition">
-              Home
-            </Link>
-            <Link to="/chat" className="hover:text-green-400 transition">
-              Chat
-            </Link>
-            <Link to="/yoga" className="hover:text-green-400 transition">
-              Yoga
-            </Link>
-            <div className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center">
-              <i className="fas fa-user text-gray-300 text-sm"></i>
-            </div>
-          </nav>
-        </div>
-      </header>
+      <Header />
 
       {/* CONTENT */}
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-2 pb-10 ">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6 pb-10 ">
         {/* IMAGE AND VIDEO SECTION */}
         <div className="flex gap-4 w-full">
           {/* IMAGE - 70% */}
           <div
-            className="relative w-[50%] overflow-hidden rounded-3xl 
-    bg-white/10 backdrop-blur-lg border border-white/10 shadow-xl
+            className="relative w-[50%] overflow-hidden rounded-2xl 
+    bg-gradient-to-br from-[#1a2942]/60 to-[#1a2942]/40 backdrop-blur-xl border border-blue-500/30 shadow-2xl hover:shadow-blue-500/20 hover:border-blue-500/50 transition-all duration-300
     h-[248px] sm:h-[311px] md:h-[350px] lg:h-[340px] flex items-center justify-center"
           >
             {referenceImage ? (
@@ -422,13 +390,13 @@ export default function EachExercise() {
 
           {/* VIDEO - 30% */}
           <div
-            className="relative w-[50%] overflow-hidden rounded-3xl 
-    bg-white/10 backdrop-blur-lg border border-white/10 shadow-xl
+            className="relative w-[50%] overflow-hidden rounded-2xl 
+    bg-gradient-to-br from-[#1a2942]/60 to-[#1a2942]/40 backdrop-blur-xl border border-blue-500/30 shadow-2xl hover:shadow-blue-500/20 hover:border-blue-500/50 transition-all duration-300
     h-[248px] sm:h-[311px] md:h-[350px] lg:h-[340px] flex items-center justify-center"
           >
             <iframe
-              width="656"
-              height="369"
+              width="750"
+              height="350"
               src={`https://www.youtube.com/embed/${exercise.elink}`}
               title="Halasana for Beginners | How To Do Plow Yoga Pose | Step-by-Step guide"
               frameborder="0"
@@ -440,7 +408,7 @@ export default function EachExercise() {
         </div>
 
         {/* NAME - No typing effect */}
-        <h1 className="text-4xl font-bold text-center text-green-400 mt-5">
+        <h1 className="text-4xl font-bold text-center py-2 mt-3 bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent animate-fadeIn">
           {exercise.name} ( {exercise.hindi} )
         </h1>
 
@@ -472,7 +440,7 @@ export default function EachExercise() {
         {/* BENEFITS - Only show after scroll */}
         {hasScrolled && step >= 1 && (
           <div className="mt-6 ml-14">
-            <h2 className="text-2xl font-semibold text-green-400 mb-2">
+            <h2 className="text-2xl font-semibold text-blue-400 mb-2 transition-colors duration-300 hover:text-blue-300">
               Benefits
             </h2>
             <div className="text-base opacity-90">
@@ -489,7 +457,7 @@ export default function EachExercise() {
         {/* STEPS - Only show after scroll */}
         {hasScrolled && step >= 2 && (
           <div className="mt-6 ml-14">
-            <h2 className="text-2xl font-semibold text-green-400 mb-2">
+            <h2 className="text-2xl font-semibold text-blue-400 mb-2 transition-colors duration-300 hover:text-blue-300">
               Steps
             </h2>
             <div className="text-base opacity-90">
@@ -506,7 +474,7 @@ export default function EachExercise() {
         {/* MUSCLES - Only show after scroll */}
         {hasScrolled && step >= 3 && (
           <div className="mt-6 ml-14">
-            <h2 className="text-2xl font-semibold text-green-400 mb-2">
+            <h2 className="text-2xl font-semibold text-blue-400 mb-2 transition-colors duration-300 hover:text-blue-300">
               Muscles Targeted
             </h2>
             <div className="text-base opacity-90">
@@ -523,7 +491,7 @@ export default function EachExercise() {
         {/* BREATHING - Only show after scroll */}
         {hasScrolled && step >= 4 && (
           <div className="mt-6 ml-14">
-            <h2 className="text-2xl font-semibold text-green-400 mb-2">
+            <h2 className="text-2xl font-semibold text-blue-400 mb-2 transition-colors duration-300 hover:text-blue-300">
               Breathing
             </h2>
             <div className="text-base opacity-90">
@@ -540,7 +508,7 @@ export default function EachExercise() {
         {/* DURATION - Only show after scroll */}
         {hasScrolled && step >= 5 && (
           <div className="mt-6 ml-14">
-            <h2 className="text-xl font-semibold text-green-400 mb-1">
+            <h2 className="text-xl font-semibold text-blue-400 mb-1 transition-colors duration-300 hover:text-blue-300">
               Duration
             </h2>
             <div className="text-base opacity-90">
@@ -557,7 +525,7 @@ export default function EachExercise() {
         {/* DIFFICULTY - Only show after scroll */}
         {hasScrolled && step >= 6 && (
           <div className="mt-6 ml-14">
-            <h2 className="text-xl font-semibold text-green-400 mb-1">
+            <h2 className="text-xl font-semibold text-blue-400 mb-1 transition-colors duration-300 hover:text-blue-300">
               Difficulty
             </h2>
             <div className="text-base opacity-90">
@@ -626,10 +594,10 @@ export default function EachExercise() {
               }
               navigate(`/exercise/${exercise.id - 1}`, { replace: true });
             }}
-            className={`w-12 h-12 rounded-full flex items-center justify-center backdrop-blur-xl border shadow-lg transition ${
+            className={`w-12 h-12 rounded-full flex items-center justify-center backdrop-blur-xl border shadow-lg transition-all duration-300 ${
               exercise.id <= 1
                 ? "opacity-40 cursor-not-allowed bg-white/10 border-white/10"
-                : "hover:scale-110 bg-white/20 border-white/30"
+                : "hover:scale-125 hover:shadow-blue-500/30 hover:shadow-2xl bg-blue-500/20 border-blue-500/40 hover:bg-blue-500/30 hover:border-blue-400"
             }`}
           >
             <span className="text-2xl">⟨</span>
@@ -647,10 +615,10 @@ export default function EachExercise() {
               }
               navigate(`/exercise/${exercise.id + 1}`, { replace: true });
             }}
-            className={`w-12 h-12 rounded-full flex items-center justify-center backdrop-blur-xl border shadow-lg transition ${
+            className={`w-12 h-12 rounded-full flex items-center justify-center backdrop-blur-xl border shadow-lg transition-all duration-300 ${
               exercise.id >= exercises.length
                 ? "opacity-40 cursor-not-allowed bg-white/10 border-white/10"
-                : "hover:scale-110 bg-white/20 border-white/30"
+                : "hover:scale-125 hover:shadow-blue-500/30 hover:shadow-2xl bg-blue-500/20 border-blue-500/40 hover:bg-blue-500/30 hover:border-blue-400"
             }`}
           >
             <span className="text-2xl">⟩</span>
@@ -664,7 +632,13 @@ export default function EachExercise() {
           className="fixed bottom-1 sm:bottom-3 left-1/2 -translate-x-1/2 
     w-[100vw] px-2 sm:px-0 max-w-3xl z-[10001]"
         >
-          <div className="bg-white/10 backdrop-blur-xl shadow-xl rounded-full border border-white/20 p-3 flex items-center gap-2">
+          <div
+            className={`backdrop-blur-2xl shadow-2xl rounded-full p-3 flex items-center gap-2 transition-all duration-300 ${
+              darkMode
+                ? "bg-white/10 border border-blue-500/30 hover:border-blue-500/50"
+                : "bg-white/90 border border-blue-300/50 hover:border-blue-400"
+            }`}
+          >
             <button
               onClick={(e) => {
                 e.stopPropagation();
@@ -675,10 +649,10 @@ export default function EachExercise() {
                   openCameraModal();
                 }
               }}
-              className={`w-8 h-8 rounded-full flex items-center justify-center backdrop-blur-xl border shadow-lg transition flex-shrink-0 text-sm ${
+              className={`w-8 h-8 rounded-full flex items-center justify-center backdrop-blur-xl border shadow-lg transition-all duration-300 flex-shrink-0 text-sm hover:scale-110 ${
                 isCamOpen
                   ? "bg-red-600 hover:bg-red-700 border-red-400"
-                  : "bg-green-600 hover:bg-green-700 border-green-400"
+                  : "bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 border-blue-400 shadow-blue-500/50"
               }`}
             >
               {isCamOpen ? "✕" : "📷"}
@@ -702,12 +676,16 @@ export default function EachExercise() {
               }}
               onKeyDown={(e) => e.key === "Enter" && handleSend()}
               placeholder="Ask anything about this exercise…"
-              className="flex-grow px-3 py-2 rounded-full bg-transparent text-white focus:outline-none placeholder-gray-400 text-sm"
+              className={`flex-grow px-3 py-2 rounded-full bg-transparent focus:outline-none text-sm ${
+                darkMode
+                  ? "text-white placeholder-gray-400"
+                  : "text-gray-900 placeholder-gray-500"
+              }`}
             />
 
             <button
               onClick={handleSend}
-              className="px-4 py-2 bg-green-600 text-white rounded-full hover:bg-green-700 transition flex-shrink-0 text-sm"
+              className="px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-full hover:from-blue-600 hover:to-blue-700 transition-all duration-300 flex-shrink-0 text-sm hover:scale-105 shadow-lg shadow-blue-500/30"
             >
               Send
             </button>
@@ -722,14 +700,18 @@ export default function EachExercise() {
 
       {/* Chat Modal */}
       {chatMounted && (
-        <div className="fixed inset-0 z-[9999] flex justify-center pointer-events-auto">
+        <div className="fixed inset-0 z-[9999] flex justify-center pointer-events-auto animate-fadeIn">
           <div
-            className="absolute inset-0 backdrop-blur-sm bg-black/60"
+            className="absolute inset-0 backdrop-blur-md bg-black/60"
             onClick={() => setIsChatOpen(false)}
           />
           <div
             id="chat-panel"
-            className="pointer-events-auto fixed z-[10000] left-1/2 w-[100vw] max-w-3xl flex flex-col bg-white/10 backdrop-blur-2xl rounded-3xl shadow-2xl border border-white/10 overflow-hidden"
+            className={`pointer-events-auto fixed z-[10000] left-1/2 w-[100vw] max-w-3xl flex flex-col backdrop-blur-2xl rounded-3xl shadow-2xl overflow-hidden ${
+              darkMode
+                ? "bg-gradient-to-br from-[#1a2942]/95 to-[#0D1931]/95 border border-blue-500/30"
+                : "bg-gradient-to-br from-blue-50/95 to-white/95 border border-blue-300/50"
+            }`}
             style={{
               top: "0rem", // navbar height
               bottom: "4.5rem", // aligned with chat bar top edge
@@ -740,14 +722,20 @@ export default function EachExercise() {
               opacity: isChatOpen ? 1 : 0,
             }}
           >
-            <div className="relative p-4 border-b border-white/10 text-center text-white">
+            <div
+              className={`relative p-4 text-center ${
+                darkMode
+                  ? "border-b border-blue-500/20 text-white"
+                  : "border-b border-blue-300/30 text-gray-900"
+              }`}
+            >
               <button
                 onClick={() => setIsChatOpen(false)}
-                className="absolute right-4 top-4 w-9 h-9 bg-red-600 hover:bg-red-700 text-white rounded-full transition"
+                className="absolute right-4 top-4 w-9 h-9 bg-red-600 hover:bg-red-700 text-white rounded-full transition-all duration-300 hover:scale-125 hover:rotate-90 shadow-lg"
               >
                 ✕
               </button>
-              <h2 className="text-lg font-semibold">
+              <h2 className="text-lg font-semibold bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
                 Chat about {exercise.name}
               </h2>
             </div>
@@ -761,10 +749,12 @@ export default function EachExercise() {
                   }`}
                 >
                   <div
-                    className={`px-4 py-2 rounded-2xl max-w-[75%] text-sm ${
+                    className={`px-4 py-2 rounded-2xl max-w-[75%] text-sm transition-all duration-300 ${
                       msg.from === "user"
-                        ? "bg-green-600 text-white"
-                        : "bg-white/30 backdrop-blur-xl text-white border border-white/20"
+                        ? "bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-lg shadow-blue-500/30"
+                        : darkMode
+                        ? "bg-white/20 backdrop-blur-xl text-white border border-blue-500/30 hover:bg-white/30"
+                        : "bg-blue-50 backdrop-blur-xl text-gray-900 border border-blue-200 hover:bg-blue-100"
                     }`}
                   >
                     {msg.text}
@@ -779,11 +769,11 @@ export default function EachExercise() {
 
       {/* Camera Modal */}
       {camMounted && (
-        <div className="fixed inset-0 z-50 flex justify-center pointer-events-none">
-          <div className="absolute inset-0 backdrop-blur-sm bg-black/30" />
+        <div className="fixed inset-0 z-50 flex justify-center pointer-events-none animate-fadeIn">
+          <div className="absolute inset-0 backdrop-blur-md bg-black/60" />
           <div
             id="camera-panel"
-            className="pointer-events-auto fixed z-[10000] left-1/2 top-0 w-[100vw] max-w-[1100px] h-screen bg-white/10 backdrop-blur-2xl shadow-2xl border border-white/10 overflow-hidden flex flex-col"
+            className="pointer-events-auto fixed z-[10000] left-1/2 top-0 w-[100vw] max-w-[1100px] h-screen bg-gradient-to-br from-[#1a2942]/95 to-[#0D1931]/95 backdrop-blur-2xl shadow-2xl border border-blue-500/30 overflow-hidden flex flex-col"
             style={{
               transform: isCamOpen
                 ? "translate(-50%, 0)"

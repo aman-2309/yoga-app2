@@ -3,8 +3,12 @@ import { Link, NavLink, useSearchParams } from "react-router-dom";
 import exercises from "../yogaExercises.json";
 import { motion, AnimatePresence } from "framer-motion";
 import { listReferencePoses, getReferencePose } from "./services/reference";
+import Header from "./Header";
+import { useDarkMode } from "./DarkModeContext";
 
 export default function Page() {
+  const { darkMode } = useDarkMode();
+
   // state
   const [direction, setDirection] = useState(1);
   const [query, setQuery] = useState("");
@@ -15,19 +19,8 @@ export default function Page() {
   const [showAiFilterModal, setShowAiFilterModal] = useState(false);
   const [userAge, setUserAge] = useState("");
   const [selectedHealthIssues, setSelectedHealthIssues] = useState([]);
-  const perPage = 8;
+  const perPage = 12;
   const [referenceImages, setReferenceImages] = useState({});
-
-  const [darkMode, setDarkMode] = useState(() => {
-    try {
-      return (
-        localStorage.getItem("veda-dark") === "1" ||
-        window.matchMedia?.("(prefers-color-scheme: dark)")?.matches
-      );
-    } catch {
-      return true;
-    }
-  });
 
   const [loaded, setLoaded] = useState(false); // first-load animation
   const [searchParams, setSearchParams] = useSearchParams();
@@ -40,15 +33,6 @@ export default function Page() {
     if (!Number.isNaN(p)) setPage(Math.max(0, p));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []); // run once on mount
-
-  // persist dark mode class
-  useEffect(() => {
-    if (darkMode) document.documentElement.classList.add("dark");
-    else document.documentElement.classList.remove("dark");
-    try {
-      localStorage.setItem("veda-dark", darkMode ? "1" : "0");
-    } catch {}
-  }, [darkMode]);
 
   // small mount delay to allow initial entrance animations
   useEffect(() => {
@@ -270,8 +254,6 @@ export default function Page() {
     });
   };
 
-  const toggleDarkMode = () => setDarkMode((d) => !d);
-
   const goToPage = (newPage) => {
     setDirection(newPage > page ? 1 : -1);
     setPage(Math.max(0, Math.min(newPage, totalPages - 1)));
@@ -312,69 +294,21 @@ export default function Page() {
     <div
       className={`${
         darkMode
-          ? "bg-[#071018] text-white"
-          : "bg-linear-to-b from-white to-slate-50 text-gray-900"
-      } min-h-screen font-sans transition-colors duration-300`}
+          ? "bg-gradient-to-br from-[#0D1931] via-[#0a1628] to-[#0D1931] text-white"
+          : "bg-gradient-to-br from-white via-slate-50 to-white text-gray-900"
+      } min-h-screen font-sans transition-all duration-500 overflow-x-hidden`}
     >
-      <div className="min-h-screen">
+      <div className="min-h-screen overflow-x-hidden">
         {/* NAVBAR */}
-        <header
-          className="w-full backdrop-blur-xl bg-opacity-30 border-b border-white/5 sticky top-0 z-50"
-          style={{
-            backgroundColor: darkMode
-              ? "rgba(6,10,14,0.6)"
-              : "rgba(255,255,255,0.6)",
-            WebkitBackdropFilter: "blur(8px)",
-            backdropFilter: "blur(8px)",
-          }}
-        >
-          <div className="max-w-6xl mx-auto flex justify-between items-center px-10 py-2">
-            <Link to="/" className="flex items-center gap-2">
-              <img src="/images/icon2.png" className="h-12 object-cover" alt="veda" />
-              <span className="text-lg font-bold tracking-tight">veda</span>
-            </Link>{" "}
-            <div className="flex items-center gap-3 text-base font-medium">
-              <button
-                onClick={toggleDarkMode}
-                className="w-8 h-8 rounded-full flex items-center justify-center bg-white/7 border border-white/6 hover:bg-white/10 transition text-sm"
-                aria-label="Toggle theme"
-                title="Toggle theme"
-              >
-                {darkMode ? "🌙" : "☀️"}
-              </button>
-
-              <NavLink
-                to="/"
-                className={({ isActive }) => (isActive ? "font-semibold" : "")}
-              >
-                Home
-              </NavLink>
-              <NavLink
-                to="/chat"
-                className={({ isActive }) => (isActive ? "font-semibold" : "")}
-              >
-                Chat
-              </NavLink>
-              <NavLink
-                to="/yoga"
-                className={({ isActive }) =>
-                  isActive ? "font-semibold text-green-400" : ""
-                }
-              >
-                Yoga
-              </NavLink>
-
-              <div className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center">
-                <i className="fas fa-user text-gray-300 text-sm" />
-              </div>
-            </div>
-          </div>
-        </header>
+        <Header />
 
         {/* MAIN */}
         <div className="max-w-7xl mx-auto px-0 py-6">
-          <h1 className="text-4xl md:text-5xl font-bold text-center mb-8">
-            Yoga <span className="text-green-400">Exercises</span>
+          <h1 className="text-4xl md:text-5xl font-bold text-center mb-8 animate-fadeIn">
+            Yoga{" "}
+            <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
+              Exercises
+            </span>
           </h1>
 
           <div className="flex justify-center mb-10 gap-4 items-center flex-wrap px-10">
@@ -383,35 +317,43 @@ export default function Page() {
               placeholder="Search exercises..."
               value={query}
               onChange={onSearchChange}
-              className={`flex-1 min-w-[250px] md:min-w-[350px] px-5 py-3 rounded-2xl ${
+              className={`flex-1 min-w-[250px] md:min-w-[350px] px-5 py-3 rounded-xl ${
                 darkMode
-                  ? "bg-[#0b1720] border-gray-800 text-gray-200 placeholder-gray-500"
+                  ? "bg-[#1a2942]/60 border-blue-500/30 text-gray-200 placeholder-gray-500"
                   : "bg-white border-gray-200 text-gray-800 placeholder-gray-500"
-              } focus:outline-none focus:ring-2 focus:ring-green-500 transition shadow-lg`}
+              } backdrop-blur-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500/50 transition-all duration-300 shadow-lg hover:shadow-blue-500/20 hover:shadow-2xl`}
             />
 
             {/* AI Filter Button */}
             <button
               onClick={handleAiFilterToggle}
-              className={`px-4 py-2.5 rounded-lg cursor-pointer flex items-center gap-3 transition-all duration-200 ${
+              className={`px-4 py-2.5 rounded-xl cursor-pointer flex items-center gap-3 transition-all duration-300 ${
                 darkMode
-                  ? "bg-[#1c2938] hover:bg-[#243447]"
+                  ? "bg-[#1a2942]/60 hover:bg-[#1a2942] border border-blue-500/20 hover:border-blue-500/40"
                   : "bg-gray-100 hover:bg-gray-200"
-              } focus:outline-none`}
+              } backdrop-blur-xl shadow-lg hover:shadow-blue-500/20 hover:shadow-xl hover:scale-105 focus:outline-none`}
             >
               {/* Toggle Switch */}
               <div
-                className={`relative w-11 h-6 rounded-full transition-colors duration-200 ${
-                  aiFilterEnabled ? "bg-blue-600" : "bg-gray-600"
+                className={`relative w-11 h-6 rounded-full transition-all duration-300 ${
+                  aiFilterEnabled
+                    ? "bg-gradient-to-r from-blue-500 to-blue-600 shadow-lg shadow-blue-500/50"
+                    : "bg-gray-600"
                 }`}
               >
                 <div
-                  className={`absolute top-0.5 left-0.5 w-5 h-5 bg-white rounded-full transition-transform duration-200 ${
-                    aiFilterEnabled ? "translate-x-5" : "translate-x-0"
+                  className={`absolute top-0.5 left-0.5 w-5 h-5 bg-white rounded-full transition-all duration-300 shadow-md ${
+                    aiFilterEnabled
+                      ? "translate-x-5 scale-110"
+                      : "translate-x-0"
                   }`}
                 />
               </div>
-              <span className={`text-sm ${darkMode ? "text-gray-200" : "text-gray-800"}`}>
+              <span
+                className={`text-sm ${
+                  darkMode ? "text-gray-300" : "text-gray-800"
+                }`}
+              >
                 AI Filter
               </span>
             </button>
@@ -419,11 +361,11 @@ export default function Page() {
             <div className="relative difficulty-filter-container">
               <button
                 onClick={() => setShowDifficultyMenu(!showDifficultyMenu)}
-                className={`px-5 py-3 rounded-2xl cursor-pointer flex items-center gap-2 ${
+                className={`px-5 py-3 rounded-xl cursor-pointer flex items-center gap-2 ${
                   darkMode
-                    ? "bg-[#0b1720] border border-gray-800 text-gray-200"
+                    ? "bg-[#1a2942]/60 border border-blue-500/30 text-gray-200"
                     : "bg-white border border-gray-200 text-gray-800"
-                } hover:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-500 transition shadow-lg`}
+                } backdrop-blur-xl hover:border-blue-500/60 hover:shadow-blue-500/20 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300 shadow-lg hover:scale-105`}
               >
                 <span>{selectedDifficulty || "All Levels"}</span>
                 <svg
@@ -445,9 +387,9 @@ export default function Page() {
 
               {showDifficultyMenu && (
                 <div
-                  className={`absolute top-full mt-2 right-0 w-full rounded-xl shadow-2xl border z-50 ${
+                  className={`absolute top-full mt-2 right-0 w-full rounded-xl shadow-2xl border z-50 animate-slideDown ${
                     darkMode
-                      ? "bg-[#0b1720] border-gray-800"
+                      ? "bg-[#1a2942]/95 backdrop-blur-xl border-blue-500/30"
                       : "bg-white border-gray-200"
                   }`}
                 >
@@ -484,12 +426,12 @@ export default function Page() {
                 prev();
               }}
               disabled={page === 0}
-              className={`fixed left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full flex items-center justify-center backdrop-blur-xl border shadow-lg transition z-40 ${
+              className={`fixed left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full flex items-center justify-center backdrop-blur-xl border shadow-lg transition-all duration-300 z-40 ${
                 page === 0
                   ? "opacity-40 cursor-not-allowed bg-white/10 border-white/10"
                   : darkMode
-                  ? "hover:scale-110 bg-white/20 border-white/30"
-                  : "hover:scale-110 bg-gray-200 border-gray-300"
+                  ? "hover:scale-125 hover:shadow-blue-500/30 hover:shadow-2xl bg-blue-500/20 border-blue-500/40 hover:bg-blue-500/30 hover:border-blue-400"
+                  : "hover:scale-125 bg-gray-200 border-gray-300"
               }`}
             >
               <span className="text-2xl">⟨</span>
@@ -502,12 +444,12 @@ export default function Page() {
                 next();
               }}
               disabled={page >= totalPages - 1}
-              className={`fixed right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full flex items-center justify-center backdrop-blur-xl border shadow-lg transition z-40 ${
+              className={`fixed right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full flex items-center justify-center backdrop-blur-xl border shadow-lg transition-all duration-300 z-40 ${
                 page >= totalPages - 1
                   ? "opacity-40 cursor-not-allowed bg-white/10 border-white/10"
                   : darkMode
-                  ? "hover:scale-110 bg-white/20 border-white/30"
-                  : "hover:scale-110 bg-gray-200 border-gray-300"
+                  ? "hover:scale-125 hover:shadow-blue-500/30 hover:shadow-2xl bg-blue-500/20 border-blue-500/40 hover:bg-blue-500/30 hover:border-blue-400"
+                  : "hover:scale-125 bg-gray-200 border-gray-300"
               }`}
             >
               <span className="text-2xl">⟩</span>
@@ -533,23 +475,22 @@ export default function Page() {
                     <motion.article
                       key={ex.id}
                       variants={cardVariants}
-                      whileHover={{ y: -6, scale: 1.02 }}
-                      style={glowStyle(darkMode)}
-                      className={`rounded-3xl p-5 ${
+                      whileHover={{ y: -8, scale: 1.03 }}
+                      className={`rounded-2xl p-5 ${
                         darkMode
-                          ? "bg-[#071721] border-gray-800"
+                          ? "bg-gradient-to-br from-[#1a2942]/80 to-[#1a2942]/60 border-blue-500/30"
                           : "bg-white border-gray-100"
-                      } border shadow-lg transition-all`}
+                      } backdrop-blur-xl border shadow-xl hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300 hover:border-blue-500/50`}
                     >
                       <Link to={`/exercise/${ex.id}`}>
-                        <div className="w-full h-40 rounded-xl overflow-hidden mb-3 bg-gray-100 flex items-center justify-center relative">
+                        <div className="w-full h-40 rounded-xl overflow-hidden mb-3 flex items-center justify-center relative">
                           {referenceImages[ex.id] ? (
                             <>
                               {/* Blurred background */}
                               <img
                                 src={referenceImages[ex.id]}
                                 alt=""
-                                className="absolute inset-0 w-full h-full object-cover blur-2xl scale-110 opacity-60"
+                                className="absolute inset-0 w-full h-full object-cover blur-3xl scale-110 opacity-50"
                                 aria-hidden="true"
                               />
                               {/* Main image */}
@@ -566,10 +507,10 @@ export default function Page() {
                           )}
                         </div>
 
-                        <h3 className="text-xl font-semibold text-green-400 text-center mb-1 wrap-break-words whitespace-normal leading-tight">
+                        <h3 className="text-xl font-semibold text-blue-300 text-center mb-1 wrap-break-words whitespace-normal leading-tight hover:text-blue-200 transition-colors duration-300">
                           {ex.name || "Untitled"}
                         </h3>
-                        <h3 className="text-xl font-semibold text-green-400 text-center mb-1 wrap-break-words whitespace-normal leading-tight">
+                        <h3 className="text-xl font-semibold text-blue-400 text-center mb-1 wrap-break-words whitespace-normal leading-tight hover:text-blue-300 transition-colors duration-300">
                           ({ex.hindi || "Untitled"})
                         </h3>
                       </Link>
@@ -594,10 +535,10 @@ export default function Page() {
                 prev();
               }}
               disabled={page === 0}
-              className={`px-4 py-2 text-sm font-medium transition ${
+              className={`px-4 py-2 text-sm font-medium transition-all duration-300 ${
                 page === 0
                   ? "opacity-40 cursor-not-allowed"
-                  : "hover:text-green-400"
+                  : "hover:text-blue-400 hover:scale-105"
               } ${darkMode ? "text-gray-300" : "text-gray-700"}`}
             >
               <span className="text-lg mr-1">‹</span> Previous
@@ -606,16 +547,16 @@ export default function Page() {
             {/* Logo with Page Numbers */}
             <div className="flex items-center">
               <div className="text-2xl font-bold tracking-tight flex items-center">
-                <span className="text-green-400">Y</span>
+                <span className="text-blue-400">Y</span>
                 {Array.from({ length: totalPages }).map((_, idx) => (
                   <button
                     key={idx}
                     onClick={() => goToPage(idx)}
-                    className={`transition-all duration-200 ${
+                    className={`transition-all duration-300 ${
                       idx === page
-                        ? "text-green-400"
+                        ? "text-blue-400 scale-125"
                         : darkMode
-                        ? "text-gray-600 hover:text-gray-400"
+                        ? "text-gray-600 hover:text-blue-300 hover:scale-110"
                         : "text-gray-400 hover:text-gray-600"
                     }`}
                   >
@@ -635,10 +576,10 @@ export default function Page() {
                 next();
               }}
               disabled={page >= totalPages - 1}
-              className={`px-4 py-2 text-sm font-medium transition ${
+              className={`px-4 py-2 text-sm font-medium transition-all duration-300 ${
                 page >= totalPages - 1
                   ? "opacity-40 cursor-not-allowed"
-                  : "hover:text-green-400"
+                  : "hover:text-blue-400 hover:scale-105"
               } ${darkMode ? "text-gray-300" : "text-gray-700"}`}
             >
               Next <span className="text-lg ml-1">›</span>
@@ -652,11 +593,11 @@ export default function Page() {
                 <button
                   key={idx}
                   onClick={() => goToPage(idx)}
-                  className={`text-sm font-medium transition ${
+                  className={`text-sm font-medium transition-all duration-300 ${
                     idx === page
-                      ? "text-green-400"
+                      ? "text-blue-400 scale-125 font-bold"
                       : darkMode
-                      ? "text-gray-400 hover:text-gray-300"
+                      ? "text-gray-400 hover:text-blue-300 hover:scale-110"
                       : "text-gray-600 hover:text-gray-800"
                   }`}
                 >
@@ -669,20 +610,24 @@ export default function Page() {
 
         {/* AI Filter Modal */}
         {showAiFilterModal && (
-          <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-[100] p-4">
+          <div className="fixed inset-0 bg-black/60 backdrop-blur-md flex items-center justify-center z-[100] p-4 animate-fadeIn">
             <div
               className={`relative max-w-2xl w-full max-h-[90vh] overflow-y-auto rounded-3xl p-8 ${
-                darkMode ? "bg-[#0b1720] border border-gray-800" : "bg-white"
-              } shadow-2xl`}
+                darkMode
+                  ? "bg-gradient-to-br from-[#1a2942]/95 to-[#0D1931]/95 backdrop-blur-2xl border border-blue-500/30"
+                  : "bg-white"
+              } shadow-2xl animate-scaleUp
+              [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]`}
+              style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
             >
               <button
                 onClick={() => setShowAiFilterModal(false)}
-                className="absolute top-4 right-4 text-2xl hover:text-green-400 transition"
+                className="absolute top-4 right-4 text-2xl hover:text-blue-400 transition-all duration-300 hover:scale-125 hover:rotate-90"
               >
                 ✕
               </button>
 
-              <h2 className="text-3xl font-bold mb-6 text-green-400">
+              <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
                 AI Personalized Filter
               </h2>
 
@@ -700,9 +645,9 @@ export default function Page() {
                   placeholder="Enter your age"
                   className={`w-full px-4 py-3 rounded-xl ${
                     darkMode
-                      ? "bg-[#071721] border-gray-700 text-gray-200"
+                      ? "bg-[#0D1931]/60 border-blue-500/30 text-gray-200"
                       : "bg-gray-50 border-gray-300 text-gray-800"
-                  } border focus:outline-none focus:ring-2 focus:ring-green-500`}
+                  } backdrop-blur-xl border focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300`}
                 />
               </div>
 
@@ -739,19 +684,19 @@ export default function Page() {
                   ].map((issue) => (
                     <label
                       key={issue}
-                      className={`flex items-center gap-3 p-3 rounded-lg cursor-pointer transition ${
+                      className={`flex items-center gap-3 p-3 rounded-lg cursor-pointer transition-all duration-300 ${
                         selectedHealthIssues.includes(issue)
-                          ? "bg-green-500/20 border-green-500"
+                          ? "bg-blue-500/20 border-blue-400/60 scale-105"
                           : darkMode
-                          ? "bg-[#071721] hover:bg-[#0a1f2e]"
+                          ? "bg-[#0D1931]/40 hover:bg-[#0D1931]/60 border-blue-500/20"
                           : "bg-gray-50 hover:bg-gray-100"
-                      } border`}
+                      } border hover:scale-105`}
                     >
                       <input
                         type="checkbox"
                         checked={selectedHealthIssues.includes(issue)}
                         onChange={() => toggleHealthIssue(issue)}
-                        className="w-4 h-4 text-green-500 rounded focus:ring-green-500"
+                        className="w-4 h-4 text-blue-500 rounded focus:ring-blue-500"
                       />
                       <span className="text-sm">{issue}</span>
                     </label>
@@ -764,9 +709,9 @@ export default function Page() {
                 <button
                   onClick={handleAiFilterApply}
                   disabled={!userAge || selectedHealthIssues.length === 0}
-                  className={`flex-1 py-3 px-6 rounded-xl font-semibold transition ${
+                  className={`flex-1 py-3 px-6 rounded-xl font-semibold transition-all duration-300 ${
                     userAge && selectedHealthIssues.length > 0
-                      ? "bg-green-500 text-white hover:bg-green-600"
+                      ? "bg-gradient-to-r from-blue-500 to-blue-600 text-white hover:from-blue-600 hover:to-blue-700 hover:scale-105 shadow-lg shadow-blue-500/50"
                       : "bg-gray-400 text-gray-200 cursor-not-allowed"
                   }`}
                 >
@@ -774,9 +719,9 @@ export default function Page() {
                 </button>
                 <button
                   onClick={() => setShowAiFilterModal(false)}
-                  className={`px-6 py-3 rounded-xl font-semibold transition ${
+                  className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105 ${
                     darkMode
-                      ? "bg-gray-700 hover:bg-gray-600"
+                      ? "bg-[#1a2942]/80 border border-blue-500/30 hover:bg-[#1a2942] hover:border-blue-500/50"
                       : "bg-gray-200 hover:bg-gray-300"
                   }`}
                 >
