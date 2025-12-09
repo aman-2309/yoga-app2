@@ -399,11 +399,8 @@ const Camera = forwardRef(function Camera(
         const accuracyValue = Math.round(displayAccuracy);
         setAccuracy(accuracyValue);
 
-        // Update accuracy display
-        const accuracyElement = document.getElementById("overallAccuracy");
-        if (accuracyElement) {
-          accuracyElement.innerText = accuracyValue;
-        }
+        // Update accuracy display (React will handle this via state)
+        // Removed direct DOM manipulation to prevent percentage symbol removal
 
         // Set feedback from backend response
         if (accuracyData.feedback && Array.isArray(accuracyData.feedback)) {
@@ -872,10 +869,7 @@ const Camera = forwardRef(function Camera(
         stopBtn.classList.add("opacity-50", "cursor-not-allowed");
       }
 
-      const accuracyElement = document.getElementById("overallAccuracy");
-      if (accuracyElement) {
-        accuracyElement.innerText = "--";
-      }
+      // Accuracy will be reset via state (setAccuracy(null))
     } catch (err) {
       console.error("StopCamera Error:", err);
     }
@@ -916,37 +910,37 @@ const Camera = forwardRef(function Camera(
     >
       {/* MAIN CONTAINER */}
       <div
-        className={`w-full h-full backdrop-blur-2xl shadow-2xl p-3 flex flex-col overflow-hidden ${
+        className={`w-full h-full backdrop-blur-2xl shadow-2xl p-1.5 sm:p-2 flex flex-col overflow-hidden ${
           darkMode
             ? "bg-gradient-to-br from-[#1a2942]/60 to-[#1a2942]/40 border border-blue-500/30"
             : "bg-gradient-to-br from-blue-50/80 to-white/80 border border-blue-300/50"
         }`}
       >
         {/* HEADER with Close Button */}
-        <header className="flex justify-between items-center mb-0 relative flex-shrink-0">
+        <header className="flex justify-between items-center  relative flex-shrink-0">
           <div className="flex-1"></div>
-          <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent absolute left-1/2 -translate-x-1/2 mb-0 animate-fadeIn">
+          <h1 className="text-lg sm:text-xl md:text-2xl font-bold bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent absolute left-1/2 -translate-x-1/2 animate-fadeIn">
             Yoga Accuracy
           </h1>
           <button
             onClick={onClose}
-            className="w-8 h-8 rounded-full bg-red-500 hover:bg-red-600 text-white flex items-center justify-center transition-all duration-300 hover:scale-125 hover:rotate-90 shadow-lg text-base z-10"
+            className="w-7 h-7 sm:w-8 sm:h-8 text-sm sm:text-base rounded-full bg-red-500 hover:bg-red-600 text-white flex items-center justify-center transition-all duration-300 hover:scale-125 hover:rotate-90 shadow-lg z-10"
           >
             ✕
           </button>
         </header>
 
         {/* CONTROL PANEL — Left: Dropdown+Button, Right: Accuracy */}
-        <div className="mb-2 flex-shrink-0">
-          <div className="flex items-start gap-3">
+        <div className="mb-0.5 sm:mb-1 flex-shrink-0">
+          <div className="flex flex-col md:flex-row items-stretch md:items-start  gap-1 sm:gap-1.5">
             {/* Left Side: Dropdown and Button */}
-            <div className="flex-[0.6] flex flex-col gap-6 pt-8">
-              <div className="flex flex-row gap-2">
+            <div className="flex-1 md:flex-[0.6] flex flex-col gap-1">
+              <div className="flex flex-row pt-4 sm:pt-6 gap-1 sm:gap-1.5">
                 {/* Pose Selector Dropdown */}
                 <select
                   value={selectedPose}
                   onChange={handlePoseChange}
-                  className={`w-[80%] px-3 py-2 text-xs rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300 cursor-pointer appearance-none backdrop-blur-xl shadow-lg hover:shadow-blue-500/20 ${
+                  className={`w-4/5 sm:w-[70%] md:w-[80%] px-2 py-1.5 text-[10px] sm:text-xs rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300 cursor-pointer appearance-none backdrop-blur-xl shadow-lg hover:shadow-blue-500/20 ${
                     darkMode
                       ? "bg-[#1a2942]/80 text-white border border-blue-500/30 hover:bg-[#1a2942] hover:border-blue-500/50"
                       : "bg-white/90 text-gray-900 border border-blue-300/50 hover:bg-white hover:border-blue-400"
@@ -1046,7 +1040,7 @@ const Camera = forwardRef(function Camera(
                 {/* Start/Stop Camera Button */}
                 <button
                   onClick={isCameraOn ? stopCamera : startCamera}
-                  className={`w-[20%] px-4 py-2.5 rounded-xl text-sm font-semibold whitespace-nowrap transition-all duration-300 hover:scale-105 shadow-lg
+                  className={`w-1/5 sm:w-[30%] md:w-[20%] px-2 py-1.5 rounded-lg text-[9px] sm:text-[10px] md:text-xs font-semibold whitespace-nowrap transition-all duration-300 hover:scale-105 shadow-lg overflow-hidden
             ${
               isCameraOn
                 ? "bg-red-500 hover:bg-red-600 text-white hover:shadow-red-500/30"
@@ -1058,10 +1052,10 @@ const Camera = forwardRef(function Camera(
               </div>
               {/* FEEDBACK SECTION */}
               {(generalFeedback || angleFeedback.length > 0) && (
-                <div className="mb-2 flex-shrink-0">
+                <div className="flex-shrink-0">
                   {generalFeedback && (
-                    <div className="p-2">
-                      <p className="text-blue-400 text-left font-medium text-lg leading-tight transition-colors duration-300 hover:text-blue-300">
+                    <div className="p-0.5 pt-4 sm:pt-6">
+                      <p className="text-blue-500 text-left font-medium text-[15px] sm:text-[18px] md:text-base leading-tight transition-colors duration-300 hover:text-blue-300">
                         {generalFeedback}
                       </p>
                     </div>
@@ -1071,8 +1065,8 @@ const Camera = forwardRef(function Camera(
             </div>
 
             {/* Accuracy Meter — Next to Button */}
-            <div className="flex-[0.4] flex flex-col items-center gap-0">
-              <div className="relative w-44 h-44 flex items-center justify-center transition-all duration-300 hover:scale-105">
+            <div className="flex-1 md:flex-[0.4] flex flex-col items-center justify-start gap-2 py-2">
+              <div className="relative w-full max-w-[120px] lg:max-w-[180px] aspect-square flex items-center justify-center transition-all duration-300 hover:scale-105">
                 {/* Background circle */}
                 <svg
                   className="absolute inset-0 w-full h-full -rotate-90"
@@ -1115,13 +1109,16 @@ const Camera = forwardRef(function Camera(
                 </svg>
                 {/* Center text */}
                 <div
-                  id="overallAccuracy"
-                  className="text-xl font-bold text-white z-10 transition-all duration-300"
+                  className={`text-base sm:text-xl md:text-2xl font-bold z-10 transition-all duration-300 ${
+                    darkMode ? "text-white" : "text-blue-500"
+                  }`}
                 >
-                  {accuracy ? `${accuracy}%` : "--"}
+                  {accuracy !== null && accuracy !== undefined
+                    ? `${Math.round(accuracy)}%`
+                    : "--"}
                 </div>
               </div>
-              <span className="text-sm text-blue-300 font-medium transition-colors duration-300">
+              <span className="text-xs sm:text-sm text-blue-400 font-medium transition-colors duration-300">
                 Accuracy
               </span>
             </div>
@@ -1129,33 +1126,39 @@ const Camera = forwardRef(function Camera(
         </div>
 
         {/* VIDEO + REFERENCE SECTION */}
-        <div className="grid md:grid-cols-2 gap-3 flex-1 min-h-0 overflow-hidden pb-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-1 sm:gap-2 flex-1 min-h-0 overflow-hidden">
           {/* USER CAMERA */}
-          <div className="flex flex-col min-h-0">
-            <h3 className="text-sm text-blue-400 font-semibold mb-1.5 flex-shrink-0 transition-colors duration-300 hover:text-blue-300">
+          <div className="flex flex-col h-full w-full min-h-0 max-h-full">
+            <h3 className="text-[10px] sm:text-xs text-blue-400 font-semibold mb-0.5 sm:mb-1 flex-shrink-0 transition-colors duration-300 hover:text-blue-300">
               Your Pose
             </h3>
 
-            <div className="relative bg-black/40 rounded-lg overflow-hidden border border-blue-500/30 hover:border-blue-500/50 flex-1 flex items-center justify-center text-gray-500 min-h-0 transition-all duration-300 hover:shadow-blue-500/20 hover:shadow-lg">
+            <div className="relative bg-black/40 rounded-lg overflow-hidden border border-blue-500/30 hover:border-blue-500/50 w-full h-64 sm:flex-1 sm:min-h-0 sm:max-h-[50vh] lg:max-h-[75vh] flex items-center justify-center text-gray-500 transition-all duration-300 hover:shadow-blue-500/20 hover:shadow-lg">
               <video
                 ref={videoRef}
                 playsInline
                 className="absolute inset-0 w-full h-full object-contain bg-black"
+                style={{ maxHeight: "100%", maxWidth: "100%" }}
               />
 
-              <canvas ref={canvasRef} className="absolute inset-0"></canvas>
+              <canvas
+                ref={canvasRef}
+                className="absolute inset-0 w-full h-full"
+              ></canvas>
 
-              {!isCameraOn && <p className="z-10 text-sm">📷 Camera Off</p>}
+              {!isCameraOn && (
+                <p className="z-10 text-xs sm:text-sm">📷 Camera Off</p>
+              )}
             </div>
           </div>
 
           {/* REFERENCE IMAGE */}
-          <div className="flex flex-col min-h-0">
-            <h3 className="text-sm text-blue-400 font-semibold mb-1.5 flex-shrink-0 transition-colors duration-300 hover:text-blue-300">
+          <div className="flex flex-col h-full w-full min-h-0 max-h-full">
+            <h3 className="text-[10px] sm:text-xs text-blue-400 font-semibold mb-0.5 sm:mb-1 flex-shrink-0 transition-colors duration-300 hover:text-blue-300">
               Reference
             </h3>
 
-            <div className="relative bg-black/20 rounded-lg border border-blue-500/30 hover:border-blue-500/50 flex-1 flex items-center justify-center overflow-hidden min-h-0 transition-all duration-300 hover:shadow-blue-500/20 hover:shadow-lg">
+            <div className="relative bg-black/20 rounded-lg border border-blue-500/30 hover:border-blue-500/50 w-full h-64 sm:flex-1 sm:min-h-0 sm:max-h-[50vh] lg:max-h-[75vh] flex items-center justify-center transition-all duration-300 hover:shadow-blue-500/20 hover:shadow-lg overflow-hidden">
               {referenceImage ? (
                 <>
                   {/* Blurred background */}
@@ -1170,11 +1173,11 @@ const Camera = forwardRef(function Camera(
                     id="referenceImage"
                     src={referenceImage}
                     alt="Reference Pose"
-                    className="relative max-h-full max-w-full transition-all duration-500 z-10 object-contain hover:scale-105"
+                    className="relative max-w-full max-h-full transition-all duration-500 z-10 object-contain p-1 sm:p-2"
                   />
                 </>
               ) : (
-                <div className="text-gray-400 text-sm text-center px-3">
+                <div className="text-gray-400 text-xs sm:text-sm text-center px-2 sm:px-3">
                   Select a pose to see the reference image
                 </div>
               )}
