@@ -1,0 +1,106 @@
+{
+  "image": "data\\reference_poses\\images\\Frog_Pose_or_Bhekasana_side\\Frog_Pose_or_Bhekasana_image_57.jpg",
+  "total_angles": 5,
+  "measurements": [
+    {
+      "name": "right hand",
+      "target_angle": 82.1,
+      "tolerance": 30.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 152,
+          "y": 127
+        },
+        {
+          "x": 219,
+          "y": 97
+        },
+        {
+          "x": 233,
+          "y": 145
+        }
+      ]
+    },
+    {
+      "name": "left hand",
+      "target_angle": 78.9,
+      "tolerance": 35.0,
+      "weight": 2.0,
+      "points": [
+        {
+          "x": 153,
+          "y": 123
+        },
+        {
+          "x": 230,
+          "y": 95
+        },
+        {
+          "x": 238,
+          "y": 146
+        }
+      ]
+    },
+    {
+      "name": "right leg",
+      "target_angle": 21.1,
+      "tolerance": 30.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 239,
+          "y": 216
+        },
+        {
+          "x": 394,
+          "y": 203
+        },
+        {
+          "x": 278,
+          "y": 169
+        }
+      ]
+    },
+    {
+      "name": "left leg",
+      "target_angle": 22.0,
+      "tolerance": 35.0,
+      "weight": 2.0,
+      "points": [
+        {
+          "x": 240,
+          "y": 211
+        },
+        {
+          "x": 397,
+          "y": 197
+        },
+        {
+          "x": 275,
+          "y": 160
+        }
+      ]
+    },
+    {
+      "name": "curve",
+      "target_angle": 131.3,
+      "tolerance": 30.0,
+      "weight": 5.0,
+      "points": [
+        {
+          "x": 154,
+          "y": 129
+        },
+        {
+          "x": 241,
+          "y": 219
+        },
+        {
+          "x": 388,
+          "y": 212
+        }
+      ]
+    }
+  ]
+}

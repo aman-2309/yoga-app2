@@ -1,0 +1,86 @@
+{
+  "image": "data\\reference_poses\\images\\Dolphin_Plank_Pose_or_Makara_Adho_Mukha_Svanasana__side\\Dolphin_Plank_Pose_or_Makara_Adho_Mukha_Svanasana__image_2.jpg",
+  "total_angles": 4,
+  "measurements": [
+    {
+      "name": "right hand",
+      "target_angle": 96.8,
+      "tolerance": 25.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 304,
+          "y": 157
+        },
+        {
+          "x": 311,
+          "y": 229
+        },
+        {
+          "x": 357,
+          "y": 230
+        }
+      ]
+    },
+    {
+      "name": "left hand",
+      "target_angle": 89.2,
+      "tolerance": 25.0,
+      "weight": 2.0,
+      "points": [
+        {
+          "x": 300,
+          "y": 158
+        },
+        {
+          "x": 299,
+          "y": 228
+        },
+        {
+          "x": 358,
+          "y": 228
+        }
+      ]
+    },
+    {
+      "name": "right leg",
+      "target_angle": 175.0,
+      "tolerance": 25.0,
+      "weight": 5.0,
+      "points": [
+        {
+          "x": 209,
+          "y": 162
+        },
+        {
+          "x": 128,
+          "y": 184
+        },
+        {
+          "x": 33,
+          "y": 201
+        }
+      ]
+    },
+    {
+      "name": "left leg",
+      "target_angle": 178.9,
+      "tolerance": 30.0,
+      "weight": 2.0,
+      "points": [
+        {
+          "x": 211,
+          "y": 157
+        },
+        {
+          "x": 127,
+          "y": 179
+        },
+        {
+          "x": 32,
+          "y": 202
+        }
+      ]
+    }
+  ]
+}

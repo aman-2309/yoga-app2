@@ -1,0 +1,106 @@
+{
+  "image": "data\\reference_poses\\images\\Supported_Shoulderstand_pose_or_Salamba_Sarvangasana__side\\Supported_Shoulderstand_pose_or_Salamba_Sarvangasana__image_5.jpg",
+  "total_angles": 5,
+  "measurements": [
+    {
+      "name": "right hand",
+      "target_angle": 79.5,
+      "tolerance": 25.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 585,
+          "y": 705
+        },
+        {
+          "x": 724,
+          "y": 715
+        },
+        {
+          "x": 711,
+          "y": 599
+        }
+      ]
+    },
+    {
+      "name": "left hand",
+      "target_angle": 76.7,
+      "tolerance": 25.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 586,
+          "y": 707
+        },
+        {
+          "x": 745,
+          "y": 706
+        },
+        {
+          "x": 717,
+          "y": 591
+        }
+      ]
+    },
+    {
+      "name": "right leg",
+      "target_angle": 176.3,
+      "tolerance": 25.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 746,
+          "y": 515
+        },
+        {
+          "x": 741,
+          "y": 331
+        },
+        {
+          "x": 722,
+          "y": 123
+        }
+      ]
+    },
+    {
+      "name": "left leg",
+      "target_angle": 176.4,
+      "tolerance": 30.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 750,
+          "y": 516
+        },
+        {
+          "x": 745,
+          "y": 333
+        },
+        {
+          "x": 726,
+          "y": 123
+        }
+      ]
+    },
+    {
+      "name": "curve",
+      "target_angle": 133.8,
+      "tolerance": 30.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 583,
+          "y": 700
+        },
+        {
+          "x": 751,
+          "y": 524
+        },
+        {
+          "x": 743,
+          "y": 341
+        }
+      ]
+    }
+  ]
+}

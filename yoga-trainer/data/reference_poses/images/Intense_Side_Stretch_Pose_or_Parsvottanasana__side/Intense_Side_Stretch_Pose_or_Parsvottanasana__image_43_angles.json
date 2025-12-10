@@ -1,0 +1,106 @@
+{
+  "image": "data\\reference_poses\\images\\Intense_Side_Stretch_Pose_or_Parsvottanasana__side\\Intense_Side_Stretch_Pose_or_Parsvottanasana__image_43.jpg",
+  "total_angles": 5,
+  "measurements": [
+    {
+      "name": "right hand",
+      "target_angle": 107.0,
+      "tolerance": 30.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 470,
+          "y": 219
+        },
+        {
+          "x": 368,
+          "y": 156
+        },
+        {
+          "x": 378,
+          "y": 118
+        }
+      ]
+    },
+    {
+      "name": "left hand",
+      "target_angle": 23.2,
+      "tolerance": 30.0,
+      "weight": 1.0,
+      "points": [
+        {
+          "x": 478,
+          "y": 211
+        },
+        {
+          "x": 350,
+          "y": 111
+        },
+        {
+          "x": 384,
+          "y": 120
+        }
+      ]
+    },
+    {
+      "name": "right leg",
+      "target_angle": 177.7,
+      "tolerance": 25.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 217,
+          "y": 197
+        },
+        {
+          "x": 336,
+          "y": 386
+        },
+        {
+          "x": 443,
+          "y": 572
+        }
+      ]
+    },
+    {
+      "name": "left leg",
+      "target_angle": 179.7,
+      "tolerance": 30.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 169,
+          "y": 192
+        },
+        {
+          "x": 126,
+          "y": 377
+        },
+        {
+          "x": 85,
+          "y": 558
+        }
+      ]
+    },
+    {
+      "name": "curve",
+      "target_angle": 56.8,
+      "tolerance": 30.0,
+      "weight": 5.0,
+      "points": [
+        {
+          "x": 466,
+          "y": 212
+        },
+        {
+          "x": 215,
+          "y": 191
+        },
+        {
+          "x": 329,
+          "y": 402
+        }
+      ]
+    }
+  ]
+}

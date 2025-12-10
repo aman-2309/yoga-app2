@@ -1,0 +1,86 @@
+{
+  "image": "data\\reference_poses\\images\\Side-Reclining_Leg_Lift_pose_or_Anantasana__front\\Side-Reclining_Leg_Lift_pose_or_Anantasana__image_12.jpg",
+  "total_angles": 4,
+  "measurements": [
+    {
+      "name": "right hand",
+      "target_angle": 36.9,
+      "tolerance": 30.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 377,
+          "y": 501
+        },
+        {
+          "x": 258,
+          "y": 536
+        },
+        {
+          "x": 334,
+          "y": 434
+        }
+      ]
+    },
+    {
+      "name": "left hand",
+      "target_angle": 176.1,
+      "tolerance": 25.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 438,
+          "y": 393
+        },
+        {
+          "x": 412,
+          "y": 263
+        },
+        {
+          "x": 376,
+          "y": 131
+        }
+      ]
+    },
+    {
+      "name": "right leg",
+      "target_angle": 179.3,
+      "tolerance": 25.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 631,
+          "y": 507
+        },
+        {
+          "x": 817,
+          "y": 514
+        },
+        {
+          "x": 1021,
+          "y": 524
+        }
+      ]
+    },
+    {
+      "name": "left leg",
+      "target_angle": 179.7,
+      "tolerance": 25.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 608,
+          "y": 440
+        },
+        {
+          "x": 536,
+          "y": 279
+        },
+        {
+          "x": 458,
+          "y": 102
+        }
+      ]
+    }
+  ]
+}

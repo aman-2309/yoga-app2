@@ -1,0 +1,86 @@
+{
+  "image": "data\\reference_poses\\images\\Corpse_Pose_or_Savasana__side\\Corpse_Pose_or_Savasana__image_4.jpg",
+  "total_angles": 4,
+  "measurements": [
+    {
+      "name": "right leg",
+      "target_angle": 175.1,
+      "tolerance": 25.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 340,
+          "y": 277
+        },
+        {
+          "x": 432,
+          "y": 290
+        },
+        {
+          "x": 563,
+          "y": 320
+        }
+      ]
+    },
+    {
+      "name": "left leg",
+      "target_angle": 177.4,
+      "tolerance": 25.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 342,
+          "y": 241
+        },
+        {
+          "x": 431,
+          "y": 245
+        },
+        {
+          "x": 542,
+          "y": 245
+        }
+      ]
+    },
+    {
+      "name": "right hand",
+      "target_angle": 173.4,
+      "tolerance": 25.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 189,
+          "y": 296
+        },
+        {
+          "x": 254,
+          "y": 321
+        },
+        {
+          "x": 315,
+          "y": 353
+        }
+      ]
+    },
+    {
+      "name": "left hand",
+      "target_angle": 179.1,
+      "tolerance": 25.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 194,
+          "y": 243
+        },
+        {
+          "x": 250,
+          "y": 234
+        },
+        {
+          "x": 318,
+          "y": 222
+        }
+      ]
+    }
+  ]
+}

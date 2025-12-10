@@ -1,0 +1,86 @@
+{
+  "image": "data\\reference_poses\\images\\Wide-Angle_Seated_Forward_Bend_pose_or_Upavistha_Konasana__side\\Wide-Angle_Seated_Forward_Bend_pose_or_Upavistha_Konasana__image_54.jpg",
+  "total_angles": 4,
+  "measurements": [
+    {
+      "name": "right hand",
+      "target_angle": 175.5,
+      "tolerance": 25.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 433,
+          "y": 655
+        },
+        {
+          "x": 286,
+          "y": 713
+        },
+        {
+          "x": 123,
+          "y": 763
+        }
+      ]
+    },
+    {
+      "name": "left hand",
+      "target_angle": 171.2,
+      "tolerance": 25.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 581,
+          "y": 655
+        },
+        {
+          "x": 729,
+          "y": 727
+        },
+        {
+          "x": 868,
+          "y": 770
+        }
+      ]
+    },
+    {
+      "name": "right leg",
+      "target_angle": 176.2,
+      "tolerance": 30.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 456,
+          "y": 762
+        },
+        {
+          "x": 325,
+          "y": 788
+        },
+        {
+          "x": 118,
+          "y": 815
+        }
+      ]
+    },
+    {
+      "name": "left leg",
+      "target_angle": 179.7,
+      "tolerance": 30.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 570,
+          "y": 763
+        },
+        {
+          "x": 683,
+          "y": 780
+        },
+        {
+          "x": 903,
+          "y": 812
+        }
+      ]
+    }
+  ]
+}

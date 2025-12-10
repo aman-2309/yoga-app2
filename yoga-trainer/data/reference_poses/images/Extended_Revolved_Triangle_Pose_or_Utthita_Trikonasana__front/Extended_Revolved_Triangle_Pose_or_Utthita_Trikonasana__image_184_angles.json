@@ -1,0 +1,86 @@
+{
+  "image": "data\\reference_poses\\images\\Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana__front\\Extended_Revolved_Triangle_Pose_or_Utthita_Trikonasana__image_184.jpg",
+  "total_angles": 4,
+  "measurements": [
+    {
+      "name": "right hand",
+      "target_angle": 163.3,
+      "tolerance": 20.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 189,
+          "y": 585
+        },
+        {
+          "x": 206,
+          "y": 694
+        },
+        {
+          "x": 189,
+          "y": 817
+        }
+      ]
+    },
+    {
+      "name": "left hand",
+      "target_angle": 174.6,
+      "tolerance": 25.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 214,
+          "y": 418
+        },
+        {
+          "x": 219,
+          "y": 314
+        },
+        {
+          "x": 214,
+          "y": 204
+        }
+      ]
+    },
+    {
+      "name": "right leg",
+      "target_angle": 179.6,
+      "tolerance": 30.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 340,
+          "y": 623
+        },
+        {
+          "x": 271,
+          "y": 723
+        },
+        {
+          "x": 166,
+          "y": 873
+        }
+      ]
+    },
+    {
+      "name": "left leg",
+      "target_angle": 173.4,
+      "tolerance": 30.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 423,
+          "y": 577
+        },
+        {
+          "x": 486,
+          "y": 700
+        },
+        {
+          "x": 594,
+          "y": 862
+        }
+      ]
+    }
+  ]
+}

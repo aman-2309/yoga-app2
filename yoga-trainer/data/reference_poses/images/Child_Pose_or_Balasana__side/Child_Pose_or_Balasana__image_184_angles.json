@@ -1,0 +1,86 @@
+{
+  "image": "data\\reference_poses\\images\\Child_Pose_or_Balasana__side\\Child_Pose_or_Balasana__image_184.jpg",
+  "total_angles": 4,
+  "measurements": [
+    {
+      "name": "right hand",
+      "target_angle": 165.8,
+      "tolerance": 20.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 305,
+          "y": 161
+        },
+        {
+          "x": 398,
+          "y": 209
+        },
+        {
+          "x": 510,
+          "y": 235
+        }
+      ]
+    },
+    {
+      "name": "left hand",
+      "target_angle": 172.5,
+      "tolerance": 20.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 307,
+          "y": 158
+        },
+        {
+          "x": 407,
+          "y": 196
+        },
+        {
+          "x": 496,
+          "y": 217
+        }
+      ]
+    },
+    {
+      "name": "right leg",
+      "target_angle": 40.3,
+      "tolerance": 30.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 105,
+          "y": 123
+        },
+        {
+          "x": 223,
+          "y": 213
+        },
+        {
+          "x": 88,
+          "y": 220
+        }
+      ]
+    },
+    {
+      "name": "left leg",
+      "target_angle": 29.3,
+      "tolerance": 30.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 104,
+          "y": 127
+        },
+        {
+          "x": 249,
+          "y": 207
+        },
+        {
+          "x": 100,
+          "y": 208
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "image": "data\\reference_poses\\images\\Side_Crane_(Crow)_Pose_or_Parsva_Bakasana__side\\Side_Crane_(Crow)_Pose_or_Parsva_Bakasana__image_47.jpg",
+  "total_angles": 4,
+  "measurements": [
+    {
+      "name": "right hand",
+      "target_angle": 131.0,
+      "tolerance": 25.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 689,
+          "y": 753
+        },
+        {
+          "x": 596,
+          "y": 843
+        },
+        {
+          "x": 601,
+          "y": 937
+        }
+      ]
+    },
+    {
+      "name": "left hand",
+      "target_angle": 113.1,
+      "tolerance": 30.0,
+      "weight": 2.0,
+      "points": [
+        {
+          "x": 684,
+          "y": 754
+        },
+        {
+          "x": 590,
+          "y": 798
+        },
+        {
+          "x": 595,
+          "y": 941
+        }
+      ]
+    },
+    {
+      "name": "right leg",
+      "target_angle": 159.4,
+      "tolerance": 25.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 563,
+          "y": 599
+        },
+        {
+          "x": 454,
+          "y": 554
+        },
+        {
+          "x": 317,
+          "y": 426
+        }
+      ]
+    },
+    {
+      "name": "left leg",
+      "target_angle": 78.7,
+      "tolerance": 30.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 552,
+          "y": 644
+        },
+        {
+          "x": 611,
+          "y": 749
+        },
+        {
+          "x": 491,
+          "y": 788
+        }
+      ]
+    }
+  ]
+}

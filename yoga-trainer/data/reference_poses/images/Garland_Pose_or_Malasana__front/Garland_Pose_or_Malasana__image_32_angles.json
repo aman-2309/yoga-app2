@@ -1,0 +1,86 @@
+{
+  "image": "data\\reference_poses\\images\\Garland_Pose_or_Malasana__front\\Garland_Pose_or_Malasana__image_32.jpg",
+  "total_angles": 4,
+  "measurements": [
+    {
+      "name": "right hand",
+      "target_angle": 66.9,
+      "tolerance": 30.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 252,
+          "y": 172
+        },
+        {
+          "x": 228,
+          "y": 239
+        },
+        {
+          "x": 296,
+          "y": 235
+        }
+      ]
+    },
+    {
+      "name": "left hand",
+      "target_angle": 66.2,
+      "tolerance": 30.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 356,
+          "y": 174
+        },
+        {
+          "x": 382,
+          "y": 235
+        },
+        {
+          "x": 307,
+          "y": 234
+        }
+      ]
+    },
+    {
+      "name": "right leg",
+      "target_angle": 35.5,
+      "tolerance": 30.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 279,
+          "y": 311
+        },
+        {
+          "x": 200,
+          "y": 248
+        },
+        {
+          "x": 226,
+          "y": 339
+        }
+      ]
+    },
+    {
+      "name": "left leg",
+      "target_angle": 38.4,
+      "tolerance": 30.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 325,
+          "y": 311
+        },
+        {
+          "x": 399,
+          "y": 259
+        },
+        {
+          "x": 375,
+          "y": 340
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "image": "data\\reference_poses\\images\\Shoulder-Pressing_Pose_or_Bhujapidasana__front\\Shoulder-Pressing_Pose_or_Bhujapidasana__image_48.jpg",
+  "total_angles": 4,
+  "measurements": [
+    {
+      "name": "right hand",
+      "target_angle": 159.9,
+      "tolerance": 25.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 424,
+          "y": 626
+        },
+        {
+          "x": 376,
+          "y": 728
+        },
+        {
+          "x": 359,
+          "y": 919
+        }
+      ]
+    },
+    {
+      "name": "left hand",
+      "target_angle": 168.9,
+      "tolerance": 30.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 658,
+          "y": 626
+        },
+        {
+          "x": 684,
+          "y": 763
+        },
+        {
+          "x": 683,
+          "y": 912
+        }
+      ]
+    },
+    {
+      "name": "right leg",
+      "target_angle": 17.3,
+      "tolerance": 30.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 485,
+          "y": 755
+        },
+        {
+          "x": 327,
+          "y": 626
+        },
+        {
+          "x": 490,
+          "y": 873
+        }
+      ]
+    },
+    {
+      "name": "left leg",
+      "target_angle": 18.5,
+      "tolerance": 30.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 571,
+          "y": 761
+        },
+        {
+          "x": 740,
+          "y": 651
+        },
+        {
+          "x": 559,
+          "y": 879
+        }
+      ]
+    }
+  ]
+}

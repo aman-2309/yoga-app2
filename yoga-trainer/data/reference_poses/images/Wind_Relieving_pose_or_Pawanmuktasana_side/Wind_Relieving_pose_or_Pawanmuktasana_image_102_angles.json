@@ -1,0 +1,86 @@
+{
+  "image": "data\\reference_poses\\images\\Wind_Relieving_pose_or_Pawanmuktasana_side\\Wind_Relieving_pose_or_Pawanmuktasana_image_102.jpg",
+  "total_angles": 4,
+  "measurements": [
+    {
+      "name": "left hand",
+      "target_angle": 73.4,
+      "tolerance": 30.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 757,
+          "y": 498
+        },
+        {
+          "x": 671,
+          "y": 505
+        },
+        {
+          "x": 695,
+          "y": 392
+        }
+      ]
+    },
+    {
+      "name": "right hand",
+      "target_angle": 82.4,
+      "tolerance": 35.0,
+      "weight": 2.0,
+      "points": [
+        {
+          "x": 763,
+          "y": 461
+        },
+        {
+          "x": 684,
+          "y": 458
+        },
+        {
+          "x": 695,
+          "y": 394
+        }
+      ]
+    },
+    {
+      "name": "left leg",
+      "target_angle": 27.6,
+      "tolerance": 30.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 547,
+          "y": 483
+        },
+        {
+          "x": 731,
+          "y": 403
+        },
+        {
+          "x": 537,
+          "y": 389
+        }
+      ]
+    },
+    {
+      "name": "right leg",
+      "target_angle": 178.2,
+      "tolerance": 30.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 497,
+          "y": 457
+        },
+        {
+          "x": 355,
+          "y": 473
+        },
+        {
+          "x": 170,
+          "y": 488
+        }
+      ]
+    }
+  ]
+}

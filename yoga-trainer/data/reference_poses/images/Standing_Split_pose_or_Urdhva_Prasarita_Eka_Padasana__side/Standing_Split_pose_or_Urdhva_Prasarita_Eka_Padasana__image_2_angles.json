@@ -1,0 +1,106 @@
+{
+  "image": "data\\reference_poses\\images\\Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana__side\\Standing_Split_pose_or_Urdhva_Prasarita_Eka_Padasana__image_2.jpg",
+  "total_angles": 5,
+  "measurements": [
+    {
+      "name": "left hand",
+      "target_angle": 163.0,
+      "tolerance": 25.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 184,
+          "y": 220
+        },
+        {
+          "x": 230,
+          "y": 243
+        },
+        {
+          "x": 270,
+          "y": 281
+        }
+      ]
+    },
+    {
+      "name": "right hand",
+      "target_angle": 144.9,
+      "tolerance": 25.0,
+      "weight": 2.0,
+      "points": [
+        {
+          "x": 185,
+          "y": 218
+        },
+        {
+          "x": 244,
+          "y": 237
+        },
+        {
+          "x": 275,
+          "y": 278
+        }
+      ]
+    },
+    {
+      "name": "right leg",
+      "target_angle": 177.0,
+      "tolerance": 25.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 270,
+          "y": 172
+        },
+        {
+          "x": 265,
+          "y": 237
+        },
+        {
+          "x": 263,
+          "y": 318
+        }
+      ]
+    },
+    {
+      "name": "left leg",
+      "target_angle": 169.7,
+      "tolerance": 25.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 268,
+          "y": 149
+        },
+        {
+          "x": 321,
+          "y": 113
+        },
+        {
+          "x": 377,
+          "y": 58
+        }
+      ]
+    },
+    {
+      "name": "curve",
+      "target_angle": 55.7,
+      "tolerance": 30.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 191,
+          "y": 217
+        },
+        {
+          "x": 272,
+          "y": 168
+        },
+        {
+          "x": 268,
+          "y": 241
+        }
+      ]
+    }
+  ]
+}

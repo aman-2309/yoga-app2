@@ -1,0 +1,86 @@
+{
+  "image": "data\\reference_poses\\images\\Supported_Headstand_pose_or_Salamba_Sirsasana__side\\Supported_Headstand_pose_or_Salamba_Sirsasana__image_48.jpg",
+  "total_angles": 4,
+  "measurements": [
+    {
+      "name": "right hand",
+      "target_angle": 65.0,
+      "tolerance": 25.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 416,
+          "y": 420
+        },
+        {
+          "x": 443,
+          "y": 481
+        },
+        {
+          "x": 391,
+          "y": 480
+        }
+      ]
+    },
+    {
+      "name": "left hand",
+      "target_angle": 70.0,
+      "tolerance": 25.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 420,
+          "y": 416
+        },
+        {
+          "x": 447,
+          "y": 477
+        },
+        {
+          "x": 388,
+          "y": 481
+        }
+      ]
+    },
+    {
+      "name": "right leg",
+      "target_angle": 178.6,
+      "tolerance": 25.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 412,
+          "y": 272
+        },
+        {
+          "x": 416,
+          "y": 174
+        },
+        {
+          "x": 418,
+          "y": 56
+        }
+      ]
+    },
+    {
+      "name": "left leg",
+      "target_angle": 176.6,
+      "tolerance": 25.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 414,
+          "y": 271
+        },
+        {
+          "x": 420,
+          "y": 171
+        },
+        {
+          "x": 420,
+          "y": 60
+        }
+      ]
+    }
+  ]
+}

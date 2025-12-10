@@ -1,0 +1,106 @@
+{
+  "image": "data\\reference_poses\\images\\Standing_Forward_Bend_pose_or_Uttanasana__side\\Standing_Forward_Bend_pose_or_Uttanasana__image_26.jpg",
+  "total_angles": 5,
+  "measurements": [
+    {
+      "name": "right hand",
+      "target_angle": 164.8,
+      "tolerance": 25.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 498,
+          "y": 460
+        },
+        {
+          "x": 481,
+          "y": 638
+        },
+        {
+          "x": 434,
+          "y": 763
+        }
+      ]
+    },
+    {
+      "name": "left hand",
+      "target_angle": 166.8,
+      "tolerance": 30.0,
+      "weight": 2.0,
+      "points": [
+        {
+          "x": 507,
+          "y": 462
+        },
+        {
+          "x": 481,
+          "y": 636
+        },
+        {
+          "x": 432,
+          "y": 759
+        }
+      ]
+    },
+    {
+      "name": "right leg",
+      "target_angle": 166.1,
+      "tolerance": 30.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 223,
+          "y": 194
+        },
+        {
+          "x": 287,
+          "y": 470
+        },
+        {
+          "x": 283,
+          "y": 735
+        }
+      ]
+    },
+    {
+      "name": "left leg",
+      "target_angle": 169.4,
+      "tolerance": 30.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 236,
+          "y": 199
+        },
+        {
+          "x": 301,
+          "y": 474
+        },
+        {
+          "x": 311,
+          "y": 689
+        }
+      ]
+    },
+    {
+      "name": "curve",
+      "target_angle": 36.1,
+      "tolerance": 30.0,
+      "weight": 5.0,
+      "points": [
+        {
+          "x": 511,
+          "y": 448
+        },
+        {
+          "x": 239,
+          "y": 190
+        },
+        {
+          "x": 291,
+          "y": 473
+        }
+      ]
+    }
+  ]
+}

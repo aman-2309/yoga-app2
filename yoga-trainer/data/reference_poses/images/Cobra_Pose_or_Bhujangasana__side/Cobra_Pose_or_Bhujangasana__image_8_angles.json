@@ -1,0 +1,86 @@
+{
+  "image": "data\\reference_poses\\images\\Cobra_Pose_or_Bhujangasana__side\\Cobra_Pose_or_Bhujangasana__image_8.jpg",
+  "total_angles": 4,
+  "measurements": [
+    {
+      "name": "right hand",
+      "target_angle": 171.9,
+      "tolerance": 25.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 386,
+          "y": 137
+        },
+        {
+          "x": 407,
+          "y": 224
+        },
+        {
+          "x": 438,
+          "y": 302
+        }
+      ]
+    },
+    {
+      "name": "left hand",
+      "target_angle": 167.9,
+      "tolerance": 25.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 390,
+          "y": 135
+        },
+        {
+          "x": 406,
+          "y": 225
+        },
+        {
+          "x": 437,
+          "y": 301
+        }
+      ]
+    },
+    {
+      "name": "right leg",
+      "target_angle": 174.3,
+      "tolerance": 25.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 322,
+          "y": 258
+        },
+        {
+          "x": 192,
+          "y": 275
+        },
+        {
+          "x": 62,
+          "y": 279
+        }
+      ]
+    },
+    {
+      "name": "left leg",
+      "target_angle": 176.7,
+      "tolerance": 25.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 323,
+          "y": 248
+        },
+        {
+          "x": 202,
+          "y": 258
+        },
+        {
+          "x": 85,
+          "y": 261
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "image": "data\\reference_poses\\images\\Reclining_Hand-to-Big-Toe_Pose_or_Supta_Padangusthasana__side\\Reclining_Hand-to-Big-Toe_Pose_or_Supta_Padangusthasana__image_39.jpg",
+  "total_angles": 4,
+  "measurements": [
+    {
+      "name": "right hand",
+      "target_angle": 88.0,
+      "tolerance": 20.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 183,
+          "y": 477
+        },
+        {
+          "x": 319,
+          "y": 477
+        },
+        {
+          "x": 314,
+          "y": 334
+        }
+      ]
+    },
+    {
+      "name": "left hand",
+      "target_angle": 96.8,
+      "tolerance": 30.0,
+      "weight": 2.0,
+      "points": [
+        {
+          "x": 204,
+          "y": 403
+        },
+        {
+          "x": 302,
+          "y": 396
+        },
+        {
+          "x": 306,
+          "y": 313
+        }
+      ]
+    },
+    {
+      "name": "right leg",
+      "target_angle": 177.5,
+      "tolerance": 25.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 424,
+          "y": 426
+        },
+        {
+          "x": 410,
+          "y": 255
+        },
+        {
+          "x": 403,
+          "y": 75
+        }
+      ]
+    },
+    {
+      "name": "left leg",
+      "target_angle": 177.5,
+      "tolerance": 30.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 424,
+          "y": 419
+        },
+        {
+          "x": 548,
+          "y": 416
+        },
+        {
+          "x": 709,
+          "y": 419
+        }
+      ]
+    }
+  ]
+}

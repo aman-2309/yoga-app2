@@ -1,0 +1,86 @@
+{
+  "image": "data\\reference_poses\\images\\Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana_\\yoga-trainer/data/reference_poses/images/Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana_/Four-Limbed_Staff_Pose_or_Chaturanga_Dandasana_.jpg",
+  "total_angles": 4,
+  "measurements": [
+    {
+      "name": "right hand",
+      "target_angle": 105.7,
+      "tolerance": 25.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 544,
+          "y": 233
+        },
+        {
+          "x": 468,
+          "y": 280
+        },
+        {
+          "x": 493,
+          "y": 367
+        }
+      ]
+    },
+    {
+      "name": "left hand",
+      "target_angle": 97.3,
+      "tolerance": 30.0,
+      "weight": 2.0,
+      "points": [
+        {
+          "x": 546,
+          "y": 231
+        },
+        {
+          "x": 448,
+          "y": 277
+        },
+        {
+          "x": 474,
+          "y": 358
+        }
+      ]
+    },
+    {
+      "name": "right leg",
+      "target_angle": 175.2,
+      "tolerance": 25.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 388,
+          "y": 242
+        },
+        {
+          "x": 227,
+          "y": 289
+        },
+        {
+          "x": 64,
+          "y": 322
+        }
+      ]
+    },
+    {
+      "name": "left leg",
+      "target_angle": 172.5,
+      "tolerance": 30.0,
+      "weight": 2.0,
+      "points": [
+        {
+          "x": 388,
+          "y": 238
+        },
+        {
+          "x": 229,
+          "y": 288
+        },
+        {
+          "x": 63,
+          "y": 317
+        }
+      ]
+    }
+  ]
+}

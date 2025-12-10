@@ -1,0 +1,106 @@
+{
+  "image": "data\\reference_poses\\images\\Seated_Forward_Bend_pose_or_Paschimottanasana__side\\Seated_Forward_Bend_pose_or_Paschimottanasana__image_64.jpg",
+  "total_angles": 5,
+  "measurements": [
+    {
+      "name": "right hand",
+      "target_angle": 116.9,
+      "tolerance": 30.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 275,
+          "y": 168
+        },
+        {
+          "x": 373,
+          "y": 283
+        },
+        {
+          "x": 535,
+          "y": 244
+        }
+      ]
+    },
+    {
+      "name": "left hand",
+      "target_angle": 130.6,
+      "tolerance": 30.0,
+      "weight": 2.0,
+      "points": [
+        {
+          "x": 312,
+          "y": 159
+        },
+        {
+          "x": 404,
+          "y": 247
+        },
+        {
+          "x": 576,
+          "y": 230
+        }
+      ]
+    },
+    {
+      "name": "right leg",
+      "target_angle": 175.2,
+      "tolerance": 25.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 127,
+          "y": 309
+        },
+        {
+          "x": 331,
+          "y": 311
+        },
+        {
+          "x": 555,
+          "y": 332
+        }
+      ]
+    },
+    {
+      "name": "left leg",
+      "target_angle": 178.2,
+      "tolerance": 30.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 136,
+          "y": 296
+        },
+        {
+          "x": 331,
+          "y": 303
+        },
+        {
+          "x": 560,
+          "y": 304
+        }
+      ]
+    },
+    {
+      "name": "curve",
+      "target_angle": 45.2,
+      "tolerance": 30.0,
+      "weight": 5.0,
+      "points": [
+        {
+          "x": 276,
+          "y": 163
+        },
+        {
+          "x": 129,
+          "y": 299
+        },
+        {
+          "x": 341,
+          "y": 308
+        }
+      ]
+    }
+  ]
+}

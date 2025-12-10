@@ -1,0 +1,86 @@
+{
+  "image": "data\\reference_poses\\images\\Scale_Pose_or_Tolasana__front\\Scale_Pose_or_Tolasana__image_67.jpg",
+  "total_angles": 4,
+  "measurements": [
+    {
+      "name": "right hand",
+      "target_angle": 177.2,
+      "tolerance": 30.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 464,
+          "y": 303
+        },
+        {
+          "x": 423,
+          "y": 483
+        },
+        {
+          "x": 372,
+          "y": 665
+        }
+      ]
+    },
+    {
+      "name": "left hand",
+      "target_angle": 180.0,
+      "tolerance": 25.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 715,
+          "y": 306
+        },
+        {
+          "x": 753,
+          "y": 501
+        },
+        {
+          "x": 785,
+          "y": 665
+        }
+      ]
+    },
+    {
+      "name": "right leg",
+      "target_angle": 19.8,
+      "tolerance": 30.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 516,
+          "y": 626
+        },
+        {
+          "x": 370,
+          "y": 591
+        },
+        {
+          "x": 659,
+          "y": 559
+        }
+      ]
+    },
+    {
+      "name": "left leg",
+      "target_angle": 23.0,
+      "tolerance": 30.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 605,
+          "y": 624
+        },
+        {
+          "x": 801,
+          "y": 565
+        },
+        {
+          "x": 511,
+          "y": 533
+        }
+      ]
+    }
+  ]
+}

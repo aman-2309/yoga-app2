@@ -1,0 +1,86 @@
+{
+  "image": "data\\reference_poses\\images\\Cow_Face_Pose_or_Gomukhasana__front\\Cow_Face_Pose_or_Gomukhasana__image_35.jpg",
+  "total_angles": 4,
+  "measurements": [
+    {
+      "name": "right hand",
+      "target_angle": 28.8,
+      "tolerance": 30.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 469,
+          "y": 276
+        },
+        {
+          "x": 474,
+          "y": 21
+        },
+        {
+          "x": 596,
+          "y": 254
+        }
+      ]
+    },
+    {
+      "name": "left hand",
+      "target_angle": 20.9,
+      "tolerance": 30.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 700,
+          "y": 327
+        },
+        {
+          "x": 693,
+          "y": 558
+        },
+        {
+          "x": 601,
+          "y": 294
+        }
+      ]
+    },
+    {
+      "name": "right leg",
+      "target_angle": 110.1,
+      "tolerance": 30.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 478,
+          "y": 671
+        },
+        {
+          "x": 493,
+          "y": 724
+        },
+        {
+          "x": 812,
+          "y": 748
+        }
+      ]
+    },
+    {
+      "name": "left leg",
+      "target_angle": 106.5,
+      "tolerance": 30.0,
+      "weight": 5.0,
+      "points": [
+        {
+          "x": 679,
+          "y": 672
+        },
+        {
+          "x": 573,
+          "y": 581
+        },
+        {
+          "x": 321,
+          "y": 744
+        }
+      ]
+    }
+  ]
+}

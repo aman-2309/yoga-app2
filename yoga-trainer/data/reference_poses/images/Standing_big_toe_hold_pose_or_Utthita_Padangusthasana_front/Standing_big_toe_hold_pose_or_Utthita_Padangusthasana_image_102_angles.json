@@ -1,0 +1,86 @@
+{
+  "image": "data\\reference_poses\\images\\Standing_big_toe_hold_pose_or_Utthita_Padangusthasana_front\\Standing_big_toe_hold_pose_or_Utthita_Padangusthasana_image_102.jpg",
+  "total_angles": 4,
+  "measurements": [
+    {
+      "name": "right hand",
+      "target_angle": 169.9,
+      "tolerance": 25.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 298,
+          "y": 229
+        },
+        {
+          "x": 221,
+          "y": 207
+        },
+        {
+          "x": 135,
+          "y": 165
+        }
+      ]
+    },
+    {
+      "name": "left hand",
+      "target_angle": 104.1,
+      "tolerance": 30.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 396,
+          "y": 250
+        },
+        {
+          "x": 433,
+          "y": 313
+        },
+        {
+          "x": 374,
+          "y": 371
+        }
+      ]
+    },
+    {
+      "name": "right leg",
+      "target_angle": 176.3,
+      "tolerance": 30.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 284,
+          "y": 362
+        },
+        {
+          "x": 217,
+          "y": 313
+        },
+        {
+          "x": 95,
+          "y": 211
+        }
+      ]
+    },
+    {
+      "name": "left leg",
+      "target_angle": 178.9,
+      "tolerance": 30.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 334,
+          "y": 393
+        },
+        {
+          "x": 316,
+          "y": 517
+        },
+        {
+          "x": 301,
+          "y": 636
+        }
+      ]
+    }
+  ]
+}

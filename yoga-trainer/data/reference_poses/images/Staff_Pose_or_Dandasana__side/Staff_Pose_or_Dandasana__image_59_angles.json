@@ -1,0 +1,106 @@
+{
+  "image": "data\\reference_poses\\images\\Staff_Pose_or_Dandasana__side\\Staff_Pose_or_Dandasana__image_59.jpg",
+  "total_angles": 5,
+  "measurements": [
+    {
+      "name": "right hand",
+      "target_angle": 176.5,
+      "tolerance": 20.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 154,
+          "y": 180
+        },
+        {
+          "x": 167,
+          "y": 281
+        },
+        {
+          "x": 173,
+          "y": 371
+        }
+      ]
+    },
+    {
+      "name": "left hand",
+      "target_angle": 179.7,
+      "tolerance": 30.0,
+      "weight": 2.0,
+      "points": [
+        {
+          "x": 157,
+          "y": 181
+        },
+        {
+          "x": 164,
+          "y": 280
+        },
+        {
+          "x": 171,
+          "y": 372
+        }
+      ]
+    },
+    {
+      "name": "right leg",
+      "target_angle": 176.9,
+      "tolerance": 25.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 182,
+          "y": 333
+        },
+        {
+          "x": 338,
+          "y": 342
+        },
+        {
+          "x": 471,
+          "y": 357
+        }
+      ]
+    },
+    {
+      "name": "left leg",
+      "target_angle": 177.1,
+      "tolerance": 25.0,
+      "weight": 2.0,
+      "points": [
+        {
+          "x": 184,
+          "y": 325
+        },
+        {
+          "x": 338,
+          "y": 342
+        },
+        {
+          "x": 471,
+          "y": 350
+        }
+      ]
+    },
+    {
+      "name": "curve",
+      "target_angle": 103.4,
+      "tolerance": 30.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 166,
+          "y": 330
+        },
+        {
+          "x": 336,
+          "y": 345
+        },
+        {
+          "x": 338,
+          "y": 339
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "image": "data\\reference_poses\\images\\Cockerel_Pose_front\\Cockerel_Pose_image_38.jpg",
+  "total_angles": 4,
+  "measurements": [
+    {
+      "name": "right hand",
+      "target_angle": 176.1,
+      "tolerance": 25.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 120,
+          "y": 165
+        },
+        {
+          "x": 134,
+          "y": 289
+        },
+        {
+          "x": 138,
+          "y": 378
+        }
+      ]
+    },
+    {
+      "name": "left hand",
+      "target_angle": 180.0,
+      "tolerance": 25.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 258,
+          "y": 168
+        },
+        {
+          "x": 251,
+          "y": 280
+        },
+        {
+          "x": 245,
+          "y": 375
+        }
+      ]
+    },
+    {
+      "name": "right leg",
+      "target_angle": 15.3,
+      "tolerance": 30.0,
+      "weight": 5.0,
+      "points": [
+        {
+          "x": 147,
+          "y": 257
+        },
+        {
+          "x": 54,
+          "y": 280
+        },
+        {
+          "x": 217,
+          "y": 284
+        }
+      ]
+    },
+    {
+      "name": "left leg",
+      "target_angle": 7.2,
+      "tolerance": 30.0,
+      "weight": 5.0,
+      "points": [
+        {
+          "x": 215,
+          "y": 253
+        },
+        {
+          "x": 331,
+          "y": 277
+        },
+        {
+          "x": 164,
+          "y": 264
+        }
+      ]
+    }
+  ]
+}

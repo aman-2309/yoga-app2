@@ -1,0 +1,106 @@
+{
+  "image": "data\\reference_poses\\images\\Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana__side\\Downward-Facing_Dog_pose_or_Adho_Mukha_Svanasana__image_170.jpg",
+  "total_angles": 5,
+  "measurements": [
+    {
+      "name": "right hand",
+      "target_angle": 167.1,
+      "tolerance": 25.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 502,
+          "y": 455
+        },
+        {
+          "x": 362,
+          "y": 610
+        },
+        {
+          "x": 209,
+          "y": 717
+        }
+      ]
+    },
+    {
+      "name": "left hand",
+      "target_angle": 167.7,
+      "tolerance": 30.0,
+      "weight": 2.0,
+      "points": [
+        {
+          "x": 501,
+          "y": 451
+        },
+        {
+          "x": 353,
+          "y": 604
+        },
+        {
+          "x": 209,
+          "y": 700
+        }
+      ]
+    },
+    {
+      "name": "right leg",
+      "target_angle": 177.9,
+      "tolerance": 20.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 741,
+          "y": 145
+        },
+        {
+          "x": 912,
+          "y": 396
+        },
+        {
+          "x": 1077,
+          "y": 658
+        }
+      ]
+    },
+    {
+      "name": "left leg",
+      "target_angle": 170.0,
+      "tolerance": 30.0,
+      "weight": 2.0,
+      "points": [
+        {
+          "x": 753,
+          "y": 139
+        },
+        {
+          "x": 923,
+          "y": 386
+        },
+        {
+          "x": 1041,
+          "y": 645
+        }
+      ]
+    },
+    {
+      "name": "curve",
+      "target_angle": 73.6,
+      "tolerance": 20.0,
+      "weight": 5.0,
+      "points": [
+        {
+          "x": 492,
+          "y": 442
+        },
+        {
+          "x": 738,
+          "y": 146
+        },
+        {
+          "x": 908,
+          "y": 399
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "image": "data\\reference_poses\\images\\Gate_Pose_or_Parighasana__front\\Gate_Pose_or_Parighasana__image_90.jpg",
+  "total_angles": 5,
+  "measurements": [
+    {
+      "name": "right hand",
+      "target_angle": 172.2,
+      "tolerance": 25.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 562,
+          "y": 213
+        },
+        {
+          "x": 507,
+          "y": 323
+        },
+        {
+          "x": 442,
+          "y": 418
+        }
+      ]
+    },
+    {
+      "name": "left hand",
+      "target_angle": 169.1,
+      "tolerance": 25.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 634,
+          "y": 94
+        },
+        {
+          "x": 503,
+          "y": 45
+        },
+        {
+          "x": 385,
+          "y": 25
+        }
+      ]
+    },
+    {
+      "name": "right leg",
+      "target_angle": 164.5,
+      "tolerance": 30.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 640,
+          "y": 319
+        },
+        {
+          "x": 511,
+          "y": 425
+        },
+        {
+          "x": 344,
+          "y": 499
+        }
+      ]
+    },
+    {
+      "name": "left leg",
+      "target_angle": 62.0,
+      "tolerance": 30.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 755,
+          "y": 341
+        },
+        {
+          "x": 752,
+          "y": 521
+        },
+        {
+          "x": 678,
+          "y": 480
+        }
+      ]
+    },
+    {
+      "name": "curve",
+      "target_angle": 92.0,
+      "tolerance": 35.0,
+      "weight": 5.0,
+      "points": [
+        {
+          "x": 567,
+          "y": 212
+        },
+        {
+          "x": 648,
+          "y": 320
+        },
+        {
+          "x": 519,
+          "y": 424
+        }
+      ]
+    }
+  ]
+}

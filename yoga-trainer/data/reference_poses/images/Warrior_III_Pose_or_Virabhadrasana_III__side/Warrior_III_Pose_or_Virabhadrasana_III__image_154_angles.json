@@ -1,0 +1,106 @@
+{
+  "image": "data\\reference_poses\\images\\Warrior_III_Pose_or_Virabhadrasana_III__side\\Warrior_III_Pose_or_Virabhadrasana_III__image_154.jpg",
+  "total_angles": 5,
+  "measurements": [
+    {
+      "name": "left hand",
+      "target_angle": 155.5,
+      "tolerance": 25.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 439,
+          "y": 211
+        },
+        {
+          "x": 297,
+          "y": 241
+        },
+        {
+          "x": 145,
+          "y": 207
+        }
+      ]
+    },
+    {
+      "name": "right hand",
+      "target_angle": 159.9,
+      "tolerance": 30.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 445,
+          "y": 205
+        },
+        {
+          "x": 301,
+          "y": 222
+        },
+        {
+          "x": 171,
+          "y": 191
+        }
+      ]
+    },
+    {
+      "name": "right leg",
+      "target_angle": 170.9,
+      "tolerance": 30.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 650,
+          "y": 299
+        },
+        {
+          "x": 623,
+          "y": 440
+        },
+        {
+          "x": 617,
+          "y": 634
+        }
+      ]
+    },
+    {
+      "name": "left leg",
+      "target_angle": 172.5,
+      "tolerance": 30.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 679,
+          "y": 247
+        },
+        {
+          "x": 855,
+          "y": 243
+        },
+        {
+          "x": 1049,
+          "y": 213
+        }
+      ]
+    },
+    {
+      "name": "curve",
+      "target_angle": 104.1,
+      "tolerance": 30.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 448,
+          "y": 207
+        },
+        {
+          "x": 649,
+          "y": 302
+        },
+        {
+          "x": 622,
+          "y": 439
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "image": "data\\reference_poses\\images\\Crane_(Crow)_Pose_or_Bakasana__side\\Crane_(Crow)_Pose_or_Bakasana__image_10.jpg",
+  "total_angles": 5,
+  "measurements": [
+    {
+      "name": "right hand",
+      "target_angle": 126.0,
+      "tolerance": 30.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 244,
+          "y": 207
+        },
+        {
+          "x": 344,
+          "y": 275
+        },
+        {
+          "x": 348,
+          "y": 401
+        }
+      ]
+    },
+    {
+      "name": "left hand",
+      "target_angle": 130.3,
+      "tolerance": 25.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 250,
+          "y": 201
+        },
+        {
+          "x": 339,
+          "y": 281
+        },
+        {
+          "x": 336,
+          "y": 383
+        }
+      ]
+    },
+    {
+      "name": "right leg",
+      "target_angle": 45.0,
+      "tolerance": 30.0,
+      "weight": 5.0,
+      "points": [
+        {
+          "x": 424,
+          "y": 70
+        },
+        {
+          "x": 285,
+          "y": 203
+        },
+        {
+          "x": 466,
+          "y": 207
+        }
+      ]
+    },
+    {
+      "name": "left leg",
+      "target_angle": 45.5,
+      "tolerance": 30.0,
+      "weight": 5.0,
+      "points": [
+        {
+          "x": 430,
+          "y": 76
+        },
+        {
+          "x": 286,
+          "y": 201
+        },
+        {
+          "x": 463,
+          "y": 215
+        }
+      ]
+    },
+    {
+      "name": "curve",
+      "target_angle": 13.5,
+      "tolerance": 35.0,
+      "weight": 6.0,
+      "points": [
+        {
+          "x": 231,
+          "y": 171
+        },
+        {
+          "x": 422,
+          "y": 67
+        },
+        {
+          "x": 277,
+          "y": 198
+        }
+      ]
+    }
+  ]
+}

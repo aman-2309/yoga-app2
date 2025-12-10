@@ -1,0 +1,86 @@
+{
+  "image": "data\\reference_poses\\images\\Tree_Pose_or_Vrksasana__front\\Tree_Pose_or_Vrksasana__image_13.jpg",
+  "total_angles": 4,
+  "measurements": [
+    {
+      "name": "right hand",
+      "target_angle": 176.8,
+      "tolerance": 25.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 230,
+          "y": 296
+        },
+        {
+          "x": 229,
+          "y": 233
+        },
+        {
+          "x": 232,
+          "y": 158
+        }
+      ]
+    },
+    {
+      "name": "left hand",
+      "target_angle": 178.8,
+      "tolerance": 25.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 319,
+          "y": 295
+        },
+        {
+          "x": 316,
+          "y": 232
+        },
+        {
+          "x": 314,
+          "y": 156
+        }
+      ]
+    },
+    {
+      "name": "right leg",
+      "target_angle": 29.1,
+      "tolerance": 30.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 244,
+          "y": 448
+        },
+        {
+          "x": 141,
+          "y": 478
+        },
+        {
+          "x": 255,
+          "y": 504
+        }
+      ]
+    },
+    {
+      "name": "left leg",
+      "target_angle": 178.1,
+      "tolerance": 25.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 293,
+          "y": 459
+        },
+        {
+          "x": 282,
+          "y": 567
+        },
+        {
+          "x": 267,
+          "y": 678
+        }
+      ]
+    }
+  ]
+}

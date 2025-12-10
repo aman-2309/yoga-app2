@@ -1,0 +1,86 @@
+{
+  "image": "data\\reference_poses\\images\\Side_Plank_Pose_or_Vasisthasana__front\\Side_Plank_Pose_or_Vasisthasana__image_41.jpg",
+  "total_angles": 4,
+  "measurements": [
+    {
+      "name": "right hand",
+      "target_angle": 174.2,
+      "tolerance": 20.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 247,
+          "y": 484
+        },
+        {
+          "x": 226,
+          "y": 591
+        },
+        {
+          "x": 199,
+          "y": 680
+        }
+      ]
+    },
+    {
+      "name": "left hand",
+      "target_angle": 172.8,
+      "tolerance": 20.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 274,
+          "y": 364
+        },
+        {
+          "x": 288,
+          "y": 261
+        },
+        {
+          "x": 289,
+          "y": 163
+        }
+      ]
+    },
+    {
+      "name": "right leg",
+      "target_angle": 179.1,
+      "tolerance": 25.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 461,
+          "y": 537
+        },
+        {
+          "x": 574,
+          "y": 594
+        },
+        {
+          "x": 706,
+          "y": 658
+        }
+      ]
+    },
+    {
+      "name": "left leg",
+      "target_angle": 178.1,
+      "tolerance": 25.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 500,
+          "y": 468
+        },
+        {
+          "x": 607,
+          "y": 550
+        },
+        {
+          "x": 730,
+          "y": 638
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "image": "data\\reference_poses\\images\\Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana__front\\Extended_Revolved_Side_Angle_Pose_or_Utthita_Parsvakonasana__image_100.jpg",
+  "total_angles": 4,
+  "measurements": [
+    {
+      "name": "right hand",
+      "target_angle": 136.5,
+      "tolerance": 30.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 304,
+          "y": 252
+        },
+        {
+          "x": 304,
+          "y": 307
+        },
+        {
+          "x": 322,
+          "y": 326
+        }
+      ]
+    },
+    {
+      "name": "left hand",
+      "target_angle": 169.4,
+      "tolerance": 25.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 335,
+          "y": 190
+        },
+        {
+          "x": 302,
+          "y": 145
+        },
+        {
+          "x": 254,
+          "y": 100
+        }
+      ]
+    },
+    {
+      "name": "right leg",
+      "target_angle": 102.7,
+      "tolerance": 30.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 381,
+          "y": 308
+        },
+        {
+          "x": 298,
+          "y": 338
+        },
+        {
+          "x": 310,
+          "y": 433
+        }
+      ]
+    },
+    {
+      "name": "left leg",
+      "target_angle": 174.9,
+      "tolerance": 30.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 431,
+          "y": 292
+        },
+        {
+          "x": 495,
+          "y": 361
+        },
+        {
+          "x": 566,
+          "y": 425
+        }
+      ]
+    }
+  ]
+}

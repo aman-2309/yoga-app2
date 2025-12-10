@@ -1,0 +1,86 @@
+{
+  "image": "data\\reference_poses\\images\\Locust_Pose_or_Salabhasana__side\\Locust_Pose_or_Salabhasana__image_29.jpg",
+  "total_angles": 4,
+  "measurements": [
+    {
+      "name": "right hand",
+      "target_angle": 174.5,
+      "tolerance": 25.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 226,
+          "y": 254
+        },
+        {
+          "x": 305,
+          "y": 256
+        },
+        {
+          "x": 371,
+          "y": 264
+        }
+      ]
+    },
+    {
+      "name": "left hand",
+      "target_angle": 176.0,
+      "tolerance": 25.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 232,
+          "y": 236
+        },
+        {
+          "x": 308,
+          "y": 246
+        },
+        {
+          "x": 373,
+          "y": 250
+        }
+      ]
+    },
+    {
+      "name": "right leg",
+      "target_angle": 151.5,
+      "tolerance": 30.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 342,
+          "y": 314
+        },
+        {
+          "x": 454,
+          "y": 306
+        },
+        {
+          "x": 562,
+          "y": 237
+        }
+      ]
+    },
+    {
+      "name": "left leg",
+      "target_angle": 160.9,
+      "tolerance": 30.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 340,
+          "y": 295
+        },
+        {
+          "x": 427,
+          "y": 287
+        },
+        {
+          "x": 531,
+          "y": 240
+        }
+      ]
+    }
+  ]
+}

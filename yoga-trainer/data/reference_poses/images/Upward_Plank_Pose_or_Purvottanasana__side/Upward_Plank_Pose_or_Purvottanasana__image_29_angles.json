@@ -1,0 +1,86 @@
+{
+  "image": "data\\reference_poses\\images\\Upward_Plank_Pose_or_Purvottanasana__side\\Upward_Plank_Pose_or_Purvottanasana__image_29.jpg",
+  "total_angles": 4,
+  "measurements": [
+    {
+      "name": "left hand",
+      "target_angle": 172.4,
+      "tolerance": 25.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 582,
+          "y": 251
+        },
+        {
+          "x": 565,
+          "y": 339
+        },
+        {
+          "x": 560,
+          "y": 426
+        }
+      ]
+    },
+    {
+      "name": "right hand",
+      "target_angle": 173.2,
+      "tolerance": 30.0,
+      "weight": 2.0,
+      "points": [
+        {
+          "x": 582,
+          "y": 250
+        },
+        {
+          "x": 565,
+          "y": 343
+        },
+        {
+          "x": 560,
+          "y": 423
+        }
+      ]
+    },
+    {
+      "name": "left leg",
+      "target_angle": 177.1,
+      "tolerance": 25.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 400,
+          "y": 281
+        },
+        {
+          "x": 302,
+          "y": 340
+        },
+        {
+          "x": 190,
+          "y": 400
+        }
+      ]
+    },
+    {
+      "name": "right leg",
+      "target_angle": 179.5,
+      "tolerance": 30.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 399,
+          "y": 279
+        },
+        {
+          "x": 301,
+          "y": 334
+        },
+        {
+          "x": 192,
+          "y": 394
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,275 @@
+{
+  "pose_id": "Upward_Facing_Two-Foot_Staff_Pose_or_Dwi_Pada_Viparita_Dandasana__side",
+  "base_pose_name": "Upward_Facing_Two-Foot_Staff_Pose_or_Dwi_Pada_Viparita_Dandasana_",
+  "name": "Upward Facing Two-Foot Staff Pose or Dwi Pada Viparita Dandasana ",
+  "difficulty": "intermediate",
+  "view_angle": "side",
+  "keypoints": [
+    {
+      "landmark_id": 0,
+      "name": "nose",
+      "x": 0.2179456651210785,
+      "y": 0.5461299419403076,
+      "z": -0.0641636773943901,
+      "visibility": 0.9999997615814209
+    },
+    {
+      "landmark_id": 1,
+      "name": "left_eye_inner",
+      "x": 0.2278551608324051,
+      "y": 0.5602508187294006,
+      "z": -0.045735739171504974,
+      "visibility": 0.9999970197677612
+    },
+    {
+      "landmark_id": 2,
+      "name": "left_eye",
+      "x": 0.22986763715744019,
+      "y": 0.5596749782562256,
+      "z": -0.04601328447461128,
+      "visibility": 0.9999978542327881
+    },
+    {
+      "landmark_id": 3,
+      "name": "left_eye_outer",
+      "x": 0.2320687174797058,
+      "y": 0.558821439743042,
+      "z": -0.046032343059778214,
+      "visibility": 0.9999991655349731
+    },
+    {
+      "landmark_id": 4,
+      "name": "right_eye_inner",
+      "x": 0.22754007577896118,
+      "y": 0.5624661445617676,
+      "z": -0.08221151679754257,
+      "visibility": 0.9999988079071045
+    },
+    {
+      "landmark_id": 5,
+      "name": "right_eye",
+      "x": 0.22923395037651062,
+      "y": 0.5635934472084045,
+      "z": -0.08228345960378647,
+      "visibility": 0.9999994039535522
+    },
+    {
+      "landmark_id": 6,
+      "name": "right_eye_outer",
+      "x": 0.2313368022441864,
+      "y": 0.5646086931228638,
+      "z": -0.0820329487323761,
+      "visibility": 0.9999996423721313
+    },
+    {
+      "landmark_id": 7,
+      "name": "left_ear",
+      "x": 0.24718181788921356,
+      "y": 0.5503627061843872,
+      "z": 0.06527193635702133,
+      "visibility": 0.9999997615814209
+    },
+    {
+      "landmark_id": 8,
+      "name": "right_ear",
+      "x": 0.2494480460882187,
+      "y": 0.5583064556121826,
+      "z": -0.11071170121431351,
+      "visibility": 0.9999998807907104
+    },
+    {
+      "landmark_id": 9,
+      "name": "mouth_left",
+      "x": 0.22357288002967834,
+      "y": 0.5309602618217468,
+      "z": -0.024488400667905807,
+      "visibility": 0.9999996423721313
+    },
+    {
+      "landmark_id": 10,
+      "name": "mouth_right",
+      "x": 0.22326204180717468,
+      "y": 0.5352256298065186,
+      "z": -0.07464801520109177,
+      "visibility": 0.9999997615814209
+    },
+    {
+      "landmark_id": 11,
+      "name": "left_shoulder",
+      "x": 0.26871368288993835,
+      "y": 0.46368134021759033,
+      "z": 0.11168024688959122,
+      "visibility": 0.9999903440475464
+    },
+    {
+      "landmark_id": 12,
+      "name": "right_shoulder",
+      "x": 0.2735002040863037,
+      "y": 0.5089404582977295,
+      "z": -0.1428653448820114,
+      "visibility": 0.9999995231628418
+    },
+    {
+      "landmark_id": 13,
+      "name": "left_elbow",
+      "x": 0.22046157717704773,
+      "y": 0.5552140474319458,
+      "z": 0.20804232358932495,
+      "visibility": 0.6118358373641968
+    },
+    {
+      "landmark_id": 14,
+      "name": "right_elbow",
+      "x": 0.21395573019981384,
+      "y": 0.6390737295150757,
+      "z": -0.162601038813591,
+      "visibility": 0.9998809099197388
+    },
+    {
+      "landmark_id": 15,
+      "name": "left_wrist",
+      "x": 0.30303019285202026,
+      "y": 0.5731855630874634,
+      "z": 0.2982589304447174,
+      "visibility": 0.1312921792268753
+    },
+    {
+      "landmark_id": 16,
+      "name": "right_wrist",
+      "x": 0.3094457983970642,
+      "y": 0.6089922189712524,
+      "z": -0.00367204868234694,
+      "visibility": 0.9629934430122375
+    },
+    {
+      "landmark_id": 17,
+      "name": "left_pinky",
+      "x": 0.3249356746673584,
+      "y": 0.5722479820251465,
+      "z": 0.30345430970191956,
+      "visibility": 0.043584950268268585
+    },
+    {
+      "landmark_id": 18,
+      "name": "right_pinky",
+      "x": 0.3318077027797699,
+      "y": 0.6050542593002319,
+      "z": 0.007952619343996048,
+      "visibility": 0.7237785458564758
+    },
+    {
+      "landmark_id": 19,
+      "name": "left_index",
+      "x": 0.3277154564857483,
+      "y": 0.5717655420303345,
+      "z": 0.3061063289642334,
+      "visibility": 0.038392215967178345
+    },
+    {
+      "landmark_id": 20,
+      "name": "right_index",
+      "x": 0.3315795958042145,
+      "y": 0.5942740440368652,
+      "z": 0.024610305204987526,
+      "visibility": 0.6235567927360535
+    },
+    {
+      "landmark_id": 21,
+      "name": "left_thumb",
+      "x": 0.32003915309906006,
+      "y": 0.5715949535369873,
+      "z": 0.2957983911037445,
+      "visibility": 0.03443656489253044
+    },
+    {
+      "landmark_id": 22,
+      "name": "right_thumb",
+      "x": 0.32508885860443115,
+      "y": 0.5930117964744568,
+      "z": 0.004332049284130335,
+      "visibility": 0.5641654133796692
+    },
+    {
+      "landmark_id": 23,
+      "name": "left_hip",
+      "x": 0.46457183361053467,
+      "y": 0.2676573395729065,
+      "z": 0.08585133403539658,
+      "visibility": 0.9992790818214417
+    },
+    {
+      "landmark_id": 24,
+      "name": "right_hip",
+      "x": 0.46964535117149353,
+      "y": 0.3125022053718567,
+      "z": -0.08586805313825607,
+      "visibility": 0.9993900060653687
+    },
+    {
+      "landmark_id": 25,
+      "name": "left_knee",
+      "x": 0.6204484701156616,
+      "y": 0.3175998628139496,
+      "z": 0.049538061022758484,
+      "visibility": 0.6592785120010376
+    },
+    {
+      "landmark_id": 26,
+      "name": "right_knee",
+      "x": 0.6694251298904419,
+      "y": 0.36467379331588745,
+      "z": -0.16101832687854767,
+      "visibility": 0.9977343082427979
+    },
+    {
+      "landmark_id": 27,
+      "name": "left_ankle",
+      "x": 0.6381925344467163,
+      "y": 0.5167131423950195,
+      "z": 0.22355066239833832,
+      "visibility": 0.6730759739875793
+    },
+    {
+      "landmark_id": 28,
+      "name": "right_ankle",
+      "x": 0.6744008660316467,
+      "y": 0.6020028591156006,
+      "z": -0.04494144767522812,
+      "visibility": 0.9953746199607849
+    },
+    {
+      "landmark_id": 29,
+      "name": "left_heel",
+      "x": 0.6241583824157715,
+      "y": 0.5651435256004333,
+      "z": 0.24702957272529602,
+      "visibility": 0.7623575925827026
+    },
+    {
+      "landmark_id": 30,
+      "name": "right_heel",
+      "x": 0.6545193195343018,
+      "y": 0.6383234262466431,
+      "z": -0.02206970378756523,
+      "visibility": 0.9946591258049011
+    },
+    {
+      "landmark_id": 31,
+      "name": "left_foot_index",
+      "x": 0.6981563568115234,
+      "y": 0.5761611461639404,
+      "z": 0.2553521692752838,
+      "visibility": 0.7431939840316772
+    },
+    {
+      "landmark_id": 32,
+      "name": "right_foot_index",
+      "x": 0.7413580417633057,
+      "y": 0.6431700587272644,
+      "z": -0.03386278450489044,
+      "visibility": 0.992782473564148
+    }
+  ],
+  "reference_image": "data/reference_poses/images/Upward_Facing_Two-Foot_Staff_Pose_or_Dwi_Pada_Viparita_Dandasana__side/Upward_Facing_Two-Foot_Staff_Pose_or_Dwi_Pada_Viparita_Dandasana__image_63.jpg",
+  "description": "Upward Facing Two-Foot Staff Pose or Dwi Pada Viparita Dandasana  - Side view"
+}

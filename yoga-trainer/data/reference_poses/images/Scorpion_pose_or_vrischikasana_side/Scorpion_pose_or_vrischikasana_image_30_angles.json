@@ -1,0 +1,106 @@
+{
+  "image": "data\\reference_poses\\images\\Scorpion_pose_or_vrischikasana_side\\Scorpion_pose_or_vrischikasana_image_30.jpg",
+  "total_angles": 5,
+  "measurements": [
+    {
+      "name": "right hand",
+      "target_angle": 90.5,
+      "tolerance": 30.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 183,
+          "y": 400
+        },
+        {
+          "x": 163,
+          "y": 511
+        },
+        {
+          "x": 263,
+          "y": 530
+        }
+      ]
+    },
+    {
+      "name": "left hand",
+      "target_angle": 93.0,
+      "tolerance": 30.0,
+      "weight": 2.0,
+      "points": [
+        {
+          "x": 200,
+          "y": 408
+        },
+        {
+          "x": 183,
+          "y": 505
+        },
+        {
+          "x": 270,
+          "y": 525
+        }
+      ]
+    },
+    {
+      "name": "right leg",
+      "target_angle": 77.6,
+      "tolerance": 30.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 140,
+          "y": 236
+        },
+        {
+          "x": 274,
+          "y": 133
+        },
+        {
+          "x": 344,
+          "y": 282
+        }
+      ]
+    },
+    {
+      "name": "left leg",
+      "target_angle": 83.0,
+      "tolerance": 2.0,
+      "weight": 2.0,
+      "points": [
+        {
+          "x": 161,
+          "y": 253
+        },
+        {
+          "x": 281,
+          "y": 163
+        },
+        {
+          "x": 350,
+          "y": 283
+        }
+      ]
+    },
+    {
+      "name": "curve",
+      "target_angle": 104.4,
+      "tolerance": 35.0,
+      "weight": 5.0,
+      "points": [
+        {
+          "x": 189,
+          "y": 395
+        },
+        {
+          "x": 124,
+          "y": 259
+        },
+        {
+          "x": 272,
+          "y": 135
+        }
+      ]
+    }
+  ]
+}

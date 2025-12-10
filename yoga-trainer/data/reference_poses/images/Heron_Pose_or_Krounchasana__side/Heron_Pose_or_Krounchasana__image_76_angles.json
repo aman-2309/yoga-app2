@@ -1,0 +1,106 @@
+{
+  "image": "data\\reference_poses\\images\\Heron_Pose_or_Krounchasana__side\\Heron_Pose_or_Krounchasana__image_76.jpg",
+  "total_angles": 5,
+  "measurements": [
+    {
+      "name": "left hand",
+      "target_angle": 162.2,
+      "tolerance": 30.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 615,
+          "y": 561
+        },
+        {
+          "x": 378,
+          "y": 445
+        },
+        {
+          "x": 191,
+          "y": 265
+        }
+      ]
+    },
+    {
+      "name": "left hand",
+      "target_angle": 161.4,
+      "tolerance": 30.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 607,
+          "y": 499
+        },
+        {
+          "x": 393,
+          "y": 410
+        },
+        {
+          "x": 194,
+          "y": 236
+        }
+      ]
+    },
+    {
+      "name": "right leg",
+      "target_angle": 14.0,
+      "tolerance": 35.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 495,
+          "y": 967
+        },
+        {
+          "x": 94,
+          "y": 997
+        },
+        {
+          "x": 451,
+          "y": 1058
+        }
+      ]
+    },
+    {
+      "name": "left leg",
+      "target_angle": 176.1,
+      "tolerance": 30.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 456,
+          "y": 882
+        },
+        {
+          "x": 338,
+          "y": 652
+        },
+        {
+          "x": 145,
+          "y": 331
+        }
+      ]
+    },
+    {
+      "name": "curve",
+      "target_angle": 110.3,
+      "tolerance": 35.0,
+      "weight": 5.0,
+      "points": [
+        {
+          "x": 616,
+          "y": 567
+        },
+        {
+          "x": 498,
+          "y": 967
+        },
+        {
+          "x": 101,
+          "y": 994
+        }
+      ]
+    }
+  ]
+}

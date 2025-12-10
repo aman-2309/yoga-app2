@@ -1,0 +1,86 @@
+{
+  "image": "data\\reference_poses\\images\\Eight-Angle_Pose_or_Astavakrasana__front\\Eight-Angle_Pose_or_Astavakrasana__image_80.jpg",
+  "total_angles": 4,
+  "measurements": [
+    {
+      "name": "right hand",
+      "target_angle": 101.2,
+      "tolerance": 30.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 334,
+          "y": 211
+        },
+        {
+          "x": 245,
+          "y": 237
+        },
+        {
+          "x": 255,
+          "y": 349
+        }
+      ]
+    },
+    {
+      "name": "left hand",
+      "target_angle": 113.8,
+      "tolerance": 30.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 462,
+          "y": 176
+        },
+        {
+          "x": 589,
+          "y": 252
+        },
+        {
+          "x": 575,
+          "y": 365
+        }
+      ]
+    },
+    {
+      "name": "right leg",
+      "target_angle": 176.6,
+      "tolerance": 30.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 342,
+          "y": 162
+        },
+        {
+          "x": 262,
+          "y": 192
+        },
+        {
+          "x": 82,
+          "y": 272
+        }
+      ]
+    },
+    {
+      "name": "left leg",
+      "target_angle": 172.3,
+      "tolerance": 30.0,
+      "weight": 5.0,
+      "points": [
+        {
+          "x": 398,
+          "y": 284
+        },
+        {
+          "x": 301,
+          "y": 284
+        },
+        {
+          "x": 102,
+          "y": 257
+        }
+      ]
+    }
+  ]
+}

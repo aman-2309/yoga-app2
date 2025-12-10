@@ -1,0 +1,86 @@
+{
+  "image": "data\\reference_poses\\images\\Peacock_Pose_or_Mayurasana__front\\Peacock_Pose_or_Mayurasana__image_116.jpg",
+  "total_angles": 4,
+  "measurements": [
+    {
+      "name": "right hand",
+      "target_angle": 81.8,
+      "tolerance": 25.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 223,
+          "y": 321
+        },
+        {
+          "x": 315,
+          "y": 303
+        },
+        {
+          "x": 320,
+          "y": 404
+        }
+      ]
+    },
+    {
+      "name": "left hand",
+      "target_angle": 90.7,
+      "tolerance": 25.0,
+      "weight": 2.0,
+      "points": [
+        {
+          "x": 158,
+          "y": 293
+        },
+        {
+          "x": 268,
+          "y": 287
+        },
+        {
+          "x": 275,
+          "y": 393
+        }
+      ]
+    },
+    {
+      "name": "right leg",
+      "target_angle": 169.2,
+      "tolerance": 25.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 357,
+          "y": 240
+        },
+        {
+          "x": 450,
+          "y": 161
+        },
+        {
+          "x": 546,
+          "y": 42
+        }
+      ]
+    },
+    {
+      "name": "left leg",
+      "target_angle": 159.2,
+      "tolerance": 25.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 302,
+          "y": 219
+        },
+        {
+          "x": 390,
+          "y": 170
+        },
+        {
+          "x": 469,
+          "y": 76
+        }
+      ]
+    }
+  ]
+}

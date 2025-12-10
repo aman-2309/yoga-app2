@@ -1,0 +1,106 @@
+{
+  "image": "data\\reference_poses\\images\\Lord_of_the_Dance_Pose_or_Natarajasana__side\\Lord_of_the_Dance_Pose_or_Natarajasana__image_26.jpg",
+  "total_angles": 5,
+  "measurements": [
+    {
+      "name": "right hand",
+      "target_angle": 109.8,
+      "tolerance": 30.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 262,
+          "y": 412
+        },
+        {
+          "x": 268,
+          "y": 238
+        },
+        {
+          "x": 427,
+          "y": 187
+        }
+      ]
+    },
+    {
+      "name": "left hand",
+      "target_angle": 125.2,
+      "tolerance": 30.0,
+      "weight": 2.0,
+      "points": [
+        {
+          "x": 267,
+          "y": 396
+        },
+        {
+          "x": 292,
+          "y": 263
+        },
+        {
+          "x": 445,
+          "y": 193
+        }
+      ]
+    },
+    {
+      "name": "right leg",
+      "target_angle": 175.1,
+      "tolerance": 30.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 427,
+          "y": 637
+        },
+        {
+          "x": 424,
+          "y": 812
+        },
+        {
+          "x": 441,
+          "y": 1061
+        }
+      ]
+    },
+    {
+      "name": "left leg",
+      "target_angle": 85.8,
+      "tolerance": 30.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 441,
+          "y": 574
+        },
+        {
+          "x": 636,
+          "y": 436
+        },
+        {
+          "x": 491,
+          "y": 260
+        }
+      ]
+    },
+    {
+      "name": "curve",
+      "target_angle": 100.7,
+      "tolerance": 30.0,
+      "weight": 5.0,
+      "points": [
+        {
+          "x": 267,
+          "y": 434
+        },
+        {
+          "x": 438,
+          "y": 585
+        },
+        {
+          "x": 636,
+          "y": 431
+        }
+      ]
+    }
+  ]
+}

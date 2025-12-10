@@ -1,0 +1,86 @@
+{
+  "image": "data\\reference_poses\\images\\Eagle_Pose_or_Garudasana__front\\Eagle_Pose_or_Garudasana__image_9.jpg",
+  "total_angles": 4,
+  "measurements": [
+    {
+      "name": "right hand",
+      "target_angle": 95.1,
+      "tolerance": 30.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 333,
+          "y": 113
+        },
+        {
+          "x": 385,
+          "y": 97
+        },
+        {
+          "x": 372,
+          "y": 36
+        }
+      ]
+    },
+    {
+      "name": "left hand",
+      "target_angle": 83.3,
+      "tolerance": 30.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 409,
+          "y": 115
+        },
+        {
+          "x": 366,
+          "y": 112
+        },
+        {
+          "x": 379,
+          "y": 43
+        }
+      ]
+    },
+    {
+      "name": "right leg",
+      "target_angle": 148.7,
+      "tolerance": 30.0,
+      "weight": 5.0,
+      "points": [
+        {
+          "x": 331,
+          "y": 244
+        },
+        {
+          "x": 376,
+          "y": 331
+        },
+        {
+          "x": 370,
+          "y": 419
+        }
+      ]
+    },
+    {
+      "name": "left leg",
+      "target_angle": 129.5,
+      "tolerance": 30.0,
+      "weight": 5.0,
+      "points": [
+        {
+          "x": 391,
+          "y": 245
+        },
+        {
+          "x": 345,
+          "y": 295
+        },
+        {
+          "x": 355,
+          "y": 367
+        }
+      ]
+    }
+  ]
+}

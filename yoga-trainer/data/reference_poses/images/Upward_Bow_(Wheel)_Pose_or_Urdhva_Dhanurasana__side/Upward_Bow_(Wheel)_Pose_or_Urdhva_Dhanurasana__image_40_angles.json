@@ -1,0 +1,106 @@
+{
+  "image": "data\\reference_poses\\images\\Upward_Bow_(Wheel)_Pose_or_Urdhva_Dhanurasana__side\\Upward_Bow_(Wheel)_Pose_or_Urdhva_Dhanurasana__image_40.jpg",
+  "total_angles": 5,
+  "measurements": [
+    {
+      "name": "left hand",
+      "target_angle": 153.7,
+      "tolerance": 25.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 568,
+          "y": 228
+        },
+        {
+          "x": 634,
+          "y": 325
+        },
+        {
+          "x": 651,
+          "y": 447
+        }
+      ]
+    },
+    {
+      "name": "right hand",
+      "target_angle": 156.1,
+      "tolerance": 30.0,
+      "weight": 2.0,
+      "points": [
+        {
+          "x": 571,
+          "y": 225
+        },
+        {
+          "x": 634,
+          "y": 322
+        },
+        {
+          "x": 654,
+          "y": 447
+        }
+      ]
+    },
+    {
+      "name": "left leg",
+      "target_angle": 115.0,
+      "tolerance": 30.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 392,
+          "y": 160
+        },
+        {
+          "x": 224,
+          "y": 256
+        },
+        {
+          "x": 239,
+          "y": 435
+        }
+      ]
+    },
+    {
+      "name": "right leg",
+      "target_angle": 115.6,
+      "tolerance": 30.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 395,
+          "y": 157
+        },
+        {
+          "x": 229,
+          "y": 253
+        },
+        {
+          "x": 243,
+          "y": 433
+        }
+      ]
+    },
+    {
+      "name": "curve",
+      "target_angle": 128.5,
+      "tolerance": 30.0,
+      "weight": 5.0,
+      "points": [
+        {
+          "x": 572,
+          "y": 223
+        },
+        {
+          "x": 402,
+          "y": 154
+        },
+        {
+          "x": 230,
+          "y": 251
+        }
+      ]
+    }
+  ]
+}

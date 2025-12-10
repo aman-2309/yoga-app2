@@ -1,0 +1,86 @@
+{
+  "image": "data\\reference_poses\\images\\Supta_Baddha_Konasana__side\\Supta_Baddha_Konasana__image_97.jpg",
+  "total_angles": 4,
+  "measurements": [
+    {
+      "name": "right hand",
+      "target_angle": 152.1,
+      "tolerance": 30.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 311,
+          "y": 136
+        },
+        {
+          "x": 270,
+          "y": 214
+        },
+        {
+          "x": 197,
+          "y": 264
+        }
+      ]
+    },
+    {
+      "name": "left hand",
+      "target_angle": 158.7,
+      "tolerance": 25.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 422,
+          "y": 141
+        },
+        {
+          "x": 469,
+          "y": 205
+        },
+        {
+          "x": 543,
+          "y": 252
+        }
+      ]
+    },
+    {
+      "name": "right leg",
+      "target_angle": 34.2,
+      "tolerance": 30.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 331,
+          "y": 313
+        },
+        {
+          "x": 186,
+          "y": 379
+        },
+        {
+          "x": 349,
+          "y": 407
+        }
+      ]
+    },
+    {
+      "name": "left leg",
+      "target_angle": 36.9,
+      "tolerance": 25.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 391,
+          "y": 311
+        },
+        {
+          "x": 533,
+          "y": 362
+        },
+        {
+          "x": 377,
+          "y": 410
+        }
+      ]
+    }
+  ]
+}

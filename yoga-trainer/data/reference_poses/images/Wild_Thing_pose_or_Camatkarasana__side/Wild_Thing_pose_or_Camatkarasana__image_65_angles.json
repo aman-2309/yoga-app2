@@ -1,0 +1,106 @@
+{
+  "image": "data\\reference_poses\\images\\Wild_Thing_pose_or_Camatkarasana__side\\Wild_Thing_pose_or_Camatkarasana__image_65.jpg",
+  "total_angles": 5,
+  "measurements": [
+    {
+      "name": "left hand",
+      "target_angle": 176.5,
+      "tolerance": 25.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 539,
+          "y": 264
+        },
+        {
+          "x": 566,
+          "y": 364
+        },
+        {
+          "x": 600,
+          "y": 465
+        }
+      ]
+    },
+    {
+      "name": "right hand",
+      "target_angle": 160.7,
+      "tolerance": 30.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 560,
+          "y": 204
+        },
+        {
+          "x": 666,
+          "y": 236
+        },
+        {
+          "x": 740,
+          "y": 290
+        }
+      ]
+    },
+    {
+      "name": "left leg",
+      "target_angle": 178.3,
+      "tolerance": 30.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 381,
+          "y": 231
+        },
+        {
+          "x": 257,
+          "y": 331
+        },
+        {
+          "x": 108,
+          "y": 444
+        }
+      ]
+    },
+    {
+      "name": "right leg",
+      "target_angle": 102.3,
+      "tolerance": 30.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 358,
+          "y": 196
+        },
+        {
+          "x": 227,
+          "y": 282
+        },
+        {
+          "x": 283,
+          "y": 428
+        }
+      ]
+    },
+    {
+      "name": "curve",
+      "target_angle": 130.6,
+      "tolerance": 30.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 540,
+          "y": 265
+        },
+        {
+          "x": 380,
+          "y": 235
+        },
+        {
+          "x": 258,
+          "y": 333
+        }
+      ]
+    }
+  ]
+}

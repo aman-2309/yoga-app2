@@ -1,0 +1,86 @@
+{
+  "image": "data\\reference_poses\\images\\Half_Lord_of_the_Fishes_Pose_or_Ardha_Matsyendrasana__front\\Half_Lord_of_the_Fishes_Pose_or_Ardha_Matsyendrasana__image_89.jpg",
+  "total_angles": 4,
+  "measurements": [
+    {
+      "name": "right hand",
+      "target_angle": 176.6,
+      "tolerance": 25.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 511,
+          "y": 440
+        },
+        {
+          "x": 483,
+          "y": 549
+        },
+        {
+          "x": 464,
+          "y": 647
+        }
+      ]
+    },
+    {
+      "name": "left hand",
+      "target_angle": 50.0,
+      "tolerance": 25.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 655,
+          "y": 440
+        },
+        {
+          "x": 723,
+          "y": 510
+        },
+        {
+          "x": 734,
+          "y": 402
+        }
+      ]
+    },
+    {
+      "name": "right leg",
+      "target_angle": 89.7,
+      "tolerance": 30.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 589,
+          "y": 632
+        },
+        {
+          "x": 724,
+          "y": 524
+        },
+        {
+          "x": 812,
+          "y": 635
+        }
+      ]
+    },
+    {
+      "name": "left leg",
+      "target_angle": 22.2,
+      "tolerance": 30.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 652,
+          "y": 625
+        },
+        {
+          "x": 795,
+          "y": 635
+        },
+        {
+          "x": 652,
+          "y": 682
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "image": "data\\reference_poses\\images\\Low_Lunge_pose_or_Anjaneyasana__side\\Low_Lunge_pose_or_Anjaneyasana__image_88.jpg",
+  "total_angles": 4,
+  "measurements": [
+    {
+      "name": "right hand",
+      "target_angle": 160.1,
+      "tolerance": 25.0,
+      "weight": 3.0,
+      "points": [
+        {
+          "x": 262,
+          "y": 174
+        },
+        {
+          "x": 179,
+          "y": 144
+        },
+        {
+          "x": 118,
+          "y": 144
+        }
+      ]
+    },
+    {
+      "name": "left hand",
+      "target_angle": 168.5,
+      "tolerance": 25.0,
+      "weight": 2.0,
+      "points": [
+        {
+          "x": 264,
+          "y": 149
+        },
+        {
+          "x": 180,
+          "y": 139
+        },
+        {
+          "x": 119,
+          "y": 144
+        }
+      ]
+    },
+    {
+      "name": "right leg",
+      "target_angle": 130.5,
+      "tolerance": 25.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 330,
+          "y": 268
+        },
+        {
+          "x": 263,
+          "y": 352
+        },
+        {
+          "x": 144,
+          "y": 356
+        }
+      ]
+    },
+    {
+      "name": "left leg",
+      "target_angle": 80.5,
+      "tolerance": 25.0,
+      "weight": 4.0,
+      "points": [
+        {
+          "x": 368,
+          "y": 261
+        },
+        {
+          "x": 459,
+          "y": 233
+        },
+        {
+          "x": 473,
+          "y": 338
+        }
+      ]
+    }
+  ]
+}
